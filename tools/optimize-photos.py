@@ -7,8 +7,8 @@ Usage:
   python3 tools/optimize-photos.py "images/Pictures/Sofia's 7th"     sofias-7th
 
 Produces:
-  images/gallery/<slug>/large/NN.jpg  (~1600px, q74)
-  images/gallery/<slug>/thumb/NN.jpg  (~700px,  q72)
+  public/images/gallery/<slug>/large/NN.jpg  (~1600px, q74)
+  public/images/gallery/<slug>/thumb/NN.jpg  (~700px,  q72)
 
 Then add to the GALLERY array in index.html:
   { title: "Emma's Birthday", slug: "emmas-birthday", count: <N> }
@@ -33,9 +33,9 @@ def save(im, path, w, q):
 total = 0
 for i, f in enumerate(files[:10], 1):  # cap at 10 per event
     im = ImageOps.exif_transpose(Image.open(f)).convert('RGB')
-    save(im, f"images/gallery/{slug}/large/{i:02d}.jpg", 1600, 74)
-    save(im, f"images/gallery/{slug}/thumb/{i:02d}.jpg", 700, 72)
+    save(im, f"public/images/gallery/{slug}/large/{i:02d}.jpg", 1600, 74)
+    save(im, f"public/images/gallery/{slug}/thumb/{i:02d}.jpg", 700, 72)
     total += 1
 
-print(f"Done: {total} photos -> images/gallery/{slug}/")
+print(f"Done: {total} photos -> public/images/gallery/{slug}/")
 print(f'Add to GALLERY in index.html:  {{ title: "<Event name>", slug: "{slug}", count: {total} }}')

@@ -1,0 +1,6 @@
+# Cloudflare Pages project config.
+# The presence of `pages_build_output_dir` tells Cloudflare/Wrangler this is a
+# PAGES project (static assets in ./public + Functions in ./functions) — NOT a Worker.
+name = "the-pink-spa-bus"
+pages_build_output_dir = "./public"
+compatibility_date = "2024-11-01"

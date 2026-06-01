@@ -4,8 +4,8 @@
   "private": true,
   "description": "The Pink Spa Bus · Party Mobile — static site on Cloudflare Pages with a Resend form function",
   "scripts": {
-    "dev": "wrangler pages dev . --compatibility-date=2024-11-01",
-    "deploy": "wrangler pages deploy . --project-name=the-pink-spa-bus"
+    "dev": "wrangler pages dev",
+    "deploy": "wrangler pages deploy"
   },
   "devDependencies": {
     "wrangler": "^3.90.0"

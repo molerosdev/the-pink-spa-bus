@@ -1,20 +1,27 @@
 # The Pink Spa Bus — deploy & maintenance guide
 
-The site is a single static file: **`index.html`** + the **`images/`** folder. No build step.
+Standard Cloudflare Pages layout: served files live in **`public/`**, the form API in
+**`functions/`**, and `wrangler.toml` marks it as a Pages project. No build step.
 
 ```
 the-pink-bus/
-├─ index.html                 ← the website (open in any browser)
-├─ images/
-│  ├─ logo.png                ← brand logo / favicon
-│  ├─ hero/bus-1..4.jpg       ← blurred hero slideshow
-│  ├─ sections/interior.jpg   ← Experience-section photo
-│  └─ gallery/<event>/large/NN.jpg + thumb/NN.jpg
-└─ images/Pictures/           ← ORIGINAL full-size photos (not shipped; keep as source)
+├─ public/                    ← BUILD OUTPUT DIR (this is what gets served)
+│  ├─ index.html              ← the website
+│  ├─ _headers                ← caching + security headers
+│  └─ images/
+│     ├─ logo.png             ← brand logo / favicon
+│     ├─ hero/bus-1..4.jpg    ← blurred hero slideshow
+│     ├─ sections/interior.jpg← Experience-section photo
+│     └─ gallery/<event>/large/NN.jpg + thumb/NN.jpg
+├─ functions/api/submit.js    ← Pages Function → Resend (POST /api/submit)
+├─ wrangler.toml              ← pages_build_output_dir = "./public"
+├─ package.json               ← wrangler dev/deploy scripts
+└─ images/                    ← SOURCE only (Pictures/, Colors-branding.pdf) — NOT served
 ```
 
-The original demo is kept as `pub-pink-spa-bus.html` for reference. `images/Pictures/` and
-`Colors-branding.pdf` are source assets — you do **not** need to upload them to the live site.
+The original demo is kept as `pub-pink-spa-bus.html` (root, not served) for reference. Root
+`images/Pictures/` and `Colors-branding.pdf` are source assets — they are git-ignored and never
+deployed.
 
 ---
 
@@ -26,10 +33,13 @@ registrar only**, and handle forms with a **Cloudflare Pages Function + Resend**
 
 ### Deploy to Cloudflare Pages
 1. Push this folder to a GitHub repo.
-2. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → pick the repo.
-   - **Build command:** *(none — it's static)*
-   - **Build output directory:** `/` (root)
-   - Cloudflare auto-detects the `functions/` directory and deploys `/api/submit`.
+2. Cloudflare dashboard → **Workers & Pages → Create → Pages tab → Connect to Git** → pick the repo.
+   ⚠️ Use the **Pages** tab, not Workers — otherwise it runs `wrangler deploy` (Worker mode) and
+   fails looking for a Worker entry point.
+   - **Framework preset:** None
+   - **Build command:** *(leave empty — it's static)*
+   - **Build output directory:** `public`
+   - Cloudflare reads `wrangler.toml`, serves `public/`, and auto-deploys `functions/` → `/api/submit`.
 3. **Preview/staging URLs:** every branch & PR gets its own `*.pages.dev` URL automatically.
    `main` (the "production branch") = production. Push to a `staging` branch → review that URL,
    then merge to `main` to go live. (This is your "preview → promote to main domain" flow.)
