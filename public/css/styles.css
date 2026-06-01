@@ -108,9 +108,9 @@
   nav.site .brand{
     display:flex; align-items:center; gap:12px;
   }
-  .brand-logo{ height:76px; width:auto; display:block }
-  @media (max-width:720px){ .brand-logo{ height:58px } }
-  footer.site .brand-logo{ height:104px }
+  .brand-logo{ height:96px; width:auto; display:block }
+  @media (max-width:720px){ .brand-logo{ height:70px } }
+  footer.site .brand-logo{ height:132px }
   nav.site .brand-mark{
     width:42px; height:42px; border-radius:var(--r-pill);
     background:var(--primary); color:var(--ink);
