@@ -103,13 +103,17 @@
   }
   nav.site .row{
     display:flex; align-items:center; justify-content:space-between;
-    padding:20px 0;
+    height:64px; padding:0;
   }
   nav.site .brand{
     display:flex; align-items:center; gap:12px;
   }
-  .brand-logo{ height:120px; width:auto; display:block }
-  @media (max-width:720px){ .brand-logo{ height:84px } }
+  /* compact bar, but the logo is taller and overhangs below the bar */
+  .brand-logo{ height:90px; width:auto; display:block; position:relative; top:13px }
+  @media (max-width:720px){
+    nav.site .row{ height:56px }
+    .brand-logo{ height:78px; top:11px }
+  }
   footer.site .brand-logo{ height:168px }
   nav.site .brand-mark{
     width:42px; height:42px; border-radius:var(--r-pill);
