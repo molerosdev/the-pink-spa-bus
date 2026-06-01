@@ -9,7 +9,8 @@ Multi-page static site: shared shell (nav/footer) is duplicated per page; all st
 ```
 the-pink-bus/
 ├─ public/                    ← BUILD OUTPUT DIR (this is what gets served)
-│  ├─ index.html              ← Home (hero, experience, about, CTA)
+│  ├─ index.html              ← Home (hero, trust, Experience carousel)
+│  ├─ about.html              ← About + "Create magical memories" CTA
 │  ├─ packages.html           ← Packages / prices
 │  ├─ gallery.html            ← Event gallery + lightbox
 │  ├─ disclosure.html         ← Bilingual EN/ES liability waiver

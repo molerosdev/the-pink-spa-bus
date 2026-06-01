@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><!-- TODO: switch to index,follow at launch -->
-<title>Gallery · The Pink Spa Bus</title>
-<meta name="description" content="Recent celebrations aboard The Pink Spa Bus — browse photos from real kids' spa parties.">
+<title>About · The Pink Spa Bus</title>
+<meta name="description" content="About The Pink Spa Bus — a mobile spa bus bringing glamour, fun and amazing moments to kids' celebrations across Central Florida.">
 <link rel="icon" type="image/png" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +35,8 @@
     <ul>
       <li><a href="packages.html">Packages</a></li>
       <li><a href="index.html">The Experience</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a class="active" href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="disclosure.html">Disclosure</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -46,29 +46,39 @@
     </button>
   </div>
 </nav>
-<!-- ===== lookbook (gallery) ===== -->
-<section class="block alt" id="lookbook">
+<!-- ===== about ===== -->
+<section class="block" id="about">
   <div class="container">
-    <div class="section-head">
-      <span class="display-italic">— the gallery —</span>
-      <h2>Recent <em>celebrations</em>.</h2>
-      <div class="ornament gold-ornament-rule">
-        <span class="line"></span><span class="diamond"></span><span class="line"></span>
+    <div class="section-head" style="align-items:flex-start; text-align:left">
+      <span class="display-italic">— about us —</span>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p class="lead">A pink spa bus that pulls up to your door for <em>glamour, fun, and amazing moments</em> — a celebration your child will never forget.</p>
+        <p>We started The Pink Spa Bus with the goal of providing unique and personalized event experiences. The bus arrives fully styled — glam mirror stations, soft seating, music, and a hostess — so the guest of honour and her friends step into a world made just for them.</p>
+        <p>Every party is paced for children and bilingual for every family. We bring the products, the setup, and the photo moments; you bring the birthday girl. Based in Davenport and serving Central Florida.</p>
+      </div>
+      <div>
+        <div class="about-stats">
+          <div class="cell">
+            <div class="num">12</div>
+            <div class="lbl">Guests Per Party</div>
+          </div>
+          <div class="cell">
+            <div class="num">1</div>
+            <div class="lbl">Pink Spa Bus</div>
+          </div>
+          <div class="cell">
+            <div class="num">EN / ES</div>
+            <div class="lbl">Bilingual Service</div>
+          </div>
+          <div class="cell">
+            <div class="num">Central FL</div>
+            <div class="lbl">Service Area</div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- event cards rendered from the GALLERY array in JS; tap a card to open the photo lightbox -->
-    <div class="event-grid" id="gallery-grid"></div>
-  </div>
-
-  <!-- lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-    <button class="lb-close" aria-label="Close" onclick="closeLightbox()">×</button>
-    <button class="lb-nav prev" aria-label="Previous" onclick="lbStep(-1)">‹</button>
-    <figure class="lb-stage">
-      <img id="lb-img" alt="">
-      <figcaption id="lb-cap"></figcaption>
-    </figure>
-    <button class="lb-nav next" aria-label="Next" onclick="lbStep(1)">›</button>
   </div>
 </section>
 
