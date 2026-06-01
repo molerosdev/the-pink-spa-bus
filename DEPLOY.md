@@ -40,6 +40,11 @@ registrar only**, and handle forms with a **Cloudflare Pages Function + Resend**
    - **Build command:** *(leave empty — it's static)*
    - **Build output directory:** `public`
    - Cloudflare reads `wrangler.toml`, serves `public/`, and auto-deploys `functions/` → `/api/submit`.
+
+   **Troubleshooting — "you've run a Workers-specific command in a Pages project":**
+   the project's **Deploy command** is wrongly set to `wrangler deploy` (Workers). Go to
+   **project → Settings → Build configuration → Deploy command** and set it to
+   `npx wrangler pages deploy` (leave **Build command** empty). Re-run the deploy.
 3. **Preview/staging URLs:** every branch & PR gets its own `*.pages.dev` URL automatically.
    `main` (the "production branch") = production. Push to a `staging` branch → review that URL,
    then merge to `main` to go live. (This is your "preview → promote to main domain" flow.)
