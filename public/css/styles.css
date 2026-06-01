@@ -108,11 +108,11 @@
   nav.site .brand{
     display:flex; align-items:center; gap:12px;
   }
-  /* compact bar, but the logo is taller and overhangs below the bar */
-  .brand-logo{ height:110px; width:auto; display:block; position:relative; top:23px }
+  /* compact bar, but the logo is taller and overhangs the bar */
+  .brand-logo{ height:100px; width:auto; display:block; position:relative; top:0px }
   @media (max-width:720px){
     nav.site .row{ height:56px }
-    .brand-logo{ height:92px; top:18px }
+    .brand-logo{ height:84px; top:0px }
   }
   footer.site .brand-logo{ height:168px }
   nav.site .brand-mark{
