@@ -3,10 +3,19 @@
 Standard Cloudflare Pages layout: served files live in **`public/`**, the form API in
 **`functions/`**, and `wrangler.toml` marks it as a Pages project. No build step.
 
+Multi-page static site: shared shell (nav/footer) is duplicated per page; all styling is in
+`css/styles.css` and all behaviour in `js/main.js` (single source of truth for both).
+
 ```
 the-pink-bus/
 ├─ public/                    ← BUILD OUTPUT DIR (this is what gets served)
-│  ├─ index.html              ← the website
+│  ├─ index.html              ← Home (hero, experience, about, CTA)
+│  ├─ packages.html           ← Packages / prices
+│  ├─ gallery.html            ← Event gallery + lightbox
+│  ├─ disclosure.html         ← Bilingual EN/ES liability waiver
+│  ├─ contact.html            ← Contact form
+│  ├─ css/styles.css          ← all styles (shared)
+│  ├─ js/main.js              ← all JS: nav, lang toggle, gallery, forms (shared)
 │  ├─ _headers                ← caching + security headers
 │  └─ images/
 │     ├─ logo.png             ← brand logo / favicon
@@ -18,6 +27,9 @@ the-pink-bus/
 ├─ package.json               ← wrangler dev/deploy scripts
 └─ images/                    ← SOURCE only (Pictures/, Colors-branding.pdf) — NOT served
 ```
+
+Editing nav/footer means updating it in each `public/*.html` (5 files). Styles and scripts are
+shared, so edit those once.
 
 The original demo is kept as `pub-pink-spa-bus.html` (root, not served) for reference. Root
 `images/Pictures/` and `Colors-branding.pdf` are source assets — they are git-ignored and never
@@ -60,7 +72,7 @@ registrar only**, and handle forms with a **Cloudflare Pages Function + Resend**
 ## Forms (waiver + contact) → Resend email
 
 The two forms POST JSON to the Pages Function **`functions/api/submit.js`**, which emails via
-**Resend**. Front-end config is `FORM_CONFIG` in `index.html` (`endpoint: '/api/submit'`). When the
+**Resend**. Front-end config is `FORM_CONFIG` in `js/main.js` (`endpoint: '/api/submit'`). When the
 file is opened directly (`file://`) it runs in safe **DEMO mode** (nothing sent).
 
 **Setup:**
@@ -84,23 +96,24 @@ directly.
 
 ## Adding a gallery event (up to 6, 10 photos each)
 
-1. Optimise photos into `images/gallery/<slug>/large/NN.jpg` (≈1600px) and
-   `images/gallery/<slug>/thumb/NN.jpg` (≈700px), named `01.jpg, 02.jpg, …`.
-   (The script used for Emma's Birthday lives in the commit history / can be re-run.)
-2. In `index.html`, add an entry to the `GALLERY` array:
+1. Optimise photos with the helper (outputs to `public/images/gallery/<slug>/{large,thumb}`):
+   ```bash
+   python3 tools/optimize-photos.py "images/Pictures/Sofia's 7th" sofias-7th
+   ```
+2. In `public/js/main.js`, add an entry to the `GALLERY` array:
    ```js
    const GALLERY = [
      { title: "Emma's Birthday", slug: "emmas-birthday", count: 10 },
      { title: "Sofia's 7th",     slug: "sofias-7th",     count: 8 },
    ];
    ```
-That's it — the card + lightbox are generated automatically.
+That's it — the card + lightbox on `gallery.html` are generated automatically.
 
 ---
 
 ## Before going live
-- [ ] Confirm **packages & prices** with the client (currently placeholders — see TODO comment in `#programme`).
-- [ ] Verify the **liability-waiver wording** matches the legal text on the live site (see NOTE in `#disclosure`).
+- [ ] Confirm **packages & prices** with the client (placeholders in `packages.html` — see TODO comment).
+- [ ] Verify the **liability-waiver wording** matches the legal text (NOTE comment in `disclosure.html`).
 - [ ] Set Resend env vars (`RESEND_API_KEY`, `MAIL_TO`, `MAIL_FROM`) in Cloudflare Pages + verify the sending domain in Resend.
-- [ ] Flip `<meta name="robots">` from `noindex,nofollow` to `index,follow`.
+- [ ] Flip `<meta name="robots">` from `noindex,nofollow` to `index,follow` in **all 5 pages**.
 - [ ] Double-check **social links** and the **public email** (gmail vs info@).

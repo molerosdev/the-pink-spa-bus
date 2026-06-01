@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><!-- TODO: switch to index,follow at launch -->
-<title>The Pink Spa Bus · Party Mobile — Kids' Mobile Spa Parties</title>
-<meta name="description" content="The Pink Spa Bus brings a glam mobile spa party to your door — facials, manicures, makeovers and more for unforgettable kids' celebrations in Central Florida.">
+<title>Gallery · The Pink Spa Bus</title>
+<meta name="description" content="Recent celebrations aboard The Pink Spa Bus — browse photos from real kids' spa parties.">
 <link rel="icon" type="image/png" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
       <li><a href="packages.html">Packages</a></li>
       <li><a href="index.html#experience">The Experience</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
       <li><a href="disclosure.html">Disclosure</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -46,140 +46,29 @@
     </button>
   </div>
 </nav>
-<!-- ===== hero ===== -->
-<section class="hero" id="top">
-  <!-- blurred bus-image slideshow background -->
-  <div class="hero-bg" aria-hidden="true">
-    <div class="slide" style="background-image:url('images/hero/bus-1.jpg')"></div>
-    <div class="slide" style="background-image:url('images/hero/bus-2.jpg')"></div>
-    <div class="slide" style="background-image:url('images/hero/bus-3.jpg')"></div>
-    <div class="slide" style="background-image:url('images/hero/bus-4.jpg')"></div>
-  </div>
-  <!-- background sparkles -->
-  <svg class="sparkle-float s1" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-  <svg class="sparkle-float s2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-  <svg class="sparkle-float s3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-  <svg class="sparkle-float s4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-
+<!-- ===== lookbook (gallery) ===== -->
+<section class="block alt" id="lookbook">
   <div class="container">
-    <div class="invitation-card">
-      <svg class="corner-sparkle tl" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-      <svg class="corner-sparkle br" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-
-      <span class="est-pill">
-        <span class="dot"></span>
-        The Pink Spa Bus
-        <span class="dot"></span>
-        Party Mobile
-      </span>
-
-      <h1>
-        Spa parties they'll<br>
-        never <em>forget</em>.
-      </h1>
-
-      <p class="lede">
-        A pink spa bus that comes to you — glam mirror stations, makeovers,
-        manicures, and music. Glamour, fun, and amazing moments,
-        all curated for the guest of honour.
-      </p>
-
-      <div class="actions">
-        <a href="disclosure.html" class="btn btn-primary">Book a Party</a>
-        <a href="packages.html" class="btn btn-ghost">View Packages</a>
-      </div>
-
-      <div class="hero-meta">
-        <div class="left">
-          <dl>
-            <dt>Service Area</dt>
-            <dd>Central Florida</dd>
-          </dl>
-          <dl>
-            <dt>Based In</dt>
-            <dd>Davenport, FL</dd>
-          </dl>
-          <dl>
-            <dt>Capacity</dt>
-            <dd>Up to 12 Guests</dd>
-          </dl>
-        </div>
-        <div class="right">— glamour, fun, amazing moments —</div>
+    <div class="section-head">
+      <span class="display-italic">— the gallery —</span>
+      <h2>Recent <em>celebrations</em>.</h2>
+      <div class="ornament gold-ornament-rule">
+        <span class="line"></span><span class="diamond"></span><span class="line"></span>
       </div>
     </div>
+    <!-- event cards rendered from the GALLERY array in JS; tap a card to open the photo lightbox -->
+    <div class="event-grid" id="gallery-grid"></div>
   </div>
-</section>
 
-<!-- ===== trust strip ===== -->
-<div class="trust">
-  <div class="container">
-    <span class="trust-item">Mobile Spa Experience</span>
-    <span class="trust-dot"></span>
-    <span class="trust-item">Birthday Parties</span>
-    <span class="trust-dot"></span>
-    <span class="trust-item">Safe &amp; Fun Environment</span>
-    <span class="trust-dot"></span>
-    <span class="trust-item">Professional Staff</span>
-  </div>
-</div>
-
-<!-- ===== the experience ===== -->
-<section class="block alt" id="experience">
-  <div class="container">
-    <div class="experience">
-      <div class="panel" style="background:none; border:0">
-        <img src="images/sections/interior.jpg" alt="Inside the Pink Spa Bus — pink glam stations" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r-lg)">
-      </div>
-      <div class="vrule"></div>
-      <div>
-        <span class="display-italic" style="color:var(--secondary)">— the experience —</span>
-        <h3>What it feels like<br>to be the <em>guest of honour</em>.</h3>
-        <p>From the moment we arrive, the guest of honour and her friends step into a world arranged just for them — soft robes, a glam table set with their names, and a hostess who treats every detail like a couture appointment.</p>
-        <p>Every programme is paced for children — gentle, age-appropriate, and ends on a photo moment to keep.</p>
-        <ul class="points">
-          <li>Personalised welcome &amp; named glam stations</li>
-          <li>Age-appropriate, child-safe products only</li>
-          <li>Trained party hostess on-site for every booking</li>
-          <li>Take-home keepsakes for every guest</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== about ===== -->
-<section class="block" id="about">
-  <div class="container">
-    <div class="section-head" style="align-items:flex-start; text-align:left">
-      <span class="display-italic">— about us —</span>
-    </div>
-    <div class="about-grid">
-      <div>
-        <p class="lead">A pink spa bus that pulls up to your door for <em>glamour, fun, and amazing moments</em> — a celebration your child will never forget.</p>
-        <p>We started The Pink Spa Bus with the goal of providing unique and personalized event experiences. The bus arrives fully styled — glam mirror stations, soft seating, music, and a hostess — so the guest of honour and her friends step into a world made just for them.</p>
-        <p>Every party is paced for children and bilingual for every family. We bring the products, the setup, and the photo moments; you bring the birthday girl. Based in Davenport and serving Central Florida.</p>
-      </div>
-      <div>
-        <div class="about-stats">
-          <div class="cell">
-            <div class="num">12</div>
-            <div class="lbl">Guests Per Party</div>
-          </div>
-          <div class="cell">
-            <div class="num">1</div>
-            <div class="lbl">Pink Spa Bus</div>
-          </div>
-          <div class="cell">
-            <div class="num">EN / ES</div>
-            <div class="lbl">Bilingual Service</div>
-          </div>
-          <div class="cell">
-            <div class="num">Central FL</div>
-            <div class="lbl">Service Area</div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lb-close" aria-label="Close" onclick="closeLightbox()">×</button>
+    <button class="lb-nav prev" aria-label="Previous" onclick="lbStep(-1)">‹</button>
+    <figure class="lb-stage">
+      <img id="lb-img" alt="">
+      <figcaption id="lb-cap"></figcaption>
+    </figure>
+    <button class="lb-nav next" aria-label="Next" onclick="lbStep(1)">›</button>
   </div>
 </section>
 
