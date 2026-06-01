@@ -179,7 +179,7 @@
   .hero-bg .slide{
     position:absolute; inset:-4%;
     background-size:cover; background-position:center;
-    filter:blur(2.5px) saturate(1.1);
+    filter:saturate(1.08);
     opacity:0; transform:scale(1.08);
     animation:hero-cross 32s ease-in-out infinite;
   }
@@ -189,7 +189,7 @@
   .hero-bg .slide:nth-child(4){ animation-delay:24s }
   .hero-bg::after{
     content:''; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(255,247,251,.62), rgba(255,247,251,.82));
+    background:linear-gradient(180deg, rgba(255,247,251,.34), rgba(255,247,251,.58));
   }
   @keyframes hero-cross{
     0%{ opacity:0; transform:scale(1.12) }
