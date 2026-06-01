@@ -1,0 +1,7 @@
+node_modules/
+.wrangler/
+.dev.vars
+# source assets — not deployed (originals are large)
+images/Pictures/
+images/Colors-branding.pdf
+*.log

@@ -1,0 +1,5 @@
+# Copy to ".dev.vars" for local `npm run dev` (wrangler reads it automatically).
+# In production set these in Cloudflare Pages → Settings → Environment variables.
+RESEND_API_KEY=re_your_key_here
+MAIL_TO=info@thepinkspabus.com,owner@example.com
+MAIL_FROM=The Pink Spa Bus <noreply@thepinkspabus.com>
