@@ -431,10 +431,17 @@
     border:1px solid var(--rule-soft);
   }
   .experience .panel::before{
-    content:''; position:absolute; inset:14px;
+    content:''; position:absolute; inset:14px; z-index:2;
     border:1px solid var(--rule-gold); border-radius:calc(var(--r-lg) - 6px);
     pointer-events:none;
   }
+  /* crossfade carousel of bus interior/exterior photos */
+  .exp-carousel{ position:absolute; inset:0; z-index:1 }
+  .exp-slide{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    border-radius:var(--r-lg); opacity:0; transition:opacity 1.1s ease;
+  }
+  .exp-slide.is-active{ opacity:1 }
   .experience .panel .sparkle-cluster{
     position:relative; color:var(--rule-gold);
     animation:slow-spin 28s linear infinite;

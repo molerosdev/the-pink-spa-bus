@@ -267,3 +267,17 @@
   });
 
   renderGallery();
+
+  // ===== EXPERIENCE CAROUSEL (auto-rotating crossfade) =====
+  (function(){
+    const car = document.getElementById('expCarousel');
+    if(!car) return;
+    const slides = car.querySelectorAll('.exp-slide');
+    if(slides.length < 2) return;
+    let i = 0;
+    setInterval(()=>{
+      slides[i].classList.remove('is-active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-active');
+    }, 4000);
+  })();
