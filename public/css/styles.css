@@ -979,11 +979,8 @@
     transform:rotate(6deg);
     padding:8px;
   }
-  .stamp .stamp-circle{
-    width:46px; height:46px; border-radius:99px;
-    border:1px solid var(--rule-gold);
-    display:flex; align-items:center; justify-content:center;
-    color:var(--rule-gold); margin-bottom:8px;
+  .stamp .stamp-logo{
+    width:88px; height:auto; display:block; margin-bottom:6px;
   }
   .stamp .stamp-text{
     font-family:'Playfair Display',serif; font-style:italic; font-size:11px;
