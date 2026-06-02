@@ -46,67 +46,48 @@
     </button>
   </div>
 </nav>
-<!-- ===== hero ===== -->
+<!-- ===== hero (bus-centric) =====
+     Gallery is driven by this 3-image set — swap/add files here, no redesign needed:
+       images/hero/main.webp      (exterior — primary)
+       images/hero/interior.webp  (interior spa setup)
+       images/hero/alt.webp       (additional bus angle)        -->
 <section class="hero" id="top">
-  <!-- blurred bus-image slideshow background -->
-  <div class="hero-bg" aria-hidden="true">
-    <div class="slide" style="background-image:url('images/hero/bus-1.jpg')"></div>
-    <div class="slide" style="background-image:url('images/hero/bus-2.jpg')"></div>
-    <div class="slide" style="background-image:url('images/hero/bus-3.jpg')"></div>
-    <div class="slide" style="background-image:url('images/hero/bus-4.jpg')"></div>
-  </div>
-  <!-- background sparkles -->
-  <svg class="sparkle-float s1" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-  <svg class="sparkle-float s2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-  <svg class="sparkle-float s3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-  <svg class="sparkle-float s4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
+  <div class="container hero-grid">
 
-  <div class="container">
-    <div class="invitation-card">
-      <svg class="corner-sparkle tl" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-      <svg class="corner-sparkle br" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9 24 12 13.5 15 12 24 10.5 15 0 12 10.5 9z"/></svg>
-
+    <div class="hero-copy">
       <span class="est-pill">
-        <span class="dot"></span>
-        The Pink Spa Bus
-        <span class="dot"></span>
-        Party Mobile
+        <span class="dot"></span> The Pink Spa Bus <span class="dot"></span> Party Mobile
       </span>
-
-      <h1>
-        Spa parties they'll<br>
-        never <em>forget</em>.
-      </h1>
-
+      <h1>Spa parties they'll<br>never <em>forget</em>.</h1>
       <p class="lede">
-        A pink spa bus that comes to you — glam mirror stations, makeovers,
-        manicures, and music. Glamour, fun, and amazing moments,
-        all curated for the guest of honour.
+        A luxury mobile spa experience <em>inside a real pink spa bus</em> — glam
+        mirror stations, makeovers, manicures and music, parked right at your door.
       </p>
-
       <div class="actions">
         <a href="contact.html" class="btn btn-primary">Book a Party</a>
         <a href="packages.html" class="btn btn-ghost">View Packages</a>
       </div>
-
       <div class="hero-meta">
         <div class="left">
-          <dl>
-            <dt>Service Area</dt>
-            <dd>Central Florida</dd>
-          </dl>
-          <dl>
-            <dt>Based In</dt>
-            <dd>Central Florida</dd>
-          </dl>
-          <dl>
-            <dt>Capacity</dt>
-            <dd>Up to 20 Guests</dd>
-          </dl>
+          <dl><dt>Service Area</dt><dd>Central Florida</dd></dl>
+          <dl><dt>Capacity</dt><dd>Up to 20 Guests</dd></dl>
+          <dl><dt>Ages</dt><dd>3 – 12 Years</dd></dl>
         </div>
-        <div class="right">— glamour, fun, amazing moments —</div>
       </div>
     </div>
+
+    <div class="hero-gallery" aria-label="The Pink Spa Bus — exterior and interior">
+      <figure class="hg hg-main">
+        <img src="images/hero/main.webp" alt="The Pink Spa Bus parked — fully wrapped pink exterior" width="1200" height="801">
+      </figure>
+      <figure class="hg hg-sub">
+        <img src="images/hero/interior.webp" alt="Inside the Pink Spa Bus — pink glam mirror stations" loading="lazy" width="760" height="601">
+      </figure>
+      <figure class="hg hg-sub">
+        <img src="images/hero/alt.webp" alt="The Pink Spa Bus — another exterior angle" loading="lazy" width="760" height="426">
+      </figure>
+    </div>
+
   </div>
 </section>
 

@@ -1,128 +1,278 @@
-PROJECT: Services Page – Package Card Flip Animation Enhancement
+PRD: Hero Section Redesign – Bus-Centric Experience
+Project Overview
 
-OBJECTIVE
+Redesign the homepage hero section to make The Pink Spa Bus the immediate visual focus.
 
-Replace the current package details expansion behavior with an interactive flip-card experience.
+The current hero successfully communicates the brand but places too much emphasis on text and insufficient emphasis on the actual spa bus experience.
 
-When a visitor clicks the "View full details" section on any package card, the card should smoothly flip and reveal the complete package details on the reverse side of the same card.
+The new hero should allow visitors to immediately understand:
 
-No content changes are required.
+What the Pink Spa Bus looks like
+The size and uniqueness of the bus
+The interior spa experience
+That this is a mobile luxury spa party venue
 
-No pricing changes are required.
+The bus should become the dominant visual element while maintaining clear messaging and call-to-action visibility.
 
-No layout changes are required.
+Business Goal
 
-This update only affects the package card interaction.
+Increase user understanding of the unique selling proposition within the first 3 seconds:
 
-CURRENT BEHAVIOR
+"A luxury mobile spa experience inside a real pink spa bus."
 
-- Package cards display summary information.
-- Clicking the "+" icon expands content below or within the card.
+Design Direction
+Current State
+Large white content container
+Background imagery partially obscured
+Bus is visible but secondary
+Text dominates the viewport
+Desired State
+Bus imagery dominates the hero
+Text supports the visuals
+Multiple views of the bus are showcased
+Visitors immediately recognize the bus as the attraction
+Hero Layout
+Desktop Layout
 
-NEW BEHAVIOR
+Two-column layout.
 
-- Package cards remain unchanged on initial page load.
-- Clicking the "View full details" section triggers a card flip animation.
-- The front side rotates out of view.
-- The back side rotates into view.
-- Full package information is displayed on the back side.
-- The card remains in the flipped state until the user closes it.
+Left Column
 
-CARD FRONT CONTENT
+Content only.
 
-Maintain current content:
+Include:
 
-- Package image
-- Package badge
-- Package name
-- Package price
-- Duration
-- Guest count
-- Short summary
-- Book This Package button
-- "+" icon
+Main headline
+Supporting subheadline
+CTA buttons
 
-CARD BACK CONTENT
+Width:
 
-Display all package details currently contained within the expandable section, including:
+Approximately 35–40%
+Right Column
 
-- What's Included
-- The Experience
-- Important Information
+Bus visual gallery.
 
-BACK CARD ACTIONS
+Width:
 
-Display a visible action allowing users to return to the front side.
+Approximately 60–65%
 
-Accepted options:
+This side should become the focal point of the page.
 
-- Back Arrow Icon
-- Close (X) Icon
-- "Back to Package Summary" button
+Visual Gallery Requirements
 
-User interaction should flip the card back to its original front state.
+Display multiple bus images simultaneously.
 
-ANIMATION REQUIREMENTS
+Suggested composition:
 
-- Smooth 3D card flip animation
-- Horizontal flip effect
-- Duration between 300ms and 600ms
-- Animation must feel premium and responsive
-- No page jump
-- No layout shifting
-- No content pushing other cards vertically
+Primary Image
 
-RESPONSIVE BEHAVIOR
+Large featured image.
+
+Content:
+
+Exterior bus photo
+
+Occupies:
+
+70% of gallery area
+Secondary Images
+
+Two smaller supporting images.
+
+Content:
+
+Interior spa setup
+Additional bus angle specified by client
+
+Layout:
+
+Stacked vertically
+Or staggered card layout
+
+Example:
+
+---
+
+| |
+| Exterior Bus Photo |
+| |
+
+---
+
+| Interior | Bus View |
+
+---
+
+Remove Existing White Card
+
+Remove the large white rectangle currently placed over the hero image.
+
+Reason:
+
+It hides the main attraction and reduces visual impact.
+
+Replace with:
+
+Clean text container
+No solid white background
+Optional subtle glass effect (10–15% opacity)
+
+The bus imagery must remain fully visible.
+
+Image Treatment
+Blur
+
+Reduce current blur significantly.
+
+Target:
+
+60–80% less blur than current implementation
+
+Images should appear crisp and professional.
+
+Overlay
+
+Apply subtle overlay only if needed for readability.
+
+Recommended:
+
+Soft pink gradient
+Very light dark overlay
+
+Goal:
+
+Improve text contrast without hiding images.
+
+Hero Height
+
+Increase visual impact.
 
 Desktop:
 
-- Flip occurs within the existing card container
-- Neighboring cards remain stationary
+85vh to 100vh
 
-Tablet:
+The hero should feel premium and immersive.
 
-- Same behavior as desktop
+Animation Requirements
 
-Mobile:
+Animations must be subtle.
 
-- Flip animation remains enabled
-- Content remains fully readable
-- No overflow outside viewport
+Image Entrance
 
-CARD HEIGHT REQUIREMENTS
+On page load:
 
-- Front and back sides must maintain consistent dimensions.
-- Back side should support scrolling internally if content exceeds available height.
-- Overall page layout should remain stable during card interactions.
+Fade in
+Slight upward motion
 
-ACCESSIBILITY REQUIREMENTS
+Duration:
 
-- "+" icon must be keyboard accessible.
-- Flip action must support keyboard navigation.
-- Focus state must remain visible.
-- Screen readers should properly identify interactive elements.
+500–700ms
+Gallery Hover Effects
 
-VISUAL REQUIREMENTS
+On hover:
 
-Maintain existing:
+Slight scale effect (1.02–1.05)
+Soft shadow increase
 
-- Branding
-- Colors
-- Typography
-- Shadows
-- Borders
-- Rounded corners
+No aggressive movement.
 
-No visual redesign is required.
+Floating Motion
 
-ACCEPTANCE CRITERIA
+Optional:
 
-- Clicking "View full details" flips the card instead of expanding content.
-- Full package information appears on the back side.
-- Users can return to the front side without refreshing the page.
-- No page layout movement occurs during interaction.
-- All package information remains readable.
-- Flip animation works on desktop, tablet, and mobile.
-- Existing branding and styling remain unchanged.
-- Contact form integration and "Book This Package" functionality remain unchanged.
-- Only the package card interaction behavior is modified.
+Very subtle floating animation on supporting images.
+
+Movement:
+
+3–5 pixels
+
+Cycle:
+
+6–8 seconds
+Mobile Layout
+
+Stack vertically.
+
+Order:
+
+Section 1
+
+Headline
+
+Section 2
+
+CTA Buttons
+
+Section 3
+
+Bus image gallery
+
+OR
+
+Preferred
+
+Bus gallery first, then headline and CTA.
+
+Reason:
+
+Mobile visitors should immediately see the bus.
+
+Performance Requirements
+
+Images must be optimized.
+
+Requirements:
+
+WebP format
+Lazy load secondary images
+Responsive image sizing
+Maintain Lighthouse performance above 90
+Future-Proofing
+
+The gallery component must allow easy replacement/addition of images.
+
+Developer should create image array structure such as:
+
+const heroImages = [
+exteriorBusMain,
+interiorBus,
+exteriorBusAlt,
+];
+
+Allowing future additions without redesign.
+
+Acceptance Criteria
+Success Condition 1
+
+Visitor can immediately identify the Pink Spa Bus within the first viewport.
+
+Success Condition 2
+
+At least three bus-related images are visible in the hero section.
+
+Success Condition 3
+
+No large opaque white container blocks hero imagery.
+
+Success Condition 4
+
+Headline and CTA remain readable on desktop and mobile.
+
+Success Condition 5
+
+Hero clearly communicates that the bus itself is the unique attraction.
+
+Success Condition 6
+
+Subtle animations enhance the experience without impacting performance.
+
+Implementation Priority
+Remove white hero card.
+Create two-column desktop layout.
+Add 3-image bus gallery (exterior + interior + additional image).
+Reduce blur and improve image clarity.
+Add subtle animations.
+Optimize mobile experience with bus-first presentation.
+
+This redesign shifts the hero from a typical service landing page into a product showcase, which aligns directly with the client's feedback that the bus—not the text—is the star of the experience.
