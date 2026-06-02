@@ -441,7 +441,14 @@
   .pkg-inner:not(.is-flipped) .pkg-back{ pointer-events:none }
   .pkg-inner.is-flipped .pkg-front{ pointer-events:none }
   .pkg-media{ position:relative; aspect-ratio:1000/1937; overflow:hidden; background:#FBEAF4 }
-  .pkg-media img{ width:100%; height:100%; object-fit:cover; object-position:top center; display:block }
+  .pkg-media img{ width:100%; height:100%; object-fit:contain; object-position:top center; display:block }
+  /* Pink Star card → blue top wash */
+  .pkg-card.blue-top .pkg-media{ background:#E3F4FB }
+  .pkg-card.blue-top .pkg-media::after{
+    content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:linear-gradient(180deg, rgba(51,192,225,.42) 0%, rgba(51,192,225,.12) 30%, rgba(51,192,225,0) 50%);
+  }
+  .pkg-card.blue-top .pkg-badge{ background:var(--brand-cyan); color:var(--ink) }
   .pkg-badge{
     position:absolute; top:16px; left:50%; transform:translateX(-50%);
     background:var(--primary); color:#fff;
