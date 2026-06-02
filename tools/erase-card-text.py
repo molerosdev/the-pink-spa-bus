@@ -61,14 +61,26 @@ def main():
 
     out = cv2.inpaint(img, mask, 6, cv2.INPAINT_TELEA)
 
-    # save a portrait, web-sized PNG
-    cv2.imwrite(OUT, out)
-    # also emit an optimized version via Pillow for smaller size
+    # → Pillow, normalize size
     from PIL import Image
-    im = Image.open(OUT).convert("RGB")
+    im = Image.fromarray(cv2.cvtColor(out, cv2.COLOR_BGR2RGB))
     im.thumbnail((1000, 1300), Image.LANCZOS)
-    im.save(OUT.replace(".png", ".jpg"), "JPEG", quality=82, optimize=True, progressive=True)
-    print("wrote", OUT, "and", OUT.replace(".png", ".jpg"))
+    W, Hh = im.size
+
+    # Extend the empty panel vertically so card content can overlay it (keeps logo,
+    # bow and bottom bows; inserts a stretched clean-panel slice below the top band).
+    top_h = int(Hh * 0.34)
+    add   = int(Hh * 0.55)
+    s0, s1 = int(Hh * 0.40), int(Hh * 0.46)
+    top    = im.crop((0, 0, W, top_h))
+    filler = im.crop((0, s0, W, s1)).resize((W, add), Image.LANCZOS)
+    rest   = im.crop((0, top_h, W, Hh))
+    tall = Image.new("RGB", (W, top_h + add + (Hh - top_h)))
+    tall.paste(top, (0, 0)); tall.paste(filler, (0, top_h)); tall.paste(rest, (0, top_h + add))
+
+    jpg = OUT.replace(".png", ".jpg")
+    tall.save(jpg, "JPEG", quality=84, optimize=True, progressive=True)
+    print("wrote", jpg, tall.size, "(top band ~%.0f%%)" % (100 * top_h / tall.size[1]))
 
 if __name__ == "__main__":
     main()
