@@ -443,7 +443,7 @@
   .pkg-media{ position:relative; aspect-ratio:1000/1937; overflow:hidden; background:#FBEAF4 }
   .pkg-media img{ width:100%; height:100%; object-fit:contain; object-position:top center; display:block }
   .pkg-badge{
-    position:absolute; top:14px; right:14px; z-index:2;
+    position:absolute; top:14px; right:14px; z-index:5;   /* relative to .pkg-card */
     background:var(--primary); color:#fff;
     font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
     padding:7px 16px; border-radius:var(--r-pill); white-space:nowrap;
