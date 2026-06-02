@@ -222,16 +222,20 @@
     margin:6px 0 0; font-family:'Playfair Display',serif; font-size:17px; font-weight:500; color:var(--ink);
   }
 
-  /* bus gallery (right column) */
+  /* bus gallery (right column) — each .hg crossfades through its own image set */
   .hero-gallery{ display:grid; grid-template-columns:1fr 1fr; gap:16px }
   .hg{
-    margin:0; border-radius:var(--r-lg); overflow:hidden; background:var(--surface-mid);
-    box-shadow:var(--shadow-card);
+    position:relative; margin:0; border-radius:var(--r-lg); overflow:hidden;
+    background:var(--surface-mid); box-shadow:var(--shadow-card);
     opacity:0; transform:translateY(16px); animation:heroRise .6s ease forwards;
   }
-  .hg img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .45s ease }
+  .hg-slide{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
+    opacity:0; transition:opacity .9s ease, transform .45s ease;
+  }
+  .hg-slide.is-active{ opacity:1 }
   .hg:hover{ box-shadow:var(--shadow-card-lift) }
-  .hg:hover img{ transform:scale(1.04) }
+  .hg:hover .hg-slide{ transform:scale(1.04) }
   .hg-main{ grid-column:1 / -1; aspect-ratio:16/10; animation-delay:.05s }
   .hg-sub{ aspect-ratio:4/3; animation:heroRise .6s ease .18s forwards, hgFloat 7s ease-in-out 1.5s infinite }
   .hero-copy > *{ opacity:0; transform:translateY(14px); animation:heroRise .55s ease forwards }

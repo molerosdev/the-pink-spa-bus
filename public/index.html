@@ -76,15 +76,26 @@
       </div>
     </div>
 
+    <!-- Each slot crossfades its own exclusive image set (no image repeats on screen).
+         Add/replace files and the matching <img> lines below — main: m*, interior: a*, exterior: b*. -->
     <div class="hero-gallery" aria-label="The Pink Spa Bus — exterior and interior">
       <figure class="hg hg-main">
-        <img src="images/hero/main.webp" alt="The Pink Spa Bus parked — fully wrapped pink exterior" width="1200" height="801">
+        <img class="hg-slide is-active" src="images/hero/m1.webp" alt="The Pink Spa Bus — fully wrapped pink exterior">
+        <img class="hg-slide" src="images/hero/m2.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/m3.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/m4.webp" alt="" loading="lazy">
       </figure>
       <figure class="hg hg-sub">
-        <img src="images/hero/interior.webp" alt="Inside the Pink Spa Bus — pink glam mirror stations" loading="lazy" width="760" height="601">
+        <img class="hg-slide is-active" src="images/hero/a1.webp" alt="Inside the Pink Spa Bus — pink glam mirror stations">
+        <img class="hg-slide" src="images/hero/a2.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/a3.webp" alt="" loading="lazy">
       </figure>
       <figure class="hg hg-sub">
-        <img src="images/hero/alt.webp" alt="The Pink Spa Bus — another exterior angle" loading="lazy" width="760" height="426">
+        <img class="hg-slide is-active" src="images/hero/b1.webp" alt="The Pink Spa Bus — exterior view">
+        <img class="hg-slide" src="images/hero/b2.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/b3.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/b4.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/b5.webp" alt="" loading="lazy">
       </figure>
     </div>
 

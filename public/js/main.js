@@ -296,6 +296,22 @@
     if(focusTarget) focusTarget.focus({ preventScroll:true });
   };
 
+  // ===== HERO GALLERY: crossfade each slot through its own image set =====
+  (function(){
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if(reduce) return;
+    document.querySelectorAll('.hero-gallery .hg').forEach((fig, gi)=>{
+      const slides = fig.querySelectorAll('.hg-slide');
+      if(slides.length < 2) return;
+      let i = 0;
+      setInterval(()=>{
+        slides[i].classList.remove('is-active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('is-active');
+      }, 5200 + gi * 1300);   // stagger so the slots don't flip in unison
+    });
+  })();
+
   // ===== CONTACT: pre-select package from ?package= (set by "Book This Package") =====
   (function(){
     const sel = document.getElementById('packageSelect');
