@@ -1,204 +1,128 @@
-Services Page Content
-Design Direction
+PROJECT: Services Page – Package Card Flip Animation Enhancement
 
-Maintain the existing Pink Spa Bus branding:
+OBJECTIVE
 
-Pink and white color palette
-Rounded cards
-Luxury princess spa aesthetic
-Consistent typography with current website
-Three package cards displayed side-by-side on desktop
-Stacked on mobile
-Each card includes:
-Pink Spa Bus image
-Custom package badge
-Package name
-Price
-Duration
-Guest count
-CTA button
-Expandable "View Full Details"
+Replace the current package details expansion behavior with an interactive flip-card experience.
 
-CTA Button:
+When a visitor clicks the "View full details" section on any package card, the card should smoothly flip and reveal the complete package details on the reverse side of the same card.
 
-Book This Package
+No content changes are required.
 
-Behavior:
+No pricing changes are required.
 
-Redirect to Contact Page
-Package automatically pre-selected in form
-Package Card 1
-Pink Star Package
-Card Summary
+No layout changes are required.
 
-Starting at $550 + Tax
+This update only affects the package card interaction.
 
-Perfect for smaller celebrations and intimate spa parties.
+CURRENT BEHAVIOR
 
-2 Hours
-Ages 3–12
-Up to 8 Guests
-Additional Guests: $50 each
-Mini Spa Experience
-Hair & Makeup Station
-Karaoke & Just Dance
-Surprise Gift for Birthday Girl
+- Package cards display summary information.
+- Clicking the "+" icon expands content below or within the card.
 
-Button:
+NEW BEHAVIOR
 
-Book This Package
+- Package cards remain unchanged on initial page load.
+- Clicking the "View full details" section triggers a card flip animation.
+- The front side rotates out of view.
+- The back side rotates into view.
+- Full package information is displayed on the back side.
+- The card remains in the flipped state until the user closes it.
 
-Expandable Details
-What's Included
-Spa robes (for use inside the bus)
-Spa headbands (for use inside the bus)
-Facial mask experience
-Cleansing pads
-Facial massage
-Mini manicure
-Hand massage
-Fashion accessories
-Colored hair extensions
-Hair bows or clips
-Makeup application
-Face gems
-Bracelet and necklace activities
-Karaoke
-Just Dance
-Fashion show
-Surprise gift for the birthday girl
-Up to 3 hostesses
-The Experience
+CARD FRONT CONTENT
 
-Guests are welcomed aboard The Pink Spa Bus and enjoy a magical spa-themed celebration. Each child receives a mini manicure, relaxing facial treatment, hair styling, makeup application, and fun accessory enhancements.
+Maintain current content:
 
-While taking turns at the beauty stations, guests participate in creative bracelet and necklace activities before enjoying music, dancing, karaoke, and a fashion show.
+- Package image
+- Package badge
+- Package name
+- Package price
+- Duration
+- Guest count
+- Short summary
+- Book This Package button
+- "+" icon
 
-Activities are guided according to the interests and participation preferences of each child.
+CARD BACK CONTENT
 
-Important Information
-Adults are not permitted inside the spa bus once activities begin.
-Parents or guardians may enter only when necessary.
-Additional guests are $50 each.
-Package changes or refunds are not available on the event day.
-Service duration ranges from 1 hour 30 minutes to 2 hours.
-Package Card 2
-Pink Super Star Package
-Card Summary
+Display all package details currently contained within the expandable section, including:
 
-Starting at $750 + Tax
+- What's Included
+- The Experience
+- Important Information
 
-Our most popular package for larger celebrations and extra fun.
+BACK CARD ACTIONS
 
-2 to 2.5 Hours
-Ages 3–12
-Up to 13 Guests
-Additional Guests: $50 each
-Full Spa Experience
-Hair & Makeup Station
-Karaoke & Just Dance
-Surprise Gift for Birthday Girl
+Display a visible action allowing users to return to the front side.
 
-Button:
+Accepted options:
 
-Book This Package
+- Back Arrow Icon
+- Close (X) Icon
+- "Back to Package Summary" button
 
-Expandable Details
-What's Included
-Spa robes (for use inside the bus)
-Spa headbands (for use inside the bus)
-Facial mask experience
-Cleansing pads
-Facial massage
-Mini manicure
-Hand massage
-Fashion accessories
-Colored hair extensions
-Hair bows or clips
-Makeup application
-Face gems
-Bracelet and necklace activities
-Karaoke
-Just Dance
-Fashion show
-Surprise gift for the birthday girl
-Up to 3 hostesses
-The Experience
+User interaction should flip the card back to its original front state.
 
-Guests enjoy an immersive spa celebration aboard The Pink Spa Bus. Each child receives a pampering experience that includes mini manicures, relaxing facial treatments, hair styling, makeup, and fun accessories.
+ANIMATION REQUIREMENTS
 
-Creative activities, dancing, karaoke, and a fashion show create a memorable experience designed to celebrate confidence, friendship, and fun.
+- Smooth 3D card flip animation
+- Horizontal flip effect
+- Duration between 300ms and 600ms
+- Animation must feel premium and responsive
+- No page jump
+- No layout shifting
+- No content pushing other cards vertically
 
-Activities are adapted to the personalities and interests of the guests while encouraging participation in a comfortable and enjoyable environment.
+RESPONSIVE BEHAVIOR
 
-Important Information
-Adults are not permitted inside the spa bus once activities begin.
-Parents or guardians may enter only when necessary.
-Additional guests are $50 each.
-Package changes or refunds are not available on the event day.
-Service duration ranges from 2 hours to 2 hours 30 minutes.
-Package Card 3
-Pink Special Package
-Card Summary
+Desktop:
 
-Starting at $1,000 + Tax
+- Flip occurs within the existing card container
+- Neighboring cards remain stationary
 
-The ultimate Pink Spa Bus celebration for larger groups and unforgettable memories.
+Tablet:
 
-2.5 to 3 Hours
-Ages 3–12
-Up to 18 Guests
-Additional Guests: $50 each
-Premium Spa Experience
-Hair & Makeup Station
-Karaoke & Just Dance
-Surprise Gift for Birthday Girl
+- Same behavior as desktop
 
-Button:
+Mobile:
 
-Book This Package
+- Flip animation remains enabled
+- Content remains fully readable
+- No overflow outside viewport
 
-Expandable Details
-What's Included
-Spa robes (for use inside the bus)
-Spa headbands (for use inside the bus)
-Facial mask experience
-Cleansing pads
-Facial massage
-Mini manicure
-Hand massage
-Fashion accessories
-Colored hair extensions
-Hair bows or clips
-Makeup application
-Face gems
-Bracelet and necklace activities
-Karaoke
-Just Dance
-Fashion show
-Surprise gift for the birthday girl
-Up to 3 hostesses
-The Experience
+CARD HEIGHT REQUIREMENTS
 
-Our most complete spa celebration package provides extended party time and accommodates larger groups while maintaining the signature Pink Spa Bus experience.
+- Front and back sides must maintain consistent dimensions.
+- Back side should support scrolling internally if content exceeds available height.
+- Overall page layout should remain stable during card interactions.
 
-Guests enjoy mini manicures, facial treatments, hair styling, makeup, creative activities, dancing, karaoke, and a fashion show in a fun, safe, and engaging environment.
+ACCESSIBILITY REQUIREMENTS
 
-Each celebration is guided by our team and adapted to the interests of the group.
+- "+" icon must be keyboard accessible.
+- Flip action must support keyboard navigation.
+- Focus state must remain visible.
+- Screen readers should properly identify interactive elements.
 
-Important Information
-Adults are not permitted inside the spa bus once activities begin.
-Parents or guardians may enter only when necessary.
-Additional guests are $50 each.
-Package changes or refunds are not available on the event day.
-Service duration ranges from 2 hours 30 minutes to 3 hours.
+VISUAL REQUIREMENTS
 
-The contact form must be updated to show the package selected in the services section.
+Maintain existing:
 
-Add a dropdown with the Packages available to the contact form.
+- Branding
+- Colors
+- Typography
+- Shadows
+- Borders
+- Rounded corners
 
-Disclousure only will be used as requirement after the party is booked. (optional)
+No visual redesign is required.
 
-Also when customers click the Reserve it must redirect to the contact form.
+ACCEPTANCE CRITERIA
 
-Replace all Davenport locations with "Based in Central Florida"
+- Clicking "View full details" flips the card instead of expanding content.
+- Full package information appears on the back side.
+- Users can return to the front side without refreshing the page.
+- No page layout movement occurs during interaction.
+- All package information remains readable.
+- Flip animation works on desktop, tablet, and mobile.
+- Existing branding and styling remain unchanged.
+- Contact form integration and "Book This Package" functionality remain unchanged.
+- Only the package card interaction behavior is modified.

@@ -282,6 +282,20 @@
     }, 4000);
   })();
 
+  // ===== SERVICES: package card flip =====
+  window.flipCard = function(btn){
+    const card = btn.closest('.pkg-card');
+    if(!card) return;
+    const inner   = card.querySelector('.pkg-inner');
+    const trigger = card.querySelector('.pkg-flip-btn');
+    const back    = card.querySelector('.pkg-back');
+    const flipped = inner.classList.toggle('is-flipped');
+    if(trigger) trigger.setAttribute('aria-expanded', flipped ? 'true' : 'false');
+    if(back)    back.setAttribute('aria-hidden', flipped ? 'false' : 'true');
+    const focusTarget = flipped ? card.querySelector('.pkg-back-btn') : trigger;
+    if(focusTarget) focusTarget.focus({ preventScroll:true });
+  };
+
   // ===== CONTACT: pre-select package from ?package= (set by "Book This Package") =====
   (function(){
     const sel = document.getElementById('packageSelect');

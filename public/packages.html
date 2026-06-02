@@ -59,189 +59,231 @@
 
     <div class="pkg-grid">
 
-      <!-- Package 1 — Pink Star -->
       <article class="pkg-card">
-        <div class="pkg-media">
-          <img src="images/experience/01.jpg" alt="Inside the Pink Spa Bus — glam stations" loading="lazy">
-          <span class="pkg-badge">★ Pink Star</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Pink Star Package</h3>
-          <div class="pkg-price">Starting at <strong>$550</strong> <small>+ Tax</small></div>
-          <p class="pkg-summary">Perfect for smaller celebrations and intimate spa parties.</p>
-          <ul class="pkg-meta">
-            <li><span>Duration</span><strong>2 Hours</strong></li>
-            <li><span>Ages</span><strong>3–12</strong></li>
-            <li><span>Guests</span><strong>Up to 8</strong></li>
-            <li><span>Add'l guest</span><strong>$50 each</strong></li>
-          </ul>
-          <ul class="pkg-highlights">
-            <li>Mini Spa Experience</li>
-            <li>Hair &amp; Makeup Station</li>
-            <li>Karaoke &amp; Just Dance</li>
-            <li>Surprise Gift for Birthday Girl</li>
-          </ul>
-          <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Star%20Package">Book This Package</a>
-          <details class="pkg-details">
-            <summary>View Full Details</summary>
-            <h4>What's Included</h4>
-            <ul>
-              <li>Spa robes (for use inside the bus)</li>
-              <li>Spa headbands (for use inside the bus)</li>
-              <li>Facial mask experience</li>
-              <li>Cleansing pads</li>
-              <li>Facial massage</li>
-              <li>Mini manicure</li>
-              <li>Hand massage</li>
-              <li>Fashion accessories</li>
-              <li>Colored hair extensions</li>
-              <li>Hair bows or clips</li>
-              <li>Makeup application</li>
-              <li>Face gems</li>
-              <li>Bracelet and necklace activities</li>
-              <li>Karaoke</li>
-              <li>Just Dance</li>
-              <li>Fashion show</li>
-              <li>Surprise gift for the birthday girl</li>
-              <li>Up to 3 hostesses</li>
-            </ul>
-            <h4>The Experience</h4>
-            <p>Guests are welcomed aboard The Pink Spa Bus and enjoy a magical spa-themed celebration. Each child receives a mini manicure, relaxing facial treatment, hair styling, makeup application, and fun accessory enhancements.</p>
-            <p>While taking turns at the beauty stations, guests participate in creative bracelet and necklace activities before enjoying music, dancing, karaoke, and a fashion show.</p>
-            <p>Activities are guided according to the interests and participation preferences of each child.</p>
-            <h4>Important Information</h4>
-            <ul>
-              <li>Adults are not permitted inside the spa bus once activities begin.</li>
-              <li>Parents or guardians may enter only when necessary.</li>
-              <li>Additional guests are $50 each.</li>
-              <li>Package changes or refunds are not available on the event day.</li>
-              <li>Service duration ranges from 1 hour 30 minutes to 2 hours.</li>
-            </ul>
-          </details>
+        <div class="pkg-inner">
+
+          <div class="pkg-face pkg-front">
+            <div class="pkg-media">
+              <img src="images/experience/01.jpg" alt="Inside the Pink Spa Bus — glam stations" loading="lazy">
+              <span class="pkg-badge">★ Pink Star</span>
+            </div>
+            <div class="pkg-body">
+              <h3>Pink Star Package</h3>
+              <div class="pkg-price">Starting at <strong>$550</strong> <small>+ Tax</small></div>
+              <p class="pkg-summary">Perfect for smaller celebrations and intimate spa parties.</p>
+              <ul class="pkg-meta">
+                <li><span>Duration</span><strong>2 Hours</strong></li>
+                <li><span>Ages</span><strong>3–12</strong></li>
+                <li><span>Guests</span><strong>Up to 8</strong></li>
+                <li><span>Add'l guest</span><strong>$50 each</strong></li>
+              </ul>
+              <ul class="pkg-highlights">
+              <li>Mini Spa Experience</li>
+              <li>Hair &amp; Makeup Station</li>
+              <li>Karaoke &amp; Just Dance</li>
+              <li>Surprise Gift for Birthday Girl</li>
+              </ul>
+              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Star%20Package">Book This Package</a>
+              <button type="button" class="pkg-flip-btn" aria-expanded="false" onclick="flipCard(this)">
+                <span>View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pkg-face pkg-back" aria-hidden="true">
+            <button type="button" class="pkg-back-btn" onclick="flipCard(this)">
+              <span aria-hidden="true">←</span> Back to Package Summary
+            </button>
+            <div class="pkg-back-scroll">
+              <h4>Pink Star Package</h4>
+              <h5>What's Included</h5>
+              <ul>
+                <li>Spa robes (for use inside the bus)</li>
+                <li>Spa headbands (for use inside the bus)</li>
+                <li>Facial mask experience</li>
+                <li>Cleansing pads</li>
+                <li>Facial massage</li>
+                <li>Mini manicure</li>
+                <li>Hand massage</li>
+                <li>Fashion accessories</li>
+                <li>Colored hair extensions</li>
+                <li>Hair bows or clips</li>
+                <li>Makeup application</li>
+                <li>Face gems</li>
+                <li>Bracelet and necklace activities</li>
+                <li>Karaoke</li>
+                <li>Just Dance</li>
+                <li>Fashion show</li>
+                <li>Surprise gift for the birthday girl</li>
+                <li>Up to 3 hostesses</li>
+              </ul>
+              <h5>The Experience</h5>
+                <p>Guests are welcomed aboard The Pink Spa Bus and enjoy a magical spa-themed celebration. Each child receives a mini manicure, relaxing facial treatment, hair styling, makeup application, and fun accessory enhancements.</p>
+                <p>While taking turns at the beauty stations, guests participate in creative bracelet and necklace activities before enjoying music, dancing, karaoke, and a fashion show.</p>
+                <p>Activities are guided according to the interests and participation preferences of each child.</p>
+              <h5>Important Information</h5>
+              <ul>
+                <li>Adults are not permitted inside the spa bus once activities begin.</li>
+                <li>Parents or guardians may enter only when necessary.</li>
+                <li>Additional guests are $50 each.</li>
+                <li>Package changes or refunds are not available on the event day.</li>
+                <li>Service duration ranges from 1 hour 30 minutes to 2 hours.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </article>
 
-      <!-- Package 2 — Pink Super Star (featured) -->
       <article class="pkg-card featured">
-        <div class="pkg-media">
-          <img src="images/experience/03.jpg" alt="Inside the Pink Spa Bus — neon glam lounge" loading="lazy">
-          <span class="pkg-badge">★★ Most Popular</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Pink Super Star Package</h3>
-          <div class="pkg-price">Starting at <strong>$750</strong> <small>+ Tax</small></div>
-          <p class="pkg-summary">Our most popular package for larger celebrations and extra fun.</p>
-          <ul class="pkg-meta">
-            <li><span>Duration</span><strong>2 – 2.5 Hours</strong></li>
-            <li><span>Ages</span><strong>3–12</strong></li>
-            <li><span>Guests</span><strong>Up to 13</strong></li>
-            <li><span>Add'l guest</span><strong>$50 each</strong></li>
-          </ul>
-          <ul class="pkg-highlights">
-            <li>Full Spa Experience</li>
-            <li>Hair &amp; Makeup Station</li>
-            <li>Karaoke &amp; Just Dance</li>
-            <li>Surprise Gift for Birthday Girl</li>
-          </ul>
-          <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Super%20Star%20Package">Book This Package</a>
-          <details class="pkg-details">
-            <summary>View Full Details</summary>
-            <h4>What's Included</h4>
-            <ul>
-              <li>Spa robes (for use inside the bus)</li>
-              <li>Spa headbands (for use inside the bus)</li>
-              <li>Facial mask experience</li>
-              <li>Cleansing pads</li>
-              <li>Facial massage</li>
-              <li>Mini manicure</li>
-              <li>Hand massage</li>
-              <li>Fashion accessories</li>
-              <li>Colored hair extensions</li>
-              <li>Hair bows or clips</li>
-              <li>Makeup application</li>
-              <li>Face gems</li>
-              <li>Bracelet and necklace activities</li>
-              <li>Karaoke</li>
-              <li>Just Dance</li>
-              <li>Fashion show</li>
-              <li>Surprise gift for the birthday girl</li>
-              <li>Up to 3 hostesses</li>
-            </ul>
-            <h4>The Experience</h4>
-            <p>Guests enjoy an immersive spa celebration aboard The Pink Spa Bus. Each child receives a pampering experience that includes mini manicures, relaxing facial treatments, hair styling, makeup, and fun accessories.</p>
-            <p>Creative activities, dancing, karaoke, and a fashion show create a memorable experience designed to celebrate confidence, friendship, and fun.</p>
-            <p>Activities are adapted to the personalities and interests of the guests while encouraging participation in a comfortable and enjoyable environment.</p>
-            <h4>Important Information</h4>
-            <ul>
-              <li>Adults are not permitted inside the spa bus once activities begin.</li>
-              <li>Parents or guardians may enter only when necessary.</li>
-              <li>Additional guests are $50 each.</li>
-              <li>Package changes or refunds are not available on the event day.</li>
-              <li>Service duration ranges from 2 hours to 2 hours 30 minutes.</li>
-            </ul>
-          </details>
+        <div class="pkg-inner">
+
+          <div class="pkg-face pkg-front">
+            <div class="pkg-media">
+              <img src="images/experience/03.jpg" alt="Inside the Pink Spa Bus — neon glam lounge" loading="lazy">
+              <span class="pkg-badge">★★ Most Popular</span>
+            </div>
+            <div class="pkg-body">
+              <h3>Pink Super Star Package</h3>
+              <div class="pkg-price">Starting at <strong>$750</strong> <small>+ Tax</small></div>
+              <p class="pkg-summary">Our most popular package for larger celebrations and extra fun.</p>
+              <ul class="pkg-meta">
+                <li><span>Duration</span><strong>2 – 2.5 Hours</strong></li>
+                <li><span>Ages</span><strong>3–12</strong></li>
+                <li><span>Guests</span><strong>Up to 13</strong></li>
+                <li><span>Add'l guest</span><strong>$50 each</strong></li>
+              </ul>
+              <ul class="pkg-highlights">
+              <li>Full Spa Experience</li>
+              <li>Hair &amp; Makeup Station</li>
+              <li>Karaoke &amp; Just Dance</li>
+              <li>Surprise Gift for Birthday Girl</li>
+              </ul>
+              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Super%20Star%20Package">Book This Package</a>
+              <button type="button" class="pkg-flip-btn" aria-expanded="false" onclick="flipCard(this)">
+                <span>View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pkg-face pkg-back" aria-hidden="true">
+            <button type="button" class="pkg-back-btn" onclick="flipCard(this)">
+              <span aria-hidden="true">←</span> Back to Package Summary
+            </button>
+            <div class="pkg-back-scroll">
+              <h4>Pink Super Star Package</h4>
+              <h5>What's Included</h5>
+              <ul>
+                <li>Spa robes (for use inside the bus)</li>
+                <li>Spa headbands (for use inside the bus)</li>
+                <li>Facial mask experience</li>
+                <li>Cleansing pads</li>
+                <li>Facial massage</li>
+                <li>Mini manicure</li>
+                <li>Hand massage</li>
+                <li>Fashion accessories</li>
+                <li>Colored hair extensions</li>
+                <li>Hair bows or clips</li>
+                <li>Makeup application</li>
+                <li>Face gems</li>
+                <li>Bracelet and necklace activities</li>
+                <li>Karaoke</li>
+                <li>Just Dance</li>
+                <li>Fashion show</li>
+                <li>Surprise gift for the birthday girl</li>
+                <li>Up to 3 hostesses</li>
+              </ul>
+              <h5>The Experience</h5>
+                <p>Guests enjoy an immersive spa celebration aboard The Pink Spa Bus. Each child receives a pampering experience that includes mini manicures, relaxing facial treatments, hair styling, makeup, and fun accessories.</p>
+                <p>Creative activities, dancing, karaoke, and a fashion show create a memorable experience designed to celebrate confidence, friendship, and fun.</p>
+                <p>Activities are adapted to the personalities and interests of the guests while encouraging participation in a comfortable and enjoyable environment.</p>
+              <h5>Important Information</h5>
+              <ul>
+                <li>Adults are not permitted inside the spa bus once activities begin.</li>
+                <li>Parents or guardians may enter only when necessary.</li>
+                <li>Additional guests are $50 each.</li>
+                <li>Package changes or refunds are not available on the event day.</li>
+                <li>Service duration ranges from 2 hours to 2 hours 30 minutes.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </article>
 
-      <!-- Package 3 — Pink Special -->
       <article class="pkg-card">
-        <div class="pkg-media">
-          <img src="images/experience/02.jpg" alt="The Pink Spa Bus arrives at your door" loading="lazy">
-          <span class="pkg-badge">★★★ Premium</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Pink Special Package</h3>
-          <div class="pkg-price">Starting at <strong>$1,000</strong> <small>+ Tax</small></div>
-          <p class="pkg-summary">The ultimate Pink Spa Bus celebration for larger groups and unforgettable memories.</p>
-          <ul class="pkg-meta">
-            <li><span>Duration</span><strong>2.5 – 3 Hours</strong></li>
-            <li><span>Ages</span><strong>3–12</strong></li>
-            <li><span>Guests</span><strong>Up to 18</strong></li>
-            <li><span>Add'l guest</span><strong>$50 each</strong></li>
-          </ul>
-          <ul class="pkg-highlights">
-            <li>Premium Spa Experience</li>
-            <li>Hair &amp; Makeup Station</li>
-            <li>Karaoke &amp; Just Dance</li>
-            <li>Surprise Gift for Birthday Girl</li>
-          </ul>
-          <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Special%20Package">Book This Package</a>
-          <details class="pkg-details">
-            <summary>View Full Details</summary>
-            <h4>What's Included</h4>
-            <ul>
-              <li>Spa robes (for use inside the bus)</li>
-              <li>Spa headbands (for use inside the bus)</li>
-              <li>Facial mask experience</li>
-              <li>Cleansing pads</li>
-              <li>Facial massage</li>
-              <li>Mini manicure</li>
-              <li>Hand massage</li>
-              <li>Fashion accessories</li>
-              <li>Colored hair extensions</li>
-              <li>Hair bows or clips</li>
-              <li>Makeup application</li>
-              <li>Face gems</li>
-              <li>Bracelet and necklace activities</li>
-              <li>Karaoke</li>
-              <li>Just Dance</li>
-              <li>Fashion show</li>
-              <li>Surprise gift for the birthday girl</li>
-              <li>Up to 3 hostesses</li>
-            </ul>
-            <h4>The Experience</h4>
-            <p>Our most complete spa celebration package provides extended party time and accommodates larger groups while maintaining the signature Pink Spa Bus experience.</p>
-            <p>Guests enjoy mini manicures, facial treatments, hair styling, makeup, creative activities, dancing, karaoke, and a fashion show in a fun, safe, and engaging environment.</p>
-            <p>Each celebration is guided by our team and adapted to the interests of the group.</p>
-            <h4>Important Information</h4>
-            <ul>
-              <li>Adults are not permitted inside the spa bus once activities begin.</li>
-              <li>Parents or guardians may enter only when necessary.</li>
-              <li>Additional guests are $50 each.</li>
-              <li>Package changes or refunds are not available on the event day.</li>
-              <li>Service duration ranges from 2 hours 30 minutes to 3 hours.</li>
-            </ul>
-          </details>
+        <div class="pkg-inner">
+
+          <div class="pkg-face pkg-front">
+            <div class="pkg-media">
+              <img src="images/experience/02.jpg" alt="The Pink Spa Bus arrives at your door" loading="lazy">
+              <span class="pkg-badge">★★★ Premium</span>
+            </div>
+            <div class="pkg-body">
+              <h3>Pink Special Package</h3>
+              <div class="pkg-price">Starting at <strong>$1,000</strong> <small>+ Tax</small></div>
+              <p class="pkg-summary">The ultimate Pink Spa Bus celebration for larger groups and unforgettable memories.</p>
+              <ul class="pkg-meta">
+                <li><span>Duration</span><strong>2.5 – 3 Hours</strong></li>
+                <li><span>Ages</span><strong>3–12</strong></li>
+                <li><span>Guests</span><strong>Up to 18</strong></li>
+                <li><span>Add'l guest</span><strong>$50 each</strong></li>
+              </ul>
+              <ul class="pkg-highlights">
+              <li>Premium Spa Experience</li>
+              <li>Hair &amp; Makeup Station</li>
+              <li>Karaoke &amp; Just Dance</li>
+              <li>Surprise Gift for Birthday Girl</li>
+              </ul>
+              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Special%20Package">Book This Package</a>
+              <button type="button" class="pkg-flip-btn" aria-expanded="false" onclick="flipCard(this)">
+                <span>View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pkg-face pkg-back" aria-hidden="true">
+            <button type="button" class="pkg-back-btn" onclick="flipCard(this)">
+              <span aria-hidden="true">←</span> Back to Package Summary
+            </button>
+            <div class="pkg-back-scroll">
+              <h4>Pink Special Package</h4>
+              <h5>What's Included</h5>
+              <ul>
+                <li>Spa robes (for use inside the bus)</li>
+                <li>Spa headbands (for use inside the bus)</li>
+                <li>Facial mask experience</li>
+                <li>Cleansing pads</li>
+                <li>Facial massage</li>
+                <li>Mini manicure</li>
+                <li>Hand massage</li>
+                <li>Fashion accessories</li>
+                <li>Colored hair extensions</li>
+                <li>Hair bows or clips</li>
+                <li>Makeup application</li>
+                <li>Face gems</li>
+                <li>Bracelet and necklace activities</li>
+                <li>Karaoke</li>
+                <li>Just Dance</li>
+                <li>Fashion show</li>
+                <li>Surprise gift for the birthday girl</li>
+                <li>Up to 3 hostesses</li>
+              </ul>
+              <h5>The Experience</h5>
+                <p>Our most complete spa celebration package provides extended party time and accommodates larger groups while maintaining the signature Pink Spa Bus experience.</p>
+                <p>Guests enjoy mini manicures, facial treatments, hair styling, makeup, creative activities, dancing, karaoke, and a fashion show in a fun, safe, and engaging environment.</p>
+                <p>Each celebration is guided by our team and adapted to the interests of the group.</p>
+              <h5>Important Information</h5>
+              <ul>
+                <li>Adults are not permitted inside the spa bus once activities begin.</li>
+                <li>Parents or guardians may enter only when necessary.</li>
+                <li>Additional guests are $50 each.</li>
+                <li>Package changes or refunds are not available on the event day.</li>
+                <li>Service duration ranges from 2 hours 30 minutes to 3 hours.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </article>
 
