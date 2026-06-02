@@ -281,3 +281,17 @@
       slides[i].classList.add('is-active');
     }, 4000);
   })();
+
+  // ===== CONTACT: pre-select package from ?package= (set by "Book This Package") =====
+  (function(){
+    const sel = document.getElementById('packageSelect');
+    if(!sel) return;
+    const wanted = new URLSearchParams(location.search).get('package');
+    if(!wanted) return;
+    const match = Array.from(sel.options).find(o => o.value === wanted);
+    if(match){
+      sel.value = wanted;
+      const field = sel.closest('.field');
+      if(field) field.style.scrollMarginTop = '100px';
+    }
+  })();

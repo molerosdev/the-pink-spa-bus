@@ -113,7 +113,7 @@ That's it — the card + lightbox on `gallery.html` are generated automatically.
 ---
 
 ## Before going live
-- [ ] Confirm **packages & prices** with the client (placeholders in `packages.html` — see TODO comment).
+- [ ] Final-check **packages & prices** in `packages.html` (3 real packages: Pink Star $550 / Super Star $750 / Special $1,000, all + tax).
 - [ ] Verify the **liability-waiver wording** matches the legal text (NOTE comment in `disclosure.html`).
 - [ ] Set Resend env vars (`RESEND_API_KEY`, `MAIL_TO`, `MAIL_FROM`) in Cloudflare Pages + verify the sending domain in Resend.
 - [ ] Flip `<meta name="robots">` from `noindex,nofollow` to `index,follow` in **all 5 pages**.

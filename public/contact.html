@@ -17,7 +17,7 @@
 <div class="utility-strip">
   <div class="container">
     <div class="left">
-      Mobile Spa Bus <span class="dot">·</span> Davenport, FL <span class="hide-mob">·</span> <span class="hide-mob">Glamour, Fun, Amazing Moments</span>
+      Mobile Spa Bus <span class="dot">·</span> Central Florida <span class="hide-mob">·</span> <span class="hide-mob">Glamour, Fun, Amazing Moments</span>
     </div>
     <div class="right">
       <a href="tel:+18632967303">(863) 296-7303</a>
@@ -40,7 +40,7 @@
       <li><a href="disclosure.html">Disclosure</a></li>
       <li><a class="active" href="contact.html">Contact</a></li>
     </ul>
-    <a href="disclosure.html" class="rsvp">Reserve</a>
+    <a href="contact.html" class="rsvp">Reserve</a>
     <button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('nav').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
@@ -64,7 +64,7 @@
         <ul class="info">
           <li>
             <span class="lbl">Based in</span>
-            <span class="val">Davenport, FL<small>1162 Sand Torch Cir, Davenport, FL 33837</small></span>
+            <span class="val">Central Florida<small>Mobile — we come to you</small></span>
           </li>
           <li>
             <span class="lbl">Hours</span>
@@ -94,6 +94,16 @@
         </div>
         <h3 style="margin-bottom:24px">Send <em>a note</em>.</h3>
         <form onsubmit="event.preventDefault(); contactSubmit();">
+          <div class="field">
+            <label>Package of interest</label>
+            <select id="packageSelect" name="Package">
+              <option value="">— Select a package (optional) —</option>
+              <option value="Pink Star Package">Pink Star Package — from $550</option>
+              <option value="Pink Super Star Package">Pink Super Star Package — from $750</option>
+              <option value="Pink Special Package">Pink Special Package — from $1,000</option>
+              <option value="Not sure yet / Custom">Not sure yet / Custom</option>
+            </select>
+          </div>
           <div class="field">
             <label>Parent name</label>
             <input type="text" required>
@@ -132,7 +142,7 @@
 </section>
 <!-- ===== floating mobile cta ===== -->
 <div class="floating-cta">
-  <a href="disclosure.html" class="btn btn-primary">Reserve a Party</a>
+  <a href="contact.html" class="btn btn-primary">Reserve a Party</a>
 </div>
 
 <!-- ===== floating whatsapp FAB ===== -->
@@ -183,7 +193,7 @@
     </div>
     <div class="bottom">
       <div>© 2026 The Pink Spa Bus <span class="dot">·</span> All rights reserved</div>
-      <div>Davenport, FL <span class="dot">·</span> Mobile Spa Bus <span class="dot">·</span> Glamour, Fun, Amazing Moments</div>
+      <div>Central Florida <span class="dot">·</span> Mobile Spa Bus <span class="dot">·</span> Glamour, Fun, Amazing Moments</div>
     </div>
   </div>
 </footer>
