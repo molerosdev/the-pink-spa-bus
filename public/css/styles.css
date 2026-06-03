@@ -859,6 +859,7 @@
     transition:border-color .2s;
   }
   .cselect.open .cselect-btn, .cselect-btn:focus-visible{ border-bottom-color:var(--secondary) }
+  .cselect-btn .cselect-val{ color:var(--primary-deep); font-weight:600 }   /* same pink as options */
   .cselect-btn .cselect-chev{
     width:14px; height:14px; flex:0 0 auto; color:var(--secondary);
     transition:transform .2s ease;
