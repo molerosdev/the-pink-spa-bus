@@ -801,7 +801,13 @@
     .progress-row{ padding:0; gap:6px }
     .progress-row::before{ display:none }
     .step-node .circle{ width:36px; height:36px; font-size:14px }
-    .step-node .lbl{ font-size:8px; letter-spacing:.14em }
+    .step-node .lbl{ font-size:8px; letter-spacing:.10em }
+  }
+  /* very small screens: numbered circles only (labels would overflow 6 cols) */
+  @media (max-width:560px){
+    .progress-row{ gap:4px }
+    .step-node .circle{ width:32px; height:32px; font-size:13px }
+    .step-node .lbl{ display:none }
   }
 
   /* steps */
