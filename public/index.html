@@ -76,27 +76,19 @@
       </div>
     </div>
 
-    <!-- Each slot crossfades its own exclusive image set (no image repeats on screen).
-         Add/replace files and the matching <img> lines below — main: m*, interior: a*, exterior: b*. -->
-    <div class="hero-gallery" aria-label="The Pink Spa Bus — exterior and interior">
-      <figure class="hg hg-main">
-        <img class="hg-slide is-active" src="images/hero/m1.webp" alt="The Pink Spa Bus — fully wrapped pink exterior">
-        <img class="hg-slide" src="images/hero/m2.webp" alt="" loading="lazy">
-        <img class="hg-slide" src="images/hero/m3.webp" alt="" loading="lazy">
-        <img class="hg-slide" src="images/hero/m4.webp" alt="" loading="lazy">
-      </figure>
-      <figure class="hg hg-sub">
-        <img class="hg-slide is-active" src="images/hero/a1.webp" alt="Inside the Pink Spa Bus — pink glam mirror stations">
-        <img class="hg-slide" src="images/hero/a2.webp" alt="" loading="lazy">
-        <img class="hg-slide" src="images/hero/a3.webp" alt="" loading="lazy">
-      </figure>
-      <figure class="hg hg-sub">
-        <img class="hg-slide is-active" src="images/hero/b1.webp" alt="The Pink Spa Bus — exterior view">
-        <img class="hg-slide" src="images/hero/b2.webp" alt="" loading="lazy">
-        <img class="hg-slide" src="images/hero/b3.webp" alt="" loading="lazy">
-        <img class="hg-slide" src="images/hero/b4.webp" alt="" loading="lazy">
-        <img class="hg-slide" src="images/hero/b5.webp" alt="" loading="lazy">
-      </figure>
+    <!-- One big showcase frame; slides cycle every 5s with a slow zoom-out.
+         Images are images/hero/1.webp … 10.webp — rebuild/reorder with tools/build-hero.py. -->
+    <div class="hero-stage" aria-label="The Pink Spa Bus — photo showcase">
+      <img class="hg-slide is-active" src="images/hero/1.webp" alt="The Pink Spa Bus — fully wrapped pink exterior">
+      <img class="hg-slide" src="images/hero/2.webp" alt="" loading="lazy">
+      <img class="hg-slide" src="images/hero/3.webp" alt="" loading="lazy">
+      <img class="hg-slide" src="images/hero/4.webp" alt="" loading="lazy">
+      <img class="hg-slide" src="images/hero/5.webp" alt="" loading="lazy">
+      <img class="hg-slide" src="images/hero/6.webp" alt="" loading="lazy">
+      <img class="hg-slide" src="images/hero/7.webp" alt="" loading="lazy">
+      <img class="hg-slide" src="images/hero/8.webp" alt="" loading="lazy">
+      <img class="hg-slide" src="images/hero/9.webp" alt="" loading="lazy">
+      <img class="hg-slide" src="images/hero/10.webp" alt="" loading="lazy">
     </div>
 
   </div>

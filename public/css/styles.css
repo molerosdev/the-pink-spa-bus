@@ -222,22 +222,19 @@
     margin:6px 0 0; font-family:'Playfair Display',serif; font-size:17px; font-weight:500; color:var(--ink);
   }
 
-  /* bus gallery (right column) — each .hg crossfades through its own image set */
-  .hero-gallery{ display:grid; grid-template-columns:1fr 1fr; gap:16px }
-  .hg{
-    position:relative; margin:0; border-radius:var(--r-lg); overflow:hidden;
-    background:var(--surface-mid); box-shadow:var(--shadow-card);
-    opacity:0; transform:translateY(16px); animation:heroRise .6s ease forwards;
+  /* bus showcase (right column) — one big frame, slideshow with slow zoom-out */
+  .hero-stage{
+    position:relative; height:clamp(440px, 82vh, 760px); overflow:hidden;
+    border-radius:var(--r-lg); box-shadow:var(--shadow-card); background:var(--surface-mid);
+    opacity:0; transform:translateY(16px); animation:heroRise .6s ease .05s forwards;
   }
   .hg-slide{
     position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
-    opacity:0; transition:opacity .9s ease, transform .45s ease;
+    opacity:0; transform:scale(1.1); transition:opacity 1.2s ease;
   }
-  .hg-slide.is-active{ opacity:1 }
-  .hg:hover{ box-shadow:var(--shadow-card-lift) }
-  .hg:hover .hg-slide{ transform:scale(1.04) }
-  .hg-main{ grid-column:1 / -1; aspect-ratio:16/10; animation-delay:.05s }
-  .hg-sub{ aspect-ratio:4/3; animation:heroRise .6s ease .18s forwards, hgFloat 7s ease-in-out 1.5s infinite }
+  .hg-slide.is-active{ opacity:1; animation:kenburns 7s ease-out both }
+  @keyframes kenburns{ from{ transform:scale(1.12) } to{ transform:scale(1) } }
+
   .hero-copy > *{ opacity:0; transform:translateY(14px); animation:heroRise .55s ease forwards }
   .hero-copy > *:nth-child(1){ animation-delay:.02s }
   .hero-copy > *:nth-child(2){ animation-delay:.10s }
@@ -245,21 +242,23 @@
   .hero-copy > *:nth-child(4){ animation-delay:.26s }
   .hero-copy > *:nth-child(5){ animation-delay:.34s }
   @keyframes heroRise{ to{ opacity:1; transform:translateY(0) } }
-  @keyframes hgFloat{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-5px) } }
   @media (prefers-reduced-motion:reduce){
-    .hg, .hg-sub, .hero-copy > *{ animation:none; opacity:1; transform:none }
+    .hero-stage, .hero-copy > *{ animation:none; opacity:1; transform:none }
+    .hg-slide{ transition:none; transform:none }
+    .hg-slide.is-active{ animation:none }
   }
 
-  /* tablet & mobile: stack, bus gallery first */
+  /* tablet & mobile: stack, bus showcase first */
   @media (max-width:920px){
     .hero{ min-height:auto; padding:32px 0 52px }
     .hero-grid{ grid-template-columns:1fr; gap:28px }
-    .hero-gallery{ order:-1 }
+    .hero-stage{ order:-1; height:auto; aspect-ratio:4/3 }
     .hero-copy{ max-width:none }
   }
   @media (max-width:600px){
     .hero h1{ font-size:clamp(38px, 11vw, 52px); margin:18px 0 }
     .hero .lede{ font-size:16px }
+    .hero-stage{ aspect-ratio:1/1 }
   }
 
   /* ---- trust strip ---- */
