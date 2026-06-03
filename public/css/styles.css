@@ -260,6 +260,45 @@
     .hero-stage{ aspect-ratio:1/1 }
   }
 
+  /* ---- floating mascots (cursor parallax) ---- */
+  .has-mascot{ position:relative; overflow:hidden }
+  .has-mascot > .container{ position:relative; z-index:1 }   /* content above the mascot */
+  .mascot{
+    position:absolute; z-index:0; pointer-events:none;       /* peeks from behind the content */
+    width:clamp(150px, 14vw, 215px);
+    transition:transform .35s cubic-bezier(.2,.7,.3,1);      /* parallax easing (JS sets transform) */
+    will-change:transform;
+  }
+  .mascot img{
+    display:block; width:100%; height:auto;
+    filter:drop-shadow(0 16px 26px rgba(46,26,71,.22));
+    animation:mascotFloat 6s ease-in-out infinite;
+  }
+  .mascot.m-left{ left:-18px; bottom:0 }
+  .mascot.m-right{ right:-18px; bottom:0 }
+  .mascot.m-right img{ animation-delay:-3s }
+  @keyframes mascotFloat{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-14px) } }
+  @media (max-width:1024px){ .mascot{ display:none } }   /* keep small screens clean */
+  @media (prefers-reduced-motion:reduce){
+    .mascot{ transition:none } .mascot img{ animation:none }
+  }
+
+  /* ---- marquee banner divider ---- */
+  .marquee{
+    overflow:hidden; background:var(--primary-soft);
+    border-top:1px solid var(--rule-soft); border-bottom:1px solid var(--rule-soft);
+    padding:14px 0;
+  }
+  .marquee-track{
+    display:flex; align-items:center; width:max-content;
+    animation:marquee 32s linear infinite;
+  }
+  .marquee:hover .marquee-track{ animation-play-state:paused }
+  .marquee-track img{ height:84px; width:auto; display:block; flex:0 0 auto; margin-right:36px }
+  @keyframes marquee{ from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
+  @media (max-width:600px){ .marquee-track img{ height:60px; margin-right:24px } }
+  @media (prefers-reduced-motion:reduce){ .marquee-track{ animation:none } }
+
   /* ---- trust strip ---- */
   .trust{
     padding:36px 0; background:var(--paper);

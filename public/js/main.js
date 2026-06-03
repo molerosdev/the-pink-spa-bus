@@ -290,6 +290,21 @@
     if(focusTarget) focusTarget.focus({ preventScroll:true });
   };
 
+  // ===== MASCOTS: subtle cursor parallax =====
+  (function(){
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const mascots = document.querySelectorAll('.mascot');
+    if(!mascots.length || reduce) return;
+    window.addEventListener('mousemove', (e)=>{
+      const cx = e.clientX / window.innerWidth  - 0.5;   // -0.5 … 0.5
+      const cy = e.clientY / window.innerHeight - 0.5;
+      mascots.forEach(m=>{
+        const d = parseFloat(m.dataset.depth || '16');
+        m.style.transform = `translate(${(-cx*d).toFixed(1)}px, ${(-cy*d).toFixed(1)}px)`;
+      });
+    }, { passive:true });
+  })();
+
   // ===== HERO SHOWCASE: cycle the big frame every 5s (with CSS zoom-out) =====
   (function(){
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
