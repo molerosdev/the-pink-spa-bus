@@ -95,20 +95,19 @@ directly.
 
 ---
 
-## Adding a gallery event (up to 6, 10 photos each)
+## Adding gallery photos (single unified gallery)
 
-1. Optimise photos with the helper (outputs to `public/images/gallery/<slug>/{large,thumb}`):
+The Gallery is one mixed slideshow + thumbnail strip — no events/categories.
+
+1. Drop new full-size photos (jpg/png) into `images/Pictures/gallery-src/` (git-ignored).
+2. Rebuild the web set:
    ```bash
-   python3 tools/optimize-photos.py "images/Pictures/Sofia's 7th" sofias-7th
+   python3 tools/build-gallery.py
    ```
-2. In `public/js/main.js`, add an entry to the `GALLERY` array:
-   ```js
-   const GALLERY = [
-     { title: "Emma's Birthday", slug: "emmas-birthday", count: 10 },
-     { title: "Sofia's 7th",     slug: "sofias-7th",     count: 8 },
-   ];
-   ```
-That's it — the card + lightbox on `gallery.html` are generated automatically.
+3. It prints the new total — set `data-count="<N>"` on the `.ugal` element in `gallery.html`.
+
+Output is `public/images/gallery/large|thumb/NN.webp`; the featured image, autoplay
+(10s), pause/resume, prev/next and thumbnails are all wired in `js/main.js`.
 
 ---
 

@@ -1,278 +1,184 @@
-PRD: Hero Section Redesign – Bus-Centric Experience
-Project Overview
+# PRD: Gallery Section Reorganization
 
-Redesign the homepage hero section to make The Pink Spa Bus the immediate visual focus.
+## Project Overview
 
-The current hero successfully communicates the brand but places too much emphasis on text and insufficient emphasis on the actual spa bus experience.
+Reorganize the existing Gallery section to remove all party/package-based grouping and display all gallery photos in a single unified gallery experience.
 
-The new hero should allow visitors to immediately understand:
-
-What the Pink Spa Bus looks like
-The size and uniqueness of the bus
-The interior spa experience
-That this is a mobile luxury spa party venue
-
-The bus should become the dominant visual element while maintaining clear messaging and call-to-action visibility.
-
-Business Goal
-
-Increase user understanding of the unique selling proposition within the first 3 seconds:
-
-"A luxury mobile spa experience inside a real pink spa bus."
-
-Design Direction
-Current State
-Large white content container
-Background imagery partially obscured
-Bus is visible but secondary
-Text dominates the viewport
-Desired State
-Bus imagery dominates the hero
-Text supports the visuals
-Multiple views of the bus are showcased
-Visitors immediately recognize the bus as the attraction
-Hero Layout
-Desktop Layout
-
-Two-column layout.
-
-Left Column
-
-Content only.
-
-Include:
-
-Main headline
-Supporting subheadline
-CTA buttons
-
-Width:
-
-Approximately 35–40%
-Right Column
-
-Bus visual gallery.
-
-Width:
-
-Approximately 60–65%
-
-This side should become the focal point of the page.
-
-Visual Gallery Requirements
-
-Display multiple bus images simultaneously.
-
-Suggested composition:
-
-Primary Image
-
-Large featured image.
-
-Content:
-
-Exterior bus photo
-
-Occupies:
-
-70% of gallery area
-Secondary Images
-
-Two smaller supporting images.
-
-Content:
-
-Interior spa setup
-Additional bus angle specified by client
-
-Layout:
-
-Stacked vertically
-Or staggered card layout
-
-Example:
+The objective is to allow visitors to browse all event photos together without separating them by package or event type.
 
 ---
 
-| |
-| Exterior Bus Photo |
-| |
+# Scope
+
+This change applies only to the Gallery section.
+
+No changes are required to other sections of the website.
 
 ---
 
-| Interior | Bus View |
+# Objective
+
+Create a single mixed gallery containing all available gallery photos.
+
+Visitors should be able to:
+
+- View a large featured image.
+- Watch images rotate automatically.
+- Pause automatic rotation.
+- Navigate manually using previous/next controls.
+- Select images directly from thumbnail previews.
 
 ---
 
-Remove Existing White Card
+# Gallery Structure
 
-Remove the large white rectangle currently placed over the hero image.
+## Main Display Area
 
-Reason:
-
-It hides the main attraction and reduces visual impact.
-
-Replace with:
-
-Clean text container
-No solid white background
-Optional subtle glass effect (10–15% opacity)
-
-The bus imagery must remain fully visible.
-
-Image Treatment
-Blur
-
-Reduce current blur significantly.
-
-Target:
-
-60–80% less blur than current implementation
-
-Images should appear crisp and professional.
-
-Overlay
-
-Apply subtle overlay only if needed for readability.
-
-Recommended:
-
-Soft pink gradient
-Very light dark overlay
-
-Goal:
-
-Improve text contrast without hiding images.
-
-Hero Height
-
-Increase visual impact.
-
-Desktop:
-
-85vh to 100vh
-
-The hero should feel premium and immersive.
-
-Animation Requirements
-
-Animations must be subtle.
-
-Image Entrance
-
-On page load:
-
-Fade in
-Slight upward motion
-
-Duration:
-
-500–700ms
-Gallery Hover Effects
-
-On hover:
-
-Slight scale effect (1.02–1.05)
-Soft shadow increase
-
-No aggressive movement.
-
-Floating Motion
-
-Optional:
-
-Very subtle floating animation on supporting images.
-
-Movement:
-
-3–5 pixels
-
-Cycle:
-
-6–8 seconds
-Mobile Layout
-
-Stack vertically.
-
-Order:
-
-Section 1
-
-Headline
-
-Section 2
-
-CTA Buttons
-
-Section 3
-
-Bus image gallery
-
-OR
-
-Preferred
-
-Bus gallery first, then headline and CTA.
-
-Reason:
-
-Mobile visitors should immediately see the bus.
-
-Performance Requirements
-
-Images must be optimized.
+A large featured image should be displayed at the top of the gallery section.
 
 Requirements:
 
-WebP format
-Lazy load secondary images
-Responsive image sizing
-Maintain Lighthouse performance above 90
-Future-Proofing
+- Display one image at a time.
+- Occupy the majority of the gallery section width.
+- Automatically transition through all gallery images.
 
-The gallery component must allow easy replacement/addition of images.
+---
 
-Developer should create image array structure such as:
+## Thumbnail Navigation
 
-const heroImages = [
-exteriorBusMain,
-interiorBus,
-exteriorBusAlt,
-];
+Display a horizontal scrolling strip of thumbnails below the main image.
 
-Allowing future additions without redesign.
+Requirements:
 
-Acceptance Criteria
-Success Condition 1
+- Include all gallery images.
+- Unlimited horizontal scrolling.
+- Clicking a thumbnail immediately updates the featured image.
+- Active thumbnail should be visually highlighted.
 
-Visitor can immediately identify the Pink Spa Bus within the first viewport.
+---
 
-Success Condition 2
+# Gallery Content
 
-At least three bus-related images are visible in the hero section.
+## Image Source
 
-Success Condition 3
+Combine all existing gallery images into a single image collection.
 
-No large opaque white container blocks hero imagery.
+Requirements:
 
-Success Condition 4
+- Remove all party-based categories.
+- Remove package-based grouping.
+- Remove event-based sections.
 
-Headline and CTA remain readable on desktop and mobile.
+All images should appear together within the same gallery.
 
-Success Condition 5
+---
 
-Hero clearly communicates that the bus itself is the unique attraction.
+# Automatic Slideshow
 
-Success Condition 6
+## Rotation Behavior
 
-Subtle animations enhance the experience without impacting performance.
+Automatically rotate through gallery images.
 
-Implementation Priority
-Remove white hero card.
-Create two-column desktop layout.
-Add 3-image bus gallery (exterior + interior + additional image).
-Reduce blur and improve image clarity.
-Add subtle animations.
-Optimize mobile experience with bus-first presentation.
+Requirements:
 
-This redesign shifts the hero from a typical service landing page into a product showcase, which aligns directly with the client's feedback that the bus—not the text—is the star of the experience.
+- Change image every 10 seconds.
+- Continue looping indefinitely.
+- Cycle through all images in sequence.
+
+---
+
+## Pause Control
+
+Provide a visible control to pause and resume slideshow playback.
+
+Requirements:
+
+- Pause button stops automatic image rotation.
+- Play button resumes automatic image rotation.
+- Current image remains visible when paused.
+
+---
+
+# Manual Navigation
+
+## Previous / Next Controls
+
+Provide navigation controls on the featured image.
+
+Requirements:
+
+- Previous button displays the previous image.
+- Next button displays the next image.
+- Manual navigation must work whether slideshow is playing or paused.
+
+---
+
+# Image Presentation
+
+## Display Style
+
+Requirements:
+
+- Photos only.
+- No captions.
+- No event names.
+- No package names.
+- No overlays containing text.
+- No labels displayed on images.
+
+---
+
+# Mobile Requirements
+
+## Responsive Behavior
+
+Requirements:
+
+- Featured image displayed first.
+- Thumbnail strip remains available below the featured image.
+- Horizontal swipe on thumbnail strip allowed through native scrolling.
+- Previous and Next controls remain accessible on mobile devices.
+
+---
+
+# Acceptance Criteria
+
+### AC-1
+
+All gallery images are displayed within a single mixed gallery.
+
+### AC-2
+
+No gallery categories or package-based sections remain visible.
+
+### AC-3
+
+A large featured image is displayed above the thumbnail strip.
+
+### AC-4
+
+The gallery automatically advances every 10 seconds.
+
+### AC-5
+
+Users can pause and resume the slideshow.
+
+### AC-6
+
+Users can navigate using Previous and Next controls.
+
+### AC-7
+
+Users can select any image by clicking its thumbnail.
+
+### AC-8
+
+Thumbnail navigation supports unlimited horizontal scrolling.
+
+### AC-9
+
+No captions, labels, package names, or event names are displayed.
+
+### AC-10
+
+Gallery functions correctly on desktop, tablet, and mobile devices.

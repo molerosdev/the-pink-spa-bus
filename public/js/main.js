@@ -17,7 +17,6 @@
     });
     document.documentElement.lang = lang;
     currentLang = lang;
-    if(typeof renderGallery === 'function') renderGallery();
   }
   let currentLang = 'en';
 
@@ -202,71 +201,66 @@
     a.addEventListener('click', ()=>document.getElementById('nav').classList.remove('open'));
   });
 
-  // ===== GALLERY =====
-  // To add an event (up to 6): create images/gallery/<slug>/large/NN.jpg + thumb/NN.jpg
-  // (NN = 01,02,…), then add an entry below. `count` = how many photos in that event.
-  const GALLERY = [
-    { title: "Emma's Birthday", slug: "emmas-birthday", count: 10 }
-    // { title: "Sofia's 7th", slug: "sofias-7th", count: 8 },
-  ];
-  const GALLERY_MIN_TILES = 3; // pad with "coming soon" cards for a balanced grid
+  // ===== UNIFIED GALLERY (featured + thumbnail strip, 10s autoplay) =====
+  (function(){
+    const root = document.getElementById('ugal');
+    if(!root) return;
+    const count = parseInt(root.dataset.count, 10) || 0;
+    const base  = root.dataset.path || 'images/gallery';
+    if(count < 1) return;
+    const bg = document.getElementById('ugalBg');
+    const feat = document.getElementById('ugalFeatured');
+    const thumbs = document.getElementById('ugalThumbs');
+    const toggle = document.getElementById('ugalToggle');
+    const pad = n => String(n + 1).padStart(2, '0');
 
-  function renderGallery(){
-    const grid = document.getElementById('gallery-grid');
-    if(!grid) return;
     let html = '';
-    GALLERY.forEach((ev, i)=>{
-      const cover = `images/gallery/${ev.slug}/thumb/01.jpg`;
-      const label = currentLang==='es' ? 'fotos' : 'photos';
-      html += `<button class="event-card" onclick="openEvent(${i})" aria-label="${ev.title} — ${ev.count} ${label}">
-        <img class="cover" src="${cover}" alt="${ev.title}" loading="lazy">
-        <span class="cap"><span class="title">${ev.title}</span><span class="count">${ev.count} ${label}</span></span>
-      </button>`;
-    });
-    for(let p = GALLERY.length; p < GALLERY_MIN_TILES; p++){
-      html += `<div class="event-card soon"><span>${currentLang==='es' ? 'Más celebraciones pronto' : 'More celebrations soon'}</span></div>`;
+    for(let i = 0; i < count; i++){
+      html += `<button class="ugal-thumb" type="button" role="tab" aria-label="Photo ${i+1}" data-i="${i}"><img src="${base}/thumb/${pad(i)}.webp" alt="" loading="lazy"></button>`;
     }
-    grid.innerHTML = html;
-  }
+    thumbs.innerHTML = html;
+    const thumbEls = Array.from(thumbs.querySelectorAll('.ugal-thumb'));
 
-  // ===== LIGHTBOX =====
-  let lbEvent = null, lbIndex = 0;
-  function openEvent(i){
-    lbEvent = GALLERY[i]; lbIndex = 0;
-    document.getElementById('lightbox').classList.add('open');
-    document.getElementById('lightbox').setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-    showLbImage();
-  }
-  function showLbImage(){
-    if(!lbEvent) return;
-    const n = String(lbIndex+1).padStart(2,'0');
-    document.getElementById('lb-img').src = `images/gallery/${lbEvent.slug}/large/${n}.jpg`;
-    document.getElementById('lb-img').alt = `${lbEvent.title} — ${lbIndex+1}/${lbEvent.count}`;
-    document.getElementById('lb-cap').textContent = `${lbEvent.title} · ${lbIndex+1} / ${lbEvent.count}`;
-  }
-  function lbStep(d){
-    if(!lbEvent) return;
-    lbIndex = (lbIndex + d + lbEvent.count) % lbEvent.count;
-    showLbImage();
-  }
-  function closeLightbox(){
-    document.getElementById('lightbox').classList.remove('open');
-    document.getElementById('lightbox').setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-    lbEvent = null;
-  }
-  const _lb = document.getElementById('lightbox');
-  if(_lb){ _lb.addEventListener('click', e=>{ if(e.target.id === 'lightbox') closeLightbox(); }); }
-  document.addEventListener('keydown', e=>{
-    const lb = document.getElementById('lightbox');
-    if(!lb || !lb.classList.contains('open')) return;
-    if(e.key === 'Escape') closeLightbox();
-    else if(e.key === 'ArrowLeft') lbStep(-1);
-    else if(e.key === 'ArrowRight') lbStep(1);
-  });
+    let idx = 0, timer = null, playing = false;
+    const DELAY = 10000;
 
-  renderGallery();
+    function show(i){
+      idx = (i + count) % count;
+      const src = `${base}/large/${pad(idx)}.webp`;
+      feat.src = src; bg.src = src;
+      thumbEls.forEach((t, k)=>{
+        const on = k === idx;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      const at = thumbEls[idx];
+      if(at) at.scrollIntoView({ inline:'center', block:'nearest', behavior:'smooth' });
+    }
+    function play(){
+      if(timer) clearInterval(timer);
+      if(count > 1) timer = setInterval(()=>show(idx + 1), DELAY);
+      playing = true; root.classList.remove('is-paused');
+      if(toggle) toggle.setAttribute('aria-label', 'Pause slideshow');
+    }
+    function pause(){
+      if(timer){ clearInterval(timer); timer = null; }
+      playing = false; root.classList.add('is-paused');
+      if(toggle) toggle.setAttribute('aria-label', 'Play slideshow');
+    }
+
+    // controls (referenced by inline onclick in gallery.html)
+    window.ugalStep = function(d){ show(idx + d); if(playing) play(); };   // play() also resets the timer
+    window.ugalToggle = function(){ playing ? pause() : play(); };
+
+    thumbs.addEventListener('click', e=>{
+      const b = e.target.closest('.ugal-thumb'); if(!b) return;
+      show(parseInt(b.dataset.i, 10));
+      if(playing) play();   // reset timer so it doesn't jump right after a manual pick
+    });
+
+    show(0);
+    play();
+  })();
 
   // ===== EXPERIENCE CAROUSEL (auto-rotating crossfade) =====
   (function(){

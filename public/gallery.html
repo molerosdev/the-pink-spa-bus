@@ -56,19 +56,21 @@
         <span class="line"></span><span class="diamond"></span><span class="line"></span>
       </div>
     </div>
-    <!-- event cards rendered from the GALLERY array in JS; tap a card to open the photo lightbox -->
-    <div class="event-grid" id="gallery-grid"></div>
-  </div>
-
-  <!-- lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-    <button class="lb-close" aria-label="Close" onclick="closeLightbox()">×</button>
-    <button class="lb-nav prev" aria-label="Previous" onclick="lbStep(-1)">‹</button>
-    <figure class="lb-stage">
-      <img id="lb-img" alt="">
-      <figcaption id="lb-cap"></figcaption>
-    </figure>
-    <button class="lb-nav next" aria-label="Next" onclick="lbStep(1)">›</button>
+    <!-- Unified gallery: featured image (auto-rotates 10s) + horizontal thumbnail strip.
+         JS builds the thumbnails and wires controls. Images: images/gallery/large|thumb/NN.webp -->
+    <div class="ugal" id="ugal" data-count="36" data-path="images/gallery">
+      <div class="ugal-stage">
+        <img class="ugal-bg" id="ugalBg" alt="" aria-hidden="true">
+        <img class="ugal-featured" id="ugalFeatured" alt="The Pink Spa Bus celebration photo">
+        <button class="ugal-nav prev" type="button" aria-label="Previous photo" onclick="ugalStep(-1)">‹</button>
+        <button class="ugal-nav next" type="button" aria-label="Next photo" onclick="ugalStep(1)">›</button>
+        <button class="ugal-toggle" id="ugalToggle" type="button" aria-label="Pause slideshow" onclick="ugalToggle()">
+          <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5l12 7-12 7z"/></svg>
+        </button>
+      </div>
+      <div class="ugal-thumbs" id="ugalThumbs" role="tablist" aria-label="Gallery thumbnails"></div>
+    </div>
   </div>
 </section>
 
