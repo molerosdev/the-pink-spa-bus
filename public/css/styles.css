@@ -231,7 +231,7 @@
   .hg-slide{
     position:absolute; inset:0; margin:auto; display:block;
     max-width:100%; max-height:100%; width:auto; height:auto;   /* size to the photo, centered */
-    border-radius:7px; opacity:0; transition:opacity 1s ease;
+    border-radius:9px; opacity:0; transition:opacity 1s ease;
   }
   .hg-slide.is-active{ opacity:1 }
 
