@@ -309,7 +309,7 @@
       slides[i].classList.remove('is-active');
       i = (i + 1) % slides.length;
       slides[i].classList.add('is-active');
-    }, 5000);
+    }, 8000);
   })();
 
   // ===== CONTACT: pre-select package from ?package= (set by "Book This Package") =====
