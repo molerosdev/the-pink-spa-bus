@@ -225,12 +225,12 @@
   /* bus showcase (right column) — one big frame, images fade in (no zoom) */
   .hero-stage{
     position:relative; height:clamp(440px, 82vh, 760px); overflow:hidden;
-    border-radius:var(--r-lg); box-shadow:var(--shadow-card); background:var(--surface-mid);
+    border-radius:4px; box-shadow:var(--shadow-card); background:var(--surface-mid);
     opacity:0; transform:translateY(16px); animation:heroRise .6s ease .05s forwards;
   }
   .hg-slide{
     position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block;
-    opacity:0; transition:opacity 1s ease;
+    border-radius:4px; opacity:0; transition:opacity 1s ease;
   }
   .hg-slide.is-active{ opacity:1 }
 
