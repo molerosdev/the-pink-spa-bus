@@ -283,21 +283,16 @@
     .mascot{ transition:none } .mascot img{ animation:none }
   }
 
-  /* ---- marquee banner divider ---- */
-  .marquee{
-    overflow:hidden; background:var(--primary-soft);
+  /* ---- banner divider (single, static) ---- */
+  .banner-divider{
+    background:var(--primary-soft);
     border-top:1px solid var(--rule-soft); border-bottom:1px solid var(--rule-soft);
-    padding:14px 0;
+    padding:32px 20px; text-align:center;
   }
-  .marquee-track{
-    display:flex; align-items:center; width:max-content;
-    animation:marquee 32s linear infinite;
+  .banner-divider img{
+    display:block; margin:0 auto; width:min(851px, 100%); height:auto;
+    border-radius:var(--r-md); box-shadow:var(--shadow-card);
   }
-  .marquee:hover .marquee-track{ animation-play-state:paused }
-  .marquee-track img{ height:84px; width:auto; display:block; flex:0 0 auto; margin-right:36px }
-  @keyframes marquee{ from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
-  @media (max-width:600px){ .marquee-track img{ height:60px; margin-right:24px } }
-  @media (prefers-reduced-motion:reduce){ .marquee-track{ animation:none } }
 
   /* ---- trust strip ---- */
   .trust{
