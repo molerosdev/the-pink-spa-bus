@@ -831,6 +831,7 @@
     font-family:'Inter',sans-serif; font-size:15px; line-height:1.55;
     border:0; border-bottom:1px solid var(--rule-soft);
     padding:12px 0; outline:none; transition:border-color .2s;
+    accent-color:var(--primary);   /* pink native calendar / number spinners */
   }
   .field input:focus, .field textarea:focus, .field select:focus{ border-bottom-color:var(--secondary) }
   .field textarea{ min-height:96px; resize:vertical }
@@ -847,6 +848,36 @@
     transition:opacity .2s;
   }
   .field input[type="date"]:hover::-webkit-calendar-picker-indicator{ opacity:1 }
+
+  /* ---- custom dropdown (branded open state; JS enhances .field select) ---- */
+  .cselect{ position:relative }
+  .cselect select{ display:none }                 /* native hidden; keeps value for submit */
+  .cselect-btn{
+    width:100%; display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background:transparent; color:var(--ink); font:15px/1.55 'Inter',sans-serif; text-align:left;
+    border:0; border-bottom:1px solid var(--rule-soft); padding:12px 0; cursor:pointer;
+    transition:border-color .2s;
+  }
+  .cselect.open .cselect-btn, .cselect-btn:focus-visible{ border-bottom-color:var(--secondary) }
+  .cselect-btn .cselect-chev{
+    width:14px; height:14px; flex:0 0 auto; color:var(--secondary);
+    transition:transform .2s ease;
+  }
+  .cselect.open .cselect-chev{ transform:rotate(180deg) }
+  .cselect-list{
+    position:absolute; top:calc(100% + 6px); left:0; right:0; z-index:25;
+    background:var(--surface); border:1px solid var(--rule-soft); border-radius:var(--r-md);
+    box-shadow:var(--shadow-card-lift); padding:6px; max-height:260px; overflow:auto;
+    opacity:0; transform:translateY(-6px); pointer-events:none; transition:opacity .18s, transform .18s;
+  }
+  .cselect.open .cselect-list{ opacity:1; transform:none; pointer-events:auto }
+  .cselect-opt{
+    padding:10px 12px; border-radius:var(--r-sm); font-size:14px; color:var(--ink); cursor:pointer;
+    transition:background .15s, color .15s;
+  }
+  .cselect-opt:hover, .cselect-opt.is-focus{ background:var(--primary-soft); color:var(--primary-deep) }
+  .cselect-opt[aria-selected="true"]{ font-weight:600; color:var(--primary-deep) }
+
   .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:24px }
   @media (max-width:600px){ .field-row{ grid-template-columns:1fr } }
 

@@ -323,6 +323,45 @@
     }, 8000);
   })();
 
+  // ===== custom dropdowns (brand-styled open state) — enhances every .field select =====
+  (function(){
+    const chev = '<svg class="cselect-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+    document.querySelectorAll('.field select').forEach(sel=>{
+      const wrap = document.createElement('div'); wrap.className = 'cselect';
+      sel.parentNode.insertBefore(wrap, sel); wrap.appendChild(sel);
+      const btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'cselect-btn';
+      btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = '<span class="cselect-val"></span>' + chev;
+      const list = document.createElement('div'); list.className = 'cselect-list'; list.setAttribute('role', 'listbox');
+      Array.from(sel.options).forEach((o, i)=>{
+        const it = document.createElement('div');
+        it.className = 'cselect-opt'; it.setAttribute('role', 'option');
+        it.textContent = o.textContent; it.dataset.i = i;
+        list.appendChild(it);
+      });
+      wrap.appendChild(btn); wrap.appendChild(list);
+      const valEl = btn.querySelector('.cselect-val');
+      const opts = Array.from(list.children);
+      function sync(){
+        const o = sel.options[sel.selectedIndex];
+        valEl.textContent = o ? o.textContent : '';
+        opts.forEach((it, i)=> it.setAttribute('aria-selected', i === sel.selectedIndex ? 'true' : 'false'));
+      }
+      const close = ()=>{ wrap.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); };
+      const open  = ()=>{ wrap.classList.add('open');  btn.setAttribute('aria-expanded', 'true'); };
+      sync();
+      btn.addEventListener('click', ()=> wrap.classList.contains('open') ? close() : open());
+      list.addEventListener('click', e=>{
+        const it = e.target.closest('.cselect-opt'); if(!it) return;
+        sel.selectedIndex = +it.dataset.i; sel.dispatchEvent(new Event('change')); close(); btn.focus();
+      });
+      sel.addEventListener('change', sync);
+      document.addEventListener('click', e=>{ if(!wrap.contains(e.target)) close(); });
+      document.addEventListener('keydown', e=>{ if(e.key === 'Escape') close(); });
+    });
+  })();
+
   // ===== CONTACT: pre-select package from ?package= (set by "Book This Package") =====
   (function(){
     const sel = document.getElementById('packageSelect');
@@ -332,6 +371,7 @@
     const match = Array.from(sel.options).find(o => o.value === wanted);
     if(match){
       sel.value = wanted;
+      sel.dispatchEvent(new Event('change'));   // keep the custom dropdown label in sync
       const field = sel.closest('.field');
       if(field) field.style.scrollMarginTop = '100px';
     }
