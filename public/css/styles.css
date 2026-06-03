@@ -222,7 +222,7 @@
     margin:6px 0 0; font-family:'Playfair Display',serif; font-size:17px; font-weight:500; color:var(--ink);
   }
 
-  /* bus showcase (right column) — one big frame, slideshow with slow zoom-out */
+  /* bus showcase (right column) — one big frame, images fade in (no zoom) */
   .hero-stage{
     position:relative; height:clamp(440px, 82vh, 760px); overflow:hidden;
     border-radius:var(--r-lg); box-shadow:var(--shadow-card); background:var(--surface-mid);
@@ -230,10 +230,9 @@
   }
   .hg-slide{
     position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
-    opacity:0; transform:scale(1.1); transition:opacity 1.2s ease;
+    opacity:0; transition:opacity 1s ease;
   }
-  .hg-slide.is-active{ opacity:1; animation:kenburns 9s ease-out both }
-  @keyframes kenburns{ from{ transform:scale(1.12) } to{ transform:scale(1) } }
+  .hg-slide.is-active{ opacity:1 }
 
   .hero-copy > *{ opacity:0; transform:translateY(14px); animation:heroRise .55s ease forwards }
   .hero-copy > *:nth-child(1){ animation-delay:.02s }
@@ -244,8 +243,7 @@
   @keyframes heroRise{ to{ opacity:1; transform:translateY(0) } }
   @media (prefers-reduced-motion:reduce){
     .hero-stage, .hero-copy > *{ animation:none; opacity:1; transform:none }
-    .hg-slide{ transition:none; transform:none }
-    .hg-slide.is-active{ animation:none }
+    .hg-slide{ transition:none }
   }
 
   /* tablet & mobile: stack, bus showcase first */

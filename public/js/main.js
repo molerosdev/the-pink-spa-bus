@@ -307,7 +307,9 @@
     let i = 0;
     setInterval(()=>{
       slides[i].classList.remove('is-active');
-      i = (i + 1) % slides.length;
+      let n;
+      do { n = Math.floor(Math.random() * slides.length); } while(n === i && slides.length > 1);
+      i = n;
       slides[i].classList.add('is-active');
     }, 8000);
   })();
