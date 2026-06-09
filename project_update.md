@@ -1,184 +1,29 @@
-# PRD: Gallery Section Reorganization
-
-## Project Overview
-
-Reorganize the existing Gallery section to remove all party/package-based grouping and display all gallery photos in a single unified gallery experience.
-
-The objective is to allow visitors to browse all event photos together without separating them by package or event type.
-
----
-
-# Scope
-
-This change applies only to the Gallery section.
-
-No changes are required to other sections of the website.
-
----
-
-# Objective
-
-Create a single mixed gallery containing all available gallery photos.
-
-Visitors should be able to:
-
-- View a large featured image.
-- Watch images rotate automatically.
-- Pause automatic rotation.
-- Navigate manually using previous/next controls.
-- Select images directly from thumbnail previews.
-
----
-
-# Gallery Structure
-
-## Main Display Area
-
-A large featured image should be displayed at the top of the gallery section.
-
-Requirements:
-
-- Display one image at a time.
-- Occupy the majority of the gallery section width.
-- Automatically transition through all gallery images.
-
----
-
-## Thumbnail Navigation
-
-Display a horizontal scrolling strip of thumbnails below the main image.
-
-Requirements:
-
-- Include all gallery images.
-- Unlimited horizontal scrolling.
-- Clicking a thumbnail immediately updates the featured image.
-- Active thumbnail should be visually highlighted.
-
----
-
-# Gallery Content
-
-## Image Source
-
-Combine all existing gallery images into a single image collection.
-
-Requirements:
-
-- Remove all party-based categories.
-- Remove package-based grouping.
-- Remove event-based sections.
-
-All images should appear together within the same gallery.
-
----
-
-# Automatic Slideshow
-
-## Rotation Behavior
-
-Automatically rotate through gallery images.
-
-Requirements:
-
-- Change image every 10 seconds.
-- Continue looping indefinitely.
-- Cycle through all images in sequence.
-
----
-
-## Pause Control
-
-Provide a visible control to pause and resume slideshow playback.
-
-Requirements:
-
-- Pause button stops automatic image rotation.
-- Play button resumes automatic image rotation.
-- Current image remains visible when paused.
-
----
-
-# Manual Navigation
-
-## Previous / Next Controls
-
-Provide navigation controls on the featured image.
-
-Requirements:
-
-- Previous button displays the previous image.
-- Next button displays the next image.
-- Manual navigation must work whether slideshow is playing or paused.
-
----
-
-# Image Presentation
-
-## Display Style
-
-Requirements:
-
-- Photos only.
-- No captions.
-- No event names.
-- No package names.
-- No overlays containing text.
-- No labels displayed on images.
-
----
-
-# Mobile Requirements
-
-## Responsive Behavior
-
-Requirements:
-
-- Featured image displayed first.
-- Thumbnail strip remains available below the featured image.
-- Horizontal swipe on thumbnail strip allowed through native scrolling.
-- Previous and Next controls remain accessible on mobile devices.
-
----
-
-# Acceptance Criteria
-
-### AC-1
-
-All gallery images are displayed within a single mixed gallery.
-
-### AC-2
-
-No gallery categories or package-based sections remain visible.
-
-### AC-3
-
-A large featured image is displayed above the thumbnail strip.
-
-### AC-4
-
-The gallery automatically advances every 10 seconds.
-
-### AC-5
-
-Users can pause and resume the slideshow.
-
-### AC-6
-
-Users can navigate using Previous and Next controls.
-
-### AC-7
-
-Users can select any image by clicking its thumbnail.
-
-### AC-8
-
-Thumbnail navigation supports unlimited horizontal scrolling.
-
-### AC-9
-
-No captions, labels, package names, or event names are displayed.
-
-### AC-10
-
-Gallery functions correctly on desktop, tablet, and mobile devices.
+Pink Coquette Package – $559.99 + tax
+
+Duration: 1 hour and 30 minutes to 2 hours
+Ages: 10 to 12 years old
+Includes up to 8 guests
+Additional guest: $50 + tax each
+Up to 3 hosts included
+What’s Included?
+• Spa robes (for use inside the bus only)
+• Headbands (for use inside the bus only)
+• Water-based facial mask (non-toxic)
+• Facial cleansing pads + facial massage
+• Mini manicure (we file and polish. We do NOT cut nails)
+• Makeup + face gems
+• DYE accessories
+• Coquette details (hair bows or clips)
+• Bracelet and necklace making
+• Toast with the Guest of Honor
+• Karaoke
+• Surprise gift for the birthday girl
+The Experience
+Girls will be welcomed aboard the Pink Spa Bus and will enjoy the illusion of a real spa experience. Wearing beautiful spa robes and headbands, they will receive a mini manicure and a relaxing water-based facial mask.
+During the event, each girl will rotate through the hair and makeup station while the rest of the group participates in an additional activity selected for the day. They will then share fun moments with a toast for the Guest of Honor, karaoke, and other special activities.
+Activities are carried out spontaneously according to the girls’ interests and personalities, always respecting which activities they choose to participate in.
+Important Information
+• Adults are not allowed on the spa bus due to comfort and space limitations. Parents or guardians may board only when strictly necessary.
+• Please make sure to choose the package that best suits your event. If fewer girls attend on the day of the event than originally paid for, no adjustments or refunds will be made.
+• The service duration ranges from 1 hour and 30 minutes to 2 hours.
+If you are interested in booking for a larger number of girls, please let us know and we will be happy to provide options and pricing.

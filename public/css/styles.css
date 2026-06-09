@@ -405,6 +405,9 @@
   }
   /* 3-up only when there's room to breathe; otherwise one comfortable column */
   @media (max-width:1199px){ .pkg-grid{ grid-template-columns:1fr; max-width:580px; margin:0 auto } }
+  /* center the lone 4th (Coquette) card under the 3-up row on desktop */
+  @media (min-width:1200px){ .pkg-grid > .pkg-coquette{ grid-column:2 } }
+  .pkg-card.pkg-coquette .pkg-badge{ background:var(--tertiary) }
   /* flip container */
   .pkg-card{ position:relative; perspective:1600px; transition:transform .25s }
   .pkg-card:hover{ transform:translateY(-6px) }
