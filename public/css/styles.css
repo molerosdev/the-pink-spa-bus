@@ -248,16 +248,17 @@
   }
 
   /* tablet & mobile: stack, bus showcase first */
-  @media (max-width:920px){
-    .hero{ min-height:auto; padding:32px 0 52px }
+  /* below ~1080 the two columns get cramped → stack (bus first, copy below) */
+  @media (max-width:1080px){
+    .hero{ min-height:auto; padding:36px 0 56px }
     .hero-grid{ grid-template-columns:1fr; gap:28px }
-    .hero-stage{ order:-1; height:auto; aspect-ratio:4/3 }
+    .hero-stage{ order:-1; height:auto; aspect-ratio:16/11; max-height:64vh }
     .hero-copy{ max-width:none }
   }
   @media (max-width:600px){
     .hero h1{ font-size:clamp(38px, 11vw, 52px); margin:18px 0 }
     .hero .lede{ font-size:16px }
-    .hero-stage{ aspect-ratio:1/1 }
+    .hero-stage{ aspect-ratio:4/3 }
   }
 
   /* ---- floating mascots (cursor parallax) ---- */
@@ -402,7 +403,8 @@
   .pkg-grid{
     display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:start;
   }
-  @media (max-width:980px){ .pkg-grid{ grid-template-columns:1fr; max-width:560px; margin:0 auto } }
+  /* 3-up only when there's room to breathe; otherwise one comfortable column */
+  @media (max-width:1199px){ .pkg-grid{ grid-template-columns:1fr; max-width:580px; margin:0 auto } }
   /* flip container */
   .pkg-card{ position:relative; perspective:1600px; transition:transform .25s }
   .pkg-card:hover{ transform:translateY(-6px) }
