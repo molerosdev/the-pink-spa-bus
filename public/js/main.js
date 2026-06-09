@@ -202,16 +202,14 @@
   });
 
   // ===== UNIFIED GALLERY (featured + thumbnail strip, 10s autoplay) =====
-  (function(){
-    const root = document.getElementById('ugal');
-    if(!root) return;
+  document.querySelectorAll('.ugal').forEach(root=>{
     const count = parseInt(root.dataset.count, 10) || 0;
     const base  = root.dataset.path || 'images/gallery';
     if(count < 1) return;
-    const bg = document.getElementById('ugalBg');
-    const feat = document.getElementById('ugalFeatured');
-    const thumbs = document.getElementById('ugalThumbs');
-    const toggle = document.getElementById('ugalToggle');
+    const bg     = root.querySelector('.ugal-bg');
+    const feat   = root.querySelector('.ugal-featured');
+    const thumbs = root.querySelector('.ugal-thumbs');
+    const toggle = root.querySelector('.ugal-toggle');
     const pad = n => String(n + 1).padStart(2, '0');
 
     let html = '';
@@ -247,20 +245,20 @@
       playing = false; root.classList.add('is-paused');
       if(toggle) toggle.setAttribute('aria-label', 'Play slideshow');
     }
+    const step = d => { show(idx + d); if(playing) play(); };   // play() also resets the timer
 
-    // controls (referenced by inline onclick in gallery.html)
-    window.ugalStep = function(d){ show(idx + d); if(playing) play(); };   // play() also resets the timer
-    window.ugalToggle = function(){ playing ? pause() : play(); };
-
+    root.querySelector('.ugal-nav.prev')?.addEventListener('click', ()=> step(-1));
+    root.querySelector('.ugal-nav.next')?.addEventListener('click', ()=> step(1));
+    toggle?.addEventListener('click', ()=> playing ? pause() : play());
     thumbs.addEventListener('click', e=>{
       const b = e.target.closest('.ugal-thumb'); if(!b) return;
       show(parseInt(b.dataset.i, 10));
-      if(playing) play();   // reset timer so it doesn't jump right after a manual pick
+      if(playing) play();
     });
 
     show(0);
     play();
-  })();
+  });
 
   // ===== EXPERIENCE CAROUSEL (auto-rotating crossfade) =====
   (function(){

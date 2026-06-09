@@ -46,31 +46,55 @@
     </button>
   </div>
 </nav>
-<!-- ===== lookbook (gallery) ===== -->
+<!-- ===== galleries ===== -->
 <section class="block alt" id="lookbook">
   <div class="container">
+
+    <!-- Gallery 1: Our Events -->
     <div class="section-head">
       <span class="display-italic">— the gallery —</span>
-      <h2>Recent <em>celebrations</em>.</h2>
+      <h2>Our <em>Events</em>.</h2>
       <div class="ornament gold-ornament-rule">
         <span class="line"></span><span class="diamond"></span><span class="line"></span>
       </div>
     </div>
-    <!-- Unified gallery: featured image (auto-rotates 10s) + horizontal thumbnail strip.
-         JS builds the thumbnails and wires controls. Images: images/gallery/large|thumb/NN.webp -->
-    <div class="ugal" id="ugal" data-count="31" data-path="images/gallery">
+    <!-- Unified gallery: featured (auto-rotates 10s) + scrolling thumbnails. JS builds thumbs + wires controls. -->
+    <div class="ugal" data-count="31" data-path="images/gallery">
       <div class="ugal-stage">
-        <img class="ugal-bg" id="ugalBg" alt="" aria-hidden="true">
-        <img class="ugal-featured" id="ugalFeatured" alt="The Pink Spa Bus celebration photo">
-        <button class="ugal-nav prev" type="button" aria-label="Previous photo" onclick="ugalStep(-1)">‹</button>
-        <button class="ugal-nav next" type="button" aria-label="Next photo" onclick="ugalStep(1)">›</button>
-        <button class="ugal-toggle" id="ugalToggle" type="button" aria-label="Pause slideshow" onclick="ugalToggle()">
+        <img class="ugal-bg" alt="" aria-hidden="true">
+        <img class="ugal-featured" alt="The Pink Spa Bus event photo">
+        <button class="ugal-nav prev" type="button" aria-label="Previous photo">‹</button>
+        <button class="ugal-nav next" type="button" aria-label="Next photo">›</button>
+        <button class="ugal-toggle" type="button" aria-label="Pause slideshow">
           <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
           <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5l12 7-12 7z"/></svg>
         </button>
       </div>
-      <div class="ugal-thumbs" id="ugalThumbs" role="tablist" aria-label="Gallery thumbnails"></div>
+      <div class="ugal-thumbs" role="tablist" aria-label="Event gallery thumbnails"></div>
     </div>
+
+    <!-- Gallery 2: Pink Coquette Package — images/gallery/coquette/large|thumb/NN.webp -->
+    <div class="section-head" style="margin-top:80px">
+      <span class="display-italic">— package gallery —</span>
+      <h2>Pink Coquette <em>Package</em>.</h2>
+      <div class="ornament gold-ornament-rule">
+        <span class="line"></span><span class="diamond"></span><span class="line"></span>
+      </div>
+    </div>
+    <div class="ugal" data-count="6" data-path="images/gallery/coquette">
+      <div class="ugal-stage">
+        <img class="ugal-bg" alt="" aria-hidden="true">
+        <img class="ugal-featured" alt="Pink Coquette Package photo">
+        <button class="ugal-nav prev" type="button" aria-label="Previous photo">‹</button>
+        <button class="ugal-nav next" type="button" aria-label="Next photo">›</button>
+        <button class="ugal-toggle" type="button" aria-label="Pause slideshow">
+          <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5l12 7-12 7z"/></svg>
+        </button>
+      </div>
+      <div class="ugal-thumbs" role="tablist" aria-label="Pink Coquette Package thumbnails"></div>
+    </div>
+
   </div>
 </section>
 

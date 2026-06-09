@@ -1,26 +1,41 @@
 #!/usr/bin/env python3
 """
-Build the unified gallery image set.
+Build a gallery image set (large + thumb WebP) from full-size sources.
 
-Sources (full-size, git-ignored, NOT served):
-  images/Pictures/gallery-src/*           (drop new gallery photos here: jpg/png)
-  images/Pictures/Emma's Birthday/*.jpg   (existing event photos)
+Two galleries on gallery.html, each its own folder:
 
-Output (served):
-  public/images/gallery/large/NN.webp  (~1500px, featured)
-  public/images/gallery/thumb/NN.webp  (~400px,  thumbnails)
+  EVENTS gallery  (default)
+    sources: images/Pictures/gallery-src/*   +  images/Pictures/Emma's Birthday/*.jpg
+    output : public/images/gallery/{large,thumb}/NN.webp
+    run    : python3 tools/build-gallery.py
 
-After running, set data-count="<N>" on the .ugal element in gallery.html to the
-number printed below.
+  PINK COQUETTE gallery
+    sources: images/Pictures/coquette-src/*   (drop the Coquette photos here)
+    output : public/images/gallery/coquette/{large,thumb}/NN.webp
+    run    : python3 tools/build-gallery.py coquette
+
+After running, set data-count="<N>" on the matching .ugal in gallery.html.
 """
 from PIL import Image, ImageOps
-import glob, os
+import glob, os, sys
 
-OUT = "public/images/gallery"
-SOURCES = sorted(glob.glob("images/Pictures/gallery-src/*.png")
-               + glob.glob("images/Pictures/gallery-src/*.jpg")
-               + glob.glob("images/Pictures/gallery-src/*.jpeg")) \
-        + sorted(glob.glob("images/Pictures/Emma's Birthday/*.jpg"))
+mode = sys.argv[1] if len(sys.argv) > 1 else "events"
+
+if mode == "coquette":
+    OUT = "public/images/gallery/coquette"
+    SOURCES = sorted(glob.glob("images/Pictures/coquette-src/*.png")
+                   + glob.glob("images/Pictures/coquette-src/*.jpg")
+                   + glob.glob("images/Pictures/coquette-src/*.jpeg")
+                   + glob.glob("images/Pictures/coquette-src/*.webp"))
+else:
+    OUT = "public/images/gallery"
+    SOURCES = sorted(glob.glob("images/Pictures/gallery-src/*.png")
+                   + glob.glob("images/Pictures/gallery-src/*.jpg")
+                   + glob.glob("images/Pictures/gallery-src/*.jpeg")) \
+            + sorted(glob.glob("images/Pictures/Emma's Birthday/*.jpg"))
+
+if not SOURCES:
+    raise SystemExit(f"No source images found for '{mode}'. Add files first.")
 
 os.makedirs(f"{OUT}/large", exist_ok=True)
 os.makedirs(f"{OUT}/thumb", exist_ok=True)
@@ -34,4 +49,4 @@ for i, src in enumerate(SOURCES, 1):
     th = im.copy(); th.thumbnail((400, 400), Image.LANCZOS)
     th.save(f"{OUT}/thumb/{i:02d}.webp", "WEBP", quality=72, method=6)
 
-print(f"Built {len(SOURCES)} gallery images -> set data-count=\"{len(SOURCES)}\" in gallery.html")
+print(f"[{mode}] Built {len(SOURCES)} images -> set data-count=\"{len(SOURCES)}\" on the matching .ugal in gallery.html")
