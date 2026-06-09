@@ -548,7 +548,8 @@
   /* crossfade carousel of bus interior/exterior photos */
   .exp-carousel{ position:absolute; inset:0; z-index:1 }
   .exp-slide{
-    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:center;   /* fill the square, crop overflow from the center */
     border-radius:var(--r-lg); opacity:0; transition:opacity 1.1s ease;
   }
   .exp-slide.is-active{ opacity:1 }
