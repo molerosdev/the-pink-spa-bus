@@ -1,29 +1,60 @@
-Pink Coquette Package – $559.99 + tax
+What areas do you serve?
+We serve Orlando and surrounding areas. Additional travel fees may apply
+for locations outside our standard service area.
 
-Duration: 1 hour and 30 minutes to 2 hours
-Ages: 10 to 12 years old
-Includes up to 8 guests
-Additional guest: $50 + tax each
-Up to 3 hosts included
-What’s Included?
-• Spa robes (for use inside the bus only)
-• Headbands (for use inside the bus only)
-• Water-based facial mask (non-toxic)
-• Facial cleansing pads + facial massage
-• Mini manicure (we file and polish. We do NOT cut nails)
-• Makeup + face gems
-• DYE accessories
-• Coquette details (hair bows or clips)
-• Bracelet and necklace making
-• Toast with the Guest of Honor
-• Karaoke
-• Surprise gift for the birthday girl
-The Experience
-Girls will be welcomed aboard the Pink Spa Bus and will enjoy the illusion of a real spa experience. Wearing beautiful spa robes and headbands, they will receive a mini manicure and a relaxing water-based facial mask.
-During the event, each girl will rotate through the hair and makeup station while the rest of the group participates in an additional activity selected for the day. They will then share fun moments with a toast for the Guest of Honor, karaoke, and other special activities.
-Activities are carried out spontaneously according to the girls’ interests and personalities, always respecting which activities they choose to participate in.
-Important Information
-• Adults are not allowed on the spa bus due to comfort and space limitations. Parents or guardians may board only when strictly necessary.
-• Please make sure to choose the package that best suits your event. If fewer girls attend on the day of the event than originally paid for, no adjustments or refunds will be made.
-• The service duration ranges from 1 hour and 30 minutes to 2 hours.
-If you are interested in booking for a larger number of girls, please let us know and we will be happy to provide options and pricing.
+How many guests can attend?
+Each package includes a specific number of guests. Additional guests
+can be added for an extra fee, subject to availability.
+
+What age group is the Pink Bus Spa for?
+Our spa parties are designed for girls aged 3 to 12. We create a
+fun, safe, and age-appropriate experience for every guest.
+
+Do you travel to our location?
+Yes! We are a mobile spa bus, and we bring the experience directly to your home
+or the venue of your choice.
+
+How long do the parties last?
+The duration depends on the selected package.
+Is a deposit required?
+Yes. A non-refundable deposit of $150 is required to secure your reservation. The
+remaining balance must be paid 48 hours before the event.
+
+What is your cancellation policy?
+
+- While we do not offer refunds for cancellations, we offer the opportunity to reschedule your
+  party for another available date within 3 months of the original party date (subject
+  to availability).
+  What happens in the event of dangerous weather conditions?
+  • The Pink Spa Bus reserves the right to postpone an event due to adverse or dangerous
+  weather conditions.
+
+Are your products safe for girls?
+• All treatments are for entertainment and play purposes only and are not performed by
+licensed professionals.
+
+Do you offer pedicures?
+No. Our spa bus focuses on mini-manicures, glam hairstyles, glitter
+makeup, karaoke, mocktails, and themed spa activities.
+What should guests wear?
+Comfortable clothing is recommended.
+Can parents stay during the party?
+For the safety of all guests, adults are not permitted inside the spa
+bus during the party. Parents may enter briefly only when
+strictly necessary and are welcome to stay nearby throughout the event. How far in advance should I book?
+We recommend booking as soon as possible, especially for weekends and holidays.
+
+Do you offer party extras?
+Yes! We offer bounce houses, chairs, tables, popcorn machines, cotton candy machines, and yard games.
+
+Is a liability waiver required?
+Yes. A parent or legal guardian must complete our liability waiver before participation.
+
+How do I book my party?
+You can contact us via text, WhatsApp, email, or social media.
+
+What parking space is required?
+• Suitable parking on a flat surface is required. Our vehicle is 22 feet long (the length of three cars) and requires approximately 10 feet of width. The Pink Spa Bus is not responsible for any parking violations or fees.
+
+What happens if a guest arrives late?
+• The party start time does not depend on the arrival of all guests. Late arrivals may still participate, but they may not receive all the originally offered services within the allotted time.

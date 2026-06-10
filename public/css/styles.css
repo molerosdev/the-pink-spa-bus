@@ -1013,6 +1013,42 @@
   }
   .success-pane h4{ font-size:36px }
 
+  /* ---- FAQ accordion ---- */
+  .faq-head{ text-align:center }
+  .faq-head h3{
+    font-family:'Playfair Display',serif; font-weight:500;
+    font-size:clamp(26px,3.4vw,38px); color:var(--ink); margin:0 0 30px;
+  }
+  .faq-head h3 em{ font-style:italic; color:var(--primary-deep) }
+  .faq{ max-width:860px; margin:0 auto 64px; border-top:1px solid var(--rule-soft) }
+  .faq-item{ border-bottom:1px solid var(--rule-soft) }
+  .faq-item > summary{
+    list-style:none; cursor:pointer; display:flex; align-items:center; gap:20px;
+    justify-content:space-between; padding:20px 6px;
+    font-size:17px; font-weight:600; color:var(--ink); transition:color .2s;
+  }
+  .faq-item > summary::-webkit-details-marker{ display:none }
+  .faq-item > summary:hover{ color:var(--primary-deep) }
+  /* + / − icon */
+  .faq-ico{
+    position:relative; width:28px; height:28px; flex:0 0 auto; border-radius:99px;
+    background:var(--primary-soft); transition:background .2s;
+  }
+  .faq-ico::before, .faq-ico::after{
+    content:''; position:absolute; top:50%; left:50%; background:var(--primary-deep);
+    transform:translate(-50%,-50%); transition:opacity .2s, background .2s; border-radius:2px;
+  }
+  .faq-ico::before{ width:12px; height:2px }            /* horizontal bar */
+  .faq-ico::after{ width:2px; height:12px }             /* vertical bar (hidden when open → minus) */
+  .faq-item[open] .faq-ico{ background:var(--primary) }
+  .faq-item[open] .faq-ico::before{ background:#fff }
+  .faq-item[open] .faq-ico::after{ opacity:0 }
+  .faq-a{ padding:0 6px 22px; max-width:66ch }
+  .faq-a p{ margin:0; font-size:15.5px; line-height:1.65; color:var(--ink-soft) }
+  @media (max-width:600px){
+    .faq-item > summary{ font-size:16px; gap:14px; padding:18px 4px }
+  }
+
   /* ---- contact / postcard ---- */
   .postcard{
     background:var(--surface); border-radius:var(--r-lg);
