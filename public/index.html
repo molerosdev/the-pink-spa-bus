@@ -46,50 +46,44 @@
     </button>
   </div>
 </nav>
-<!-- ===== hero (bus-centric) =====
-     Gallery is driven by this 3-image set — swap/add files here, no redesign needed:
-       images/hero/main.webp      (exterior — primary)
-       images/hero/interior.webp  (interior spa setup)
-       images/hero/alt.webp       (additional bus angle)        -->
+<!-- ===== hero (white-card showcase) =====
+     Big image cycles bus.webp + 1.webp … 8.webp (random, fades) via main.js. -->
 <section class="hero" id="top">
-  <div class="container hero-grid">
-
-    <div class="hero-copy">
-      <span class="est-pill">
-        <span class="dot"></span> The Pink Spa Bus <span class="dot"></span> Party Mobile
-      </span>
-      <h1>Spa parties they'll<br>never <em>forget</em>.</h1>
-      <p class="lede">
-        A luxury mobile spa experience <em>inside a real pink spa bus</em> — glam
-        mirror stations, makeovers, manicures and music, parked right at your door.
-      </p>
-      <div class="actions">
-        <a href="contact.html" class="btn btn-primary">Book a Party</a>
-        <a href="packages.html" class="btn btn-ghost">View Packages</a>
-      </div>
-      <div class="hero-meta">
-        <div class="left">
-          <dl><dt>Service Area</dt><dd>Central Florida</dd></dl>
-          <dl><dt>Capacity</dt><dd>Up to 20 Guests</dd></dl>
-          <dl><dt>Ages</dt><dd>3 – 12 Years</dd></dl>
+  <div class="container">
+    <div class="hero-card">
+      <div class="hero-top">
+        <div class="hero-headline">
+          <h1>Spa parties they'll<br>never <em>forget</em>.</h1>
+          <div class="hero-proof">
+            <div class="hero-avatars">
+              <img src="images/gallery/thumb/01.webp" alt="" loading="lazy">
+              <img src="images/gallery/thumb/08.webp" alt="" loading="lazy">
+              <img src="images/gallery/thumb/15.webp" alt="" loading="lazy">
+            </div>
+            <div class="hero-stat"><strong>Up to 20</strong><span>guests per party</span></div>
+          </div>
+        </div>
+        <div class="hero-aside">
+          <p>A luxury mobile spa experience inside a real pink spa bus — glam mirror stations, makeovers, manicures &amp; music, parked right at your door.</p>
+          <a class="hero-quote" href="contact.html">
+            <span>Book My Party</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
-    </div>
 
-    <!-- One big showcase frame; slides cycle every 8s with a slow zoom-out.
-         Bus.webp shows first, then 1.webp … 8.webp; rotates at random. -->
-    <div class="hero-stage" aria-label="The Pink Spa Bus — photo showcase">
-      <img class="hg-slide is-active" src="images/hero/bus.webp" alt="The Pink Spa Bus — fully wrapped pink exterior">
-      <img class="hg-slide" src="images/hero/1.webp" alt="" loading="lazy">
-      <img class="hg-slide" src="images/hero/2.webp" alt="" loading="lazy">
-      <img class="hg-slide" src="images/hero/3.webp" alt="" loading="lazy">
-      <img class="hg-slide" src="images/hero/4.webp" alt="" loading="lazy">
-      <img class="hg-slide" src="images/hero/5.webp" alt="" loading="lazy">
-      <img class="hg-slide" src="images/hero/6.webp" alt="" loading="lazy">
-      <img class="hg-slide" src="images/hero/7.webp" alt="" loading="lazy">
-      <img class="hg-slide" src="images/hero/8.webp" alt="" loading="lazy">
+      <div class="hero-stage" aria-label="The Pink Spa Bus — photo showcase">
+        <img class="hg-slide is-active" src="images/hero/bus.webp" alt="The Pink Spa Bus — fully wrapped pink exterior">
+        <img class="hg-slide" src="images/hero/1.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/2.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/3.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/4.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/5.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/6.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/7.webp" alt="" loading="lazy">
+        <img class="hg-slide" src="images/hero/8.webp" alt="" loading="lazy">
+      </div>
     </div>
-
   </div>
 </section>
 

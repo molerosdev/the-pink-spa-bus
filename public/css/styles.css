@@ -167,40 +167,68 @@
     nav.site .rsvp{ display:none }
   }
 
-  /* ---- hero (bus-centric, two-column) ---- */
+  /* ---- hero (white-card showcase) ---- */
   .hero{
-    position:relative; min-height:88vh; display:flex; align-items:center;
-    padding:48px 0;
+    position:relative; padding:22px 0 34px;
     background:
-      radial-gradient(circle at 12% 16%, rgba(242,108,173,.20) 0%, transparent 46%),
-      radial-gradient(circle at 92% 84%, rgba(51,192,225,.18) 0%, transparent 50%),
+      radial-gradient(circle at 14% 12%, rgba(242,108,173,.16) 0%, transparent 46%),
+      radial-gradient(circle at 88% 88%, rgba(51,192,225,.16) 0%, transparent 52%),
       var(--paper);
+  }
+  .hero-card{
+    position:relative; background:var(--surface);
+    border:1px solid var(--rule-soft); border-radius:var(--r-xl);
+    box-shadow:0 30px 70px rgba(46,26,71,.10);
+    padding:clamp(28px,3.6vw,52px) clamp(24px,4vw,60px) 0;
     overflow:hidden;
   }
-  .hero-grid{
-    display:grid; grid-template-columns:38% 1fr; gap:56px; align-items:center; width:100%;
-  }
-  .hero-copy{ max-width:520px }
+  .hero-top{ display:grid; grid-template-columns:1.35fr 1fr; gap:40px; align-items:start }
 
-  .hero .est-pill{
-    display:inline-flex; align-items:center; gap:10px;
-    border:1px solid var(--rule-gold); border-radius:var(--r-pill);
-    padding:6px 18px; color:var(--secondary);
-    font-size:10px; font-weight:600; letter-spacing:.24em; text-transform:uppercase;
-  }
-  .hero .est-pill .dot{ width:4px; height:4px; background:var(--rule-gold); border-radius:99px }
-
-  .hero h1{
+  .hero-headline h1{
     font-family:'Playfair Display',serif; font-weight:500;
-    font-size:clamp(44px, 5vw, 78px); line-height:1.03; letter-spacing:-.012em;
-    color:var(--ink); margin:22px 0;
+    font-size:clamp(40px,5.2vw,76px); line-height:1.02; letter-spacing:-.015em;
+    color:var(--ink); margin:0;
   }
-  .hero h1 em{ font-style:italic; font-weight:400 }
-  .hero .lede{
-    font-size:18px; line-height:1.65; color:var(--ink-soft); max-width:46ch; margin-bottom:30px;
+  .hero-headline h1 em{ font-style:italic; font-weight:400 }
+  .hero-proof{ display:flex; align-items:center; gap:16px; margin-top:26px }
+  .hero-avatars{ display:flex }
+  .hero-avatars img{
+    width:46px; height:46px; border-radius:99px; object-fit:cover;
+    border:3px solid var(--surface); margin-left:-14px; box-shadow:0 4px 12px rgba(46,26,71,.18);
   }
-  .hero .lede em{ font-style:normal; font-weight:600; color:var(--primary-deep) }
-  .hero .actions{ display:flex; gap:14px; flex-wrap:wrap }
+  .hero-avatars img:first-child{ margin-left:0 }
+  .hero-stat strong{
+    display:block; font-family:'Playfair Display',serif; font-weight:600; font-size:22px;
+    color:var(--ink); line-height:1.05;
+  }
+  .hero-stat span{
+    font-size:10px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--secondary);
+  }
+
+  .hero-aside{ padding-top:6px; align-self:start }
+  .hero-aside p{ font-size:16px; line-height:1.6; color:var(--ink-soft); margin:0 0 22px; max-width:42ch }
+  .hero-quote{
+    display:inline-flex; align-items:center; gap:16px;
+    background:var(--surface); border:1px solid var(--rule-soft); border-radius:var(--r-pill);
+    padding:8px 8px 8px 24px; box-shadow:var(--shadow-card);
+    font-size:13px; font-weight:600; letter-spacing:.02em; color:var(--ink);
+    transition:box-shadow .2s, transform .2s;
+  }
+  .hero-quote:hover{ box-shadow:var(--shadow-card-lift); transform:translateY(-2px) }
+  .hero-quote .arrow{
+    width:44px; height:44px; border-radius:99px; background:var(--primary); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:18px; flex:0 0 auto;
+  }
+
+  /* big bus image floating at the bottom of the card */
+  .hero-stage{ position:relative; height:clamp(280px,40vh,470px); margin-top:26px }
+  .hg-slide{
+    position:absolute; left:0; right:0; bottom:0; top:0; margin:auto auto 0; display:block;
+    max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;
+    opacity:0; transition:opacity 1s ease;
+  }
+  .hg-slide.is-active{ opacity:1 }
+
   .btn{
     display:inline-flex; align-items:center; justify-content:center;
     border-radius:var(--r-pill); padding:18px 32px;
@@ -214,53 +242,27 @@
   .btn-ink{ background:var(--tertiary); color:#fff }
   .btn-ink:hover{ background:var(--secondary-deep) }
 
-  .hero-meta{ margin-top:34px; padding-top:24px; border-top:1px solid var(--rule-soft) }
-  .hero-meta .left{ display:flex; gap:28px; flex-wrap:wrap }
-  .hero-meta .left dl{ margin:0 }
-  .hero-meta .left dt{
-    font-size:10px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--secondary);
-  }
-  .hero-meta .left dd{
-    margin:6px 0 0; font-family:'Playfair Display',serif; font-size:17px; font-weight:500; color:var(--ink);
-  }
-
-  /* bus showcase (right column) — one big frame, images fade in (no zoom) */
-  .hero-stage{
-    position:relative; height:clamp(440px, 82vh, 760px); overflow:hidden;
-    border-radius:4px; box-shadow:var(--shadow-card); background:var(--surface-mid);
-    opacity:0; transform:translateY(16px); animation:heroRise .6s ease .05s forwards;
-  }
-  .hg-slide{
-    position:absolute; inset:0; margin:auto; display:block;
-    max-width:100%; max-height:100%; width:auto; height:auto;   /* size to the photo, centered */
-    border-radius:9px; opacity:0; transition:opacity 1s ease;
-  }
-  .hg-slide.is-active{ opacity:1 }
-
-  .hero-copy > *{ opacity:0; transform:translateY(14px); animation:heroRise .55s ease forwards }
-  .hero-copy > *:nth-child(1){ animation-delay:.02s }
-  .hero-copy > *:nth-child(2){ animation-delay:.10s }
-  .hero-copy > *:nth-child(3){ animation-delay:.18s }
-  .hero-copy > *:nth-child(4){ animation-delay:.26s }
-  .hero-copy > *:nth-child(5){ animation-delay:.34s }
+  /* entrance */
+  .hero-headline, .hero-aside{ opacity:0; transform:translateY(14px); animation:heroRise .6s ease forwards }
+  .hero-aside{ animation-delay:.12s }
+  .hero-stage{ opacity:0; animation:heroRise .7s ease .2s forwards }
   @keyframes heroRise{ to{ opacity:1; transform:translateY(0) } }
   @media (prefers-reduced-motion:reduce){
-    .hero-stage, .hero-copy > *{ animation:none; opacity:1; transform:none }
+    .hero-headline,.hero-aside,.hero-stage{ animation:none; opacity:1; transform:none }
     .hg-slide{ transition:none }
   }
 
-  /* tablet & mobile: stack, bus showcase first */
-  /* below ~1080 the two columns get cramped → stack (bus first, copy below) */
-  @media (max-width:1080px){
-    .hero{ min-height:auto; padding:36px 0 56px }
-    .hero-grid{ grid-template-columns:1fr; gap:28px }
-    .hero-stage{ order:-1; height:auto; aspect-ratio:16/11; max-height:64vh }
-    .hero-copy{ max-width:none }
+  /* responsive */
+  @media (max-width:860px){
+    .hero-top{ grid-template-columns:1fr; gap:22px }
+    .hero-aside{ padding-top:0 }
+    .hero-aside p{ max-width:none }
   }
   @media (max-width:600px){
-    .hero h1{ font-size:clamp(38px, 11vw, 52px); margin:18px 0 }
-    .hero .lede{ font-size:16px }
-    .hero-stage{ aspect-ratio:4/3 }
+    .hero-card{ border-radius:var(--r-lg); padding:26px 22px 0 }
+    .hero-headline h1{ font-size:clamp(34px,10vw,48px) }
+    .hero-stage{ height:clamp(220px,42vh,300px) }
+    .hero-avatars img{ width:40px; height:40px }
   }
 
   /* ---- floating mascots (cursor parallax) ---- */
