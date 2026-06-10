@@ -78,21 +78,23 @@
     .container{ padding:0 20px }
   }
 
-  /* ---- top utility strip ---- */
+  /* ---- top utility strip (scrolling ticker, left → right) ---- */
   .utility-strip{
     background:var(--primary); color:#fff;
     font-size:11px; letter-spacing:.18em; text-transform:uppercase; font-weight:500;
-    padding:10px 0;
-  }
-  .utility-strip .container{
-    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:10px 0; overflow:hidden;
   }
   .utility-strip .dot{ color:var(--brand-cyan); margin:0 8px }
-  .utility-strip .right{ display:flex; align-items:center; gap:18px }
-  @media (max-width:720px){
-    .utility-strip .left .hide-mob{ display:none }
-    .utility-strip .right{ gap:10px; font-size:10px }
+  .us-track{
+    display:flex; width:max-content;
+    animation:usMarquee 48s linear infinite;
   }
+  .utility-strip:hover .us-track{ animation-play-state:paused }
+  .us-item{ white-space:nowrap; padding-right:24px; flex:0 0 auto }
+  .us-item a:hover{ text-decoration:underline }
+  @keyframes usMarquee{ from{ transform:translateX(-50%) } to{ transform:translateX(0) } }
+  @media (max-width:720px){ .utility-strip{ font-size:10px } }
+  @media (prefers-reduced-motion:reduce){ .us-track{ animation:none } }
 
   /* ---- nav ---- */
   nav.site{
