@@ -190,7 +190,7 @@
   .hero .container{ position:relative; z-index:2; width:100% }
   /* soft halo keeps the text readable now that the veil is so light */
   .hero-content{ max-width:560px; text-align:left }
-  .hero-content h1, .hero-lede, .hero-stat strong{ text-shadow:0 2px 18px rgba(255,247,251,.9) }
+  .hero-content h1, .hero-stat strong{ text-shadow:0 2px 18px rgba(255,247,251,.9) }
 
   .hero-content h1{
     font-family:'Playfair Display',serif; font-weight:500;
@@ -198,7 +198,8 @@
     color:var(--ink); margin:0;
   }
   .hero-content h1 em{ font-style:italic; font-weight:400 }
-  .hero-lede{ font-size:18px; line-height:1.6; color:var(--ink-soft); margin:24px 0 30px; max-width:44ch }
+  .hero-lede{ font-size:18px; line-height:1.6; color:#fff; margin:24px 0 30px; max-width:44ch;
+    text-shadow:0 1px 14px rgba(46,26,71,.55), 0 1px 3px rgba(46,26,71,.4) }
   .hero-proof{ display:flex; align-items:center; gap:16px; margin-top:30px }
   .hero-avatars{ display:flex }
   .hero-avatars img{
