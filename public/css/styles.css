@@ -87,12 +87,12 @@
   .utility-strip .dot{ color:var(--brand-cyan); margin:0 8px }
   .us-track{
     display:flex; width:max-content;
-    animation:usMarquee 48s linear infinite;
+    animation:usMarquee 80s linear infinite;
   }
   .utility-strip:hover .us-track{ animation-play-state:paused }
   .us-item{ white-space:nowrap; padding-right:24px; flex:0 0 auto }
   .us-item a:hover{ text-decoration:underline }
-  @keyframes usMarquee{ from{ transform:translateX(-50%) } to{ transform:translateX(0) } }
+  @keyframes usMarquee{ from{ transform:translateX(0) } to{ transform:translateX(-50%) } }   /* right → left */
   @media (max-width:720px){ .utility-strip{ font-size:10px } }
   @media (prefers-reduced-motion:reduce){ .us-track{ animation:none } }
 
