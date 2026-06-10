@@ -589,6 +589,10 @@
     display:grid; grid-template-columns: 1.1fr 1fr; gap:80px; align-items:start;
   }
   @media (max-width:920px){ .about-grid{ grid-template-columns:1fr; gap:32px } }
+  .about-photo{
+    width:100%; height:auto; display:block; margin-bottom:28px;
+    border-radius:var(--r-lg); box-shadow:var(--shadow-card);
+  }
   .about-grid .lead{
     font-family:'Playfair Display',serif; font-weight:500; font-size:32px;
     line-height:1.2; color:var(--ink); margin:0 0 24px;
