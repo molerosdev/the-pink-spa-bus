@@ -167,10 +167,10 @@
     nav.site .rsvp{ display:none }
   }
 
-  /* ---- hero (full-bleed bus background, text left) ---- */
+  /* ---- hero (full-bleed bus background, headline top-left) ---- */
   .hero{
     position:relative; overflow:hidden; background:var(--paper);
-    min-height:clamp(560px, 86vh, 820px); display:flex; align-items:center;
+    min-height:clamp(640px, 96vh, 960px); display:flex; align-items:flex-start;
   }
   /* bus images fill the whole hero as a big background */
   .hero-stage{ position:absolute; inset:0; z-index:0 }
@@ -187,7 +187,7 @@
       rgba(255,247,251,.42) 0%, rgba(255,247,251,.26) 28%,
       rgba(255,247,251,.10) 52%, rgba(255,247,251,0) 72%);
   }
-  .hero .container{ position:relative; z-index:2; width:100% }
+  .hero .container{ position:relative; z-index:2; width:100%; padding-top:clamp(44px,7vh,96px) }
   /* only the headline sits over the photo now — soft halo keeps it readable */
   .hero-content{ max-width:620px; text-align:left }
   .hero-content h1{
@@ -259,7 +259,7 @@
 
   /* responsive */
   @media (max-width:860px){
-    .hero{ min-height:clamp(500px,80vh,640px) }
+    .hero{ min-height:clamp(560px,86vh,720px) }
     .hero-content{ max-width:none }
     /* stronger top-down scrim so text over the photo stays readable */
     .hero::after{ background:linear-gradient(180deg,
