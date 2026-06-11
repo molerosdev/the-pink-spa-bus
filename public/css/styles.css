@@ -198,8 +198,12 @@
     color:var(--ink); margin:0;
   }
   .hero-content h1 em{ font-style:italic; font-weight:400 }
-  .hero-lede{ font-size:18px; line-height:1.6; color:var(--ink); margin:24px 0 30px; max-width:44ch;
-    text-shadow:0 2px 18px rgba(255,247,251,.9) }
+  .hero-lede{ font-size:18px; line-height:1.95; margin:24px 0 30px; max-width:44ch }
+  .hero-lede span{
+    background:var(--primary); color:#fff; font-weight:500;
+    -webkit-box-decoration-break:clone; box-decoration-break:clone;
+    padding:.16em .45em; border-radius:2px;
+  }
   .hero-proof{ display:flex; align-items:center; gap:16px; margin-top:30px }
   .hero-avatars{ display:flex }
   .hero-avatars img{
