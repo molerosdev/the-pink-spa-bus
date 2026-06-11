@@ -198,8 +198,8 @@
     color:var(--ink); margin:0;
   }
   .hero-content h1 em{ font-style:italic; font-weight:400 }
-  .hero-lede{ font-size:18px; line-height:1.6; color:#fff; margin:24px 0 30px; max-width:44ch;
-    text-shadow:0 1px 14px rgba(46,26,71,.55), 0 1px 3px rgba(46,26,71,.4) }
+  .hero-lede{ font-size:18px; line-height:1.6; color:var(--ink); margin:24px 0 30px; max-width:44ch;
+    text-shadow:0 2px 18px rgba(255,247,251,.9) }
   .hero-proof{ display:flex; align-items:center; gap:16px; margin-top:30px }
   .hero-avatars{ display:flex }
   .hero-avatars img{
