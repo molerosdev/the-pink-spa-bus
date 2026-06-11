@@ -188,23 +188,24 @@
       rgba(255,247,251,.10) 52%, rgba(255,247,251,0) 72%);
   }
   .hero .container{ position:relative; z-index:2; width:100% }
-  /* soft halo keeps the text readable now that the veil is so light */
-  .hero-content{ max-width:560px; text-align:left }
-  .hero-content h1, .hero-stat strong{ text-shadow:0 2px 18px rgba(255,247,251,.9) }
-
+  /* only the headline sits over the photo now — soft halo keeps it readable */
+  .hero-content{ max-width:620px; text-align:left }
   .hero-content h1{
     font-family:'Playfair Display',serif; font-weight:500;
     font-size:clamp(40px,5.2vw,76px); line-height:1.02; letter-spacing:-.015em;
-    color:var(--ink); margin:0;
+    color:var(--ink); margin:0; text-shadow:0 2px 18px rgba(255,247,251,.9);
   }
   .hero-content h1 em{ font-style:italic; font-weight:400 }
-  .hero-lede{ font-size:18px; line-height:1.95; margin:24px 0 30px; max-width:44ch }
-  .hero-lede span{
-    background:var(--primary); color:#fff; font-weight:500;
-    -webkit-box-decoration-break:clone; box-decoration-break:clone;
-    padding:.16em .45em; border-radius:2px;
+
+  /* organized content bar below the big image */
+  .hero-bar-wrap{ background:var(--surface); border-bottom:1px solid var(--rule-soft) }
+  .hero-bar{
+    display:flex; align-items:center; justify-content:space-between; gap:28px 56px;
+    flex-wrap:wrap; padding:30px 0;
   }
-  .hero-proof{ display:flex; align-items:center; gap:16px; margin-top:30px }
+  .hero-lede{ font-size:18px; line-height:1.6; color:var(--ink-soft); margin:0; max-width:48ch; flex:1 1 360px }
+  .hero-bar-actions{ display:flex; align-items:center; gap:30px; flex:0 0 auto }
+  .hero-proof{ display:flex; align-items:center; gap:16px }
   .hero-avatars{ display:flex }
   .hero-avatars img{
     width:46px; height:46px; border-radius:99px; object-fit:cover;
@@ -263,6 +264,10 @@
     /* stronger top-down scrim so text over the photo stays readable */
     .hero::after{ background:linear-gradient(180deg,
       rgba(255,247,251,.95) 0%, rgba(255,247,251,.78) 40%, rgba(255,247,251,.45) 100%) }
+  }
+  @media (max-width:760px){
+    .hero-bar{ gap:22px; padding:26px 0 }
+    .hero-bar-actions{ width:100%; justify-content:space-between; gap:18px; flex-wrap:wrap }
   }
   @media (max-width:600px){
     .hero-content h1{ font-size:clamp(34px,10vw,48px) }
