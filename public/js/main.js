@@ -232,7 +232,13 @@
         t.setAttribute('aria-selected', on ? 'true' : 'false');
       });
       const at = thumbEls[idx];
-      if(at) at.scrollIntoView({ inline:'center', block:'nearest', behavior:'smooth' });
+      if(at){
+        // center the active thumb inside the strip only — never scroll the page
+        const c = thumbs.getBoundingClientRect();
+        const r = at.getBoundingClientRect();
+        const left = thumbs.scrollLeft + (r.left - c.left) - (c.width - r.width) / 2;
+        thumbs.scrollTo({ left, behavior:'smooth' });
+      }
     }
     function play(){
       if(timer) clearInterval(timer);
