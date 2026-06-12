@@ -260,6 +260,18 @@
     play();
   });
 
+  // ===== REVIEWS TICKER (duplicate cards once for a seamless right→left loop) =====
+  (function(){
+    const track = document.querySelector('.reviews-track');
+    if(!track || track.children.length < 2) return;
+    const clones = [...track.children].map(c => {
+      const n = c.cloneNode(true);
+      n.setAttribute('aria-hidden', 'true');
+      return n;
+    });
+    clones.forEach(n => track.appendChild(n));   // two identical halves → 50% loop is seamless
+  })();
+
   // ===== EXPERIENCE CAROUSEL (auto-rotating crossfade) =====
   (function(){
     const car = document.getElementById('expCarousel');

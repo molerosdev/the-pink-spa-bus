@@ -309,6 +309,47 @@
     border-radius:var(--r-md); box-shadow:var(--shadow-card);
   }
 
+  /* ---- reviews ticker (right → left, pause on hover) ---- */
+  .reviews{ background:var(--paper); padding:34px 0 42px; overflow:hidden }
+  .reviews-head{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:24px }
+  .reviews-head h3{
+    font-family:'Playfair Display',serif; font-weight:500; margin:0;
+    font-size:clamp(22px,3vw,32px); color:var(--ink);
+  }
+  .reviews-head h3 em{ font-style:italic; color:var(--primary-deep) }
+  .reviews-link{
+    display:inline-flex; align-items:center; gap:2px; color:var(--primary-deep);
+    font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+  }
+  .reviews-link:hover{ text-decoration:underline }
+  /* fade the edges so cards ease in/out */
+  .reviews-marquee{
+    overflow:hidden;
+    -webkit-mask:linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+            mask:linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  }
+  .reviews-track{ display:flex; gap:20px; width:max-content; animation:reviewsMarquee 70s linear infinite }
+  .reviews-marquee:hover .reviews-track{ animation-play-state:paused }
+  .review-card{
+    flex:0 0 340px; display:flex; flex-direction:column;
+    background:var(--surface); border:1px solid var(--rule-soft); border-radius:var(--r-md);
+    box-shadow:var(--shadow-card); padding:22px 24px;
+  }
+  .review-stars{ color:var(--primary); letter-spacing:3px; font-size:15px }
+  .review-text{ font-size:14.5px; line-height:1.6; color:var(--ink-soft); margin:12px 0 16px; flex:1 }
+  .review-by{ display:flex; align-items:center; gap:12px }
+  .review-avatar{
+    width:38px; height:38px; border-radius:99px; flex:0 0 auto;
+    background:var(--primary-soft); color:var(--primary-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display',serif; font-weight:700; font-size:17px;
+  }
+  .review-name strong{ display:block; font-size:14px; color:var(--ink) }
+  .review-name span{ font-size:11px; color:var(--secondary); letter-spacing:.04em }
+  @keyframes reviewsMarquee{ from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
+  @media (prefers-reduced-motion:reduce){ .reviews-track{ animation:none } }
+  @media (max-width:600px){ .review-card{ flex-basis:300px } }
+
   /* ---- trust strip ---- */
   .trust{
     padding:36px 0; background:var(--paper);
