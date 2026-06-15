@@ -1066,6 +1066,45 @@
   }
   .success-pane h4{ font-size:36px }
 
+  /* ---- party rentals ---- */
+  .rentals-sub{ margin:10px 0 0; color:var(--ink-soft); font-size:16px }
+  .rentals-intro{ max-width:680px; margin:0 auto 44px; text-align:center; color:var(--ink-soft); font-size:16px; line-height:1.65 }
+  .rentals-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:26px }
+  .rental-card{
+    flex:1 1 300px; max-width:362px; display:flex; flex-direction:column;
+    background:var(--surface); border:1px solid var(--rule-soft); border-radius:var(--r-lg);
+    box-shadow:var(--shadow-card); overflow:hidden; transition:transform .2s, box-shadow .2s;
+  }
+  .rental-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-card-lift) }
+  .rental-media{ aspect-ratio:4/3; overflow:hidden; background:var(--surface-mid) }
+  .rental-media img{ width:100%; height:100%; object-fit:cover; display:block }
+  .rental-body{ padding:20px 22px 22px; display:flex; flex-direction:column; flex:1 }
+  .rental-body h3{ font-family:'Playfair Display',serif; font-weight:500; font-size:22px; color:var(--ink); margin:0 0 8px }
+  .rental-body p{ font-size:14.5px; line-height:1.55; color:var(--ink-soft); margin:0 0 18px; flex:1 }
+  .rental-foot{ margin-top:auto; border-top:1px solid var(--rule-soft); padding-top:14px }
+  .rental-price{ display:block; font-family:'Playfair Display',serif; font-weight:600; font-size:18px; color:var(--primary-deep); margin-bottom:8px }
+  .rental-cta{ font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--secondary) }
+  .rental-cta:hover{ color:var(--primary-deep) }
+  .rental-cta span{ transition:transform .2s; display:inline-block }
+  .rental-cta:hover span{ transform:translateX(4px) }
+
+  .rentals-features{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    max-width:860px; margin:56px auto 0; text-align:center;
+  }
+  .rfeat{ display:flex; flex-direction:column; align-items:center; gap:2px }
+  .rfeat-dot{ width:10px; height:10px; border-radius:99px; background:var(--brand-cyan); margin-bottom:8px;
+    box-shadow:0 0 0 5px var(--primary-soft) }
+  .rfeat strong{ font-family:'Playfair Display',serif; font-weight:500; font-size:17px; color:var(--ink) }
+  .rfeat-sub{ font-size:13px; color:var(--ink-soft) }
+
+  .rentals-note{ max-width:620px; margin:50px auto 0; text-align:center }
+  .rentals-note p{ color:var(--ink-soft); font-size:16px; line-height:1.6; margin:0 0 22px }
+
+  @media (max-width:760px){
+    .rentals-features{ grid-template-columns:1fr; gap:22px; margin-top:44px }
+  }
+
   /* ---- FAQ accordion ---- */
   .faq-head{ text-align:center }
   .faq-head h3{
