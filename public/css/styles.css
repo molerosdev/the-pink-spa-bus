@@ -188,6 +188,8 @@
       rgba(255,247,251,.10) 52%, rgba(255,247,251,0) 72%);
   }
   .hero .container{ position:relative; z-index:2; width:100%; padding-top:clamp(24px,4vh,58px); padding-right:16px }
+  /* desktop: let the headline sit a little closer to the right edge */
+  @media (min-width:861px){ .hero-content{ margin-right:clamp(-52px,-2.4vw,-8px) } }
   /* only the headline sits over the photo now — soft halo keeps it readable */
   .hero-content{ max-width:620px; margin-left:auto; text-align:right }
   .hero-content h1{
