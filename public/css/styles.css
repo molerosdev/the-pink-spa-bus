@@ -513,7 +513,7 @@
   }
   .pkg-price{ font-size:14px; color:var(--ink-soft); margin-bottom:14px }
   .pkg-price strong{
-    font-family:'Playfair Display',serif; font-size:30px; font-weight:600; color:var(--primary-deep);
+    font-family:'Playfair Display',serif; font-size:30px; font-weight:700; color:var(--secondary);
   }
   .pkg-price small{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--secondary) }
   .pkg-summary{ font-size:14px; line-height:1.55; color:var(--ink-soft); margin:0 0 14px }
