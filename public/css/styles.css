@@ -74,6 +74,9 @@
   .container{
     max-width:1240px; margin:0 auto; padding:0 32px;
   }
+  /* justify body copy site-wide; centered blocks keep their centering */
+  p{ text-align:justify; text-justify:inter-word; }
+  .section-head p, .poster p, .rentals-note p, .success-pane p{ text-align:center; }
   @media (max-width:720px){
     .container{ padding:0 20px }
   }
