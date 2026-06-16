@@ -487,6 +487,22 @@
     </div>
   </div>
 </section>
+
+<!-- ===== rental image modal (filled + opened by main.js) ===== -->
+<div class="rmodal" id="rmodal" aria-hidden="true">
+  <div class="rmodal-backdrop" data-close></div>
+  <div class="rmodal-dialog" role="dialog" aria-modal="true" aria-labelledby="rmodalTitle">
+    <button class="rmodal-close" type="button" aria-label="Close" data-close>&times;</button>
+    <img class="rmodal-img" id="rmodalImg" src="" alt="">
+    <div class="rmodal-body">
+      <h3 id="rmodalTitle"></h3>
+      <span class="rmodal-price" id="rmodalPrice"></span>
+      <p id="rmodalDesc"></p>
+      <a class="btn btn-primary" href="contact.html">Ask About This Rental</a>
+    </div>
+  </div>
+</div>
+
 <!-- ===== floating mobile cta ===== -->
 <div class="floating-cta">
   <a href="contact.html" class="btn btn-primary">Reserve a Party</a>

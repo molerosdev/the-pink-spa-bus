@@ -314,6 +314,48 @@
   // keep the old global a no-op in case any inline handler lingers
   window.flipCard = function(){};
 
+  // ===== RENTALS: click an image → modal with the whole image + description =====
+  (function(){
+    const modal = document.getElementById('rmodal');
+    if(!modal) return;
+    const mImg   = modal.querySelector('#rmodalImg');
+    const mTitle = modal.querySelector('#rmodalTitle');
+    const mPrice = modal.querySelector('#rmodalPrice');
+    const mDesc  = modal.querySelector('#rmodalDesc');
+    let lastFocus = null;
+
+    function openModal(card){
+      const img   = card.querySelector('.rental-media img');
+      const title = card.querySelector('h3');
+      const price = card.querySelector('.rental-price');
+      const desc  = card.querySelector('.rental-body > p');
+      if(img){ mImg.src = img.currentSrc || img.src; mImg.alt = title ? title.textContent : ''; }
+      mTitle.textContent = title ? title.textContent : '';
+      mPrice.textContent = price ? price.textContent : '';
+      mDesc.textContent  = desc ? desc.textContent : '';
+      lastFocus = document.activeElement;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.rmodal-close').focus({ preventScroll:true });
+    }
+    function closeModal(){
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if(lastFocus) lastFocus.focus({ preventScroll:true });
+    }
+    document.querySelectorAll('.rental-card .rental-media').forEach(m=>{
+      m.setAttribute('role', 'button');
+      m.setAttribute('tabindex', '0');
+      m.setAttribute('aria-label', 'View larger image');
+      m.addEventListener('click', ()=> openModal(m.closest('.rental-card')));
+      m.addEventListener('keydown', e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); openModal(m.closest('.rental-card')); } });
+    });
+    modal.addEventListener('click', e=>{ if(e.target.hasAttribute('data-close')) closeModal(); });
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('is-open')) closeModal(); });
+  })();
+
   // ===== MASCOTS: subtle cursor parallax =====
   (function(){
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;

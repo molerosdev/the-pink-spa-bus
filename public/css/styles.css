@@ -1079,13 +1079,14 @@
     box-shadow:var(--shadow-card); overflow:hidden; transition:transform .2s, box-shadow .2s;
   }
   .rental-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-card-lift) }
-  .rental-media{ aspect-ratio:4/3; overflow:hidden; background:var(--surface-mid) }
-  .rental-media img{ width:100%; height:100%; object-fit:cover; display:block }
+  .rental-media{ aspect-ratio:1/1; overflow:hidden; background:var(--surface-mid); cursor:zoom-in }
+  .rental-media img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; transition:transform .35s }
+  .rental-media:hover img{ transform:scale(1.05) }
   .rental-body{ padding:20px 22px 22px; display:flex; flex-direction:column; flex:1 }
   .rental-body h3{ font-family:'Playfair Display',serif; font-weight:500; font-size:22px; color:var(--ink); margin:0 0 8px }
   .rental-body p{ font-size:14.5px; line-height:1.55; color:var(--ink-soft); margin:0 0 18px; flex:1 }
   .rental-foot{ margin-top:auto; border-top:1px solid var(--rule-soft); padding-top:14px }
-  .rental-price{ display:block; font-family:'Playfair Display',serif; font-weight:600; font-size:18px; color:var(--primary-deep); margin-bottom:8px }
+  .rental-price{ display:block; font-family:'Playfair Display',serif; font-weight:700; font-size:18px; color:var(--secondary); margin-bottom:8px }
   .rental-cta{ font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--secondary) }
   .rental-cta:hover{ color:var(--primary-deep) }
   .rental-cta span{ transition:transform .2s; display:inline-block }
@@ -1107,6 +1108,29 @@
   @media (max-width:760px){
     .rentals-features{ grid-template-columns:1fr; gap:22px; margin-top:44px }
   }
+
+  /* ---- rental image modal ---- */
+  .rmodal{ position:fixed; inset:0; z-index:1000; display:none; align-items:center; justify-content:center; padding:24px }
+  .rmodal.is-open{ display:flex }
+  .rmodal-backdrop{ position:absolute; inset:0; background:rgba(46,26,71,.55); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px) }
+  .rmodal-dialog{
+    position:relative; z-index:1; background:var(--surface); border-radius:var(--r-lg);
+    box-shadow:var(--shadow-card-lift); max-width:560px; width:100%; max-height:90vh; overflow:auto;
+    animation:rmodalRise .25s ease;
+  }
+  @keyframes rmodalRise{ from{ opacity:0; transform:translateY(16px) } to{ opacity:1; transform:none } }
+  .rmodal-img{ width:100%; max-height:58vh; object-fit:contain; display:block; background:var(--surface-mid) }
+  .rmodal-body{ padding:24px 30px 30px; text-align:center }
+  .rmodal-body h3{ font-family:'Playfair Display',serif; font-weight:500; font-size:27px; color:var(--ink); margin:0 0 6px }
+  .rmodal-price{ font-family:'Playfair Display',serif; font-weight:700; font-size:18px; color:var(--secondary); display:block; margin-bottom:12px }
+  .rmodal-body p{ color:var(--ink-soft); font-size:15px; line-height:1.6; margin:0 0 22px }
+  .rmodal-close{
+    position:absolute; top:12px; right:14px; z-index:2; width:40px; height:40px; border-radius:99px;
+    background:rgba(255,255,255,.92); border:0; cursor:pointer; font-size:24px; line-height:1; color:var(--ink);
+    box-shadow:var(--shadow-card); transition:background .2s;
+  }
+  .rmodal-close:hover{ background:#fff }
+  @media (prefers-reduced-motion:reduce){ .rmodal-dialog{ animation:none } }
 
   /* ---- FAQ accordion ---- */
   .faq-head{ text-align:center }
