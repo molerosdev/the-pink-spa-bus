@@ -502,7 +502,7 @@
   /* content overlaid on the panel (frosted), not below the image */
   .pkg-body{
     position:absolute; left:0; right:0; top:20%; bottom:0; z-index:1;
-    padding:16px 26px 22px; display:flex; flex-direction:column;
+    padding:16px 26px 30px; display:flex; flex-direction:column;
     background:linear-gradient(180deg, rgba(255,250,253,.35) 0%, rgba(255,250,253,.78) 10%, rgba(255,250,253,.86) 100%);
     -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);
   }
