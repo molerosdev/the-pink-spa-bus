@@ -183,13 +183,7 @@
     opacity:0; transition:opacity 1.1s ease;
   }
   .hg-slide.is-active{ opacity:1 }
-  /* very light scrim — right side stays almost clear so the bus shows through */
-  .hero::after{
-    content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
-    background:linear-gradient(270deg,
-      rgba(255,247,251,.42) 0%, rgba(255,247,251,.26) 28%,
-      rgba(255,247,251,.10) 52%, rgba(255,247,251,0) 72%);
-  }
+  /* no scrim — keep the bus colors vivid; the headline carries its own halo */
   .hero .container{ position:relative; z-index:2; width:100%; padding-top:clamp(24px,4vh,58px); padding-right:16px }
   /* desktop: let the headline sit closer to the right edge.
      On wide screens push into the side gutter, keeping a constant ~28px gap
@@ -201,7 +195,8 @@
   .hero-content h1{
     font-family:'Playfair Display',serif; font-weight:500;
     font-size:clamp(40px,5.2vw,76px); line-height:1.02; letter-spacing:-.015em;
-    color:var(--ink); margin:0; text-shadow:0 2px 18px rgba(255,247,251,.9);
+    color:var(--ink); margin:0;
+    text-shadow:0 1px 10px rgba(255,247,251,.95), 0 2px 22px rgba(255,247,251,.9), 0 0 2px rgba(255,247,251,.9);
   }
   .hero-content h1 em{ font-style:italic; font-weight:400 }
 
@@ -269,9 +264,6 @@
   @media (max-width:860px){
     .hero{ min-height:clamp(560px,86vh,720px) }
     .hero-content{ max-width:none }
-    /* very light top-down scrim — bus stays clearly visible (headline has its own halo) */
-    .hero::after{ background:linear-gradient(180deg,
-      rgba(255,247,251,.5) 0%, rgba(255,247,251,.22) 45%, rgba(255,247,251,0) 100%) }
   }
   @media (max-width:760px){
     .hero-bar{ gap:22px; padding:26px 0 }
