@@ -261,9 +261,9 @@
   @media (max-width:860px){
     .hero{ min-height:clamp(560px,86vh,720px) }
     .hero-content{ max-width:none }
-    /* stronger top-down scrim so text over the photo stays readable */
+    /* very light top-down scrim — bus stays clearly visible (headline has its own halo) */
     .hero::after{ background:linear-gradient(180deg,
-      rgba(255,247,251,.95) 0%, rgba(255,247,251,.78) 40%, rgba(255,247,251,.45) 100%) }
+      rgba(255,247,251,.5) 0%, rgba(255,247,251,.22) 45%, rgba(255,247,251,0) 100%) }
   }
   @media (max-width:760px){
     .hero-bar{ gap:22px; padding:26px 0 }
