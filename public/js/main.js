@@ -329,7 +329,7 @@
       const title = card.querySelector('h3');
       const price = card.querySelector('.rental-price');
       const desc  = card.querySelector('.rental-body > p');
-      if(img){ mImg.src = img.currentSrc || img.src; mImg.alt = title ? title.textContent : ''; }
+      if(img){ mImg.src = img.dataset.full || img.currentSrc || img.src; mImg.alt = title ? title.textContent : ''; }
       mTitle.textContent = title ? title.textContent : '';
       mPrice.textContent = price ? price.textContent : '';
       mDesc.textContent  = desc ? desc.textContent : '';
