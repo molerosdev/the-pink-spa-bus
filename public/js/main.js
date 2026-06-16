@@ -292,19 +292,27 @@
     }, 4000);
   })();
 
-  // ===== SERVICES: package card flip =====
-  window.flipCard = function(btn){
-    const card = btn.closest('.pkg-card');
-    if(!card) return;
+  // ===== SERVICES: package card flip — the whole card is clickable =====
+  // Click anywhere on the front to see details; click anywhere on the back to
+  // go back. Links (e.g. "Book This Package") still navigate instead of flipping.
+  function setFlipped(card, flipped){
     const inner   = card.querySelector('.pkg-inner');
     const trigger = card.querySelector('.pkg-flip-btn');
     const back    = card.querySelector('.pkg-back');
-    const flipped = inner.classList.toggle('is-flipped');
+    inner.classList.toggle('is-flipped', flipped);
     if(trigger) trigger.setAttribute('aria-expanded', flipped ? 'true' : 'false');
     if(back)    back.setAttribute('aria-hidden', flipped ? 'false' : 'true');
-    const focusTarget = flipped ? card.querySelector('.pkg-back-btn') : trigger;
-    if(focusTarget) focusTarget.focus({ preventScroll:true });
-  };
+  }
+  document.querySelectorAll('.pkg-card').forEach(card=>{
+    card.addEventListener('click', e=>{
+      if(e.target.closest('a')) return;   // let real links (Book This Package) work
+      const inner = card.querySelector('.pkg-inner');
+      if(!inner) return;
+      setFlipped(card, !inner.classList.contains('is-flipped'));
+    });
+  });
+  // keep the old global a no-op in case any inline handler lingers
+  window.flipCard = function(){};
 
   // ===== MASCOTS: subtle cursor parallax =====
   (function(){

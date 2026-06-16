@@ -464,7 +464,7 @@
   @media (min-width:1200px){ .pkg-grid > .pkg-coquette{ grid-column:2 } }
   .pkg-card.pkg-coquette .pkg-badge{ background:var(--tertiary) }
   /* flip container */
-  .pkg-card{ position:relative; perspective:1600px; transition:transform .25s }
+  .pkg-card{ position:relative; perspective:1600px; transition:transform .25s; cursor:pointer }
   .pkg-card:hover{ transform:translateY(-6px) }
   .pkg-inner{
     position:relative; transform-style:preserve-3d;
@@ -497,6 +497,8 @@
     box-shadow:0 6px 16px rgba(46,26,71,.25);
   }
   .pkg-card.featured .pkg-badge{ background:var(--tertiary) }
+  .pkg-badge{ transition:opacity .3s }
+  .pkg-card:has(.pkg-inner.is-flipped) .pkg-badge{ opacity:0; pointer-events:none }  /* clears the back button */
   /* content overlaid on the panel (frosted), not below the image */
   .pkg-body{
     position:absolute; left:0; right:0; top:20%; bottom:0; z-index:1;
@@ -539,16 +541,17 @@
     width:6px; height:6px; background:var(--rule-gold); transform:rotate(45deg);
   }
   .pkg-cta{ width:100%; margin-top:auto }
-  /* flip trigger on the front */
+  /* flip trigger on the front — highlighted pill */
   .pkg-flip-btn{
-    width:100%; margin-top:12px; padding:10px 0 0;
-    border-top:1px solid var(--rule-soft);
-    display:flex; align-items:center; justify-content:space-between;
-    font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
-    color:var(--secondary); background:none; cursor:pointer;
+    width:100%; margin-top:12px; padding:13px 18px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--secondary-deep); background:#EFE8F8;
+    border:1.5px solid #C9B3E6; border-radius:var(--r-pill); cursor:pointer;
+    transition:background .2s, color .2s, border-color .2s, box-shadow .2s;
   }
-  .pkg-flip-btn:hover{ color:var(--secondary-deep) }
-  .pkg-flip-btn .pkg-plus{ font-size:18px; line-height:1 }
+  .pkg-flip-btn:hover{ background:var(--tertiary); color:#fff; border-color:var(--tertiary); box-shadow:0 8px 20px rgba(159,117,201,.35) }
+  .pkg-flip-btn .pkg-plus{ font-size:16px; line-height:1; font-weight:700 }
   .pkg-flip-btn:focus-visible, .pkg-back-btn:focus-visible{
     outline:2px solid var(--rule-gold); outline-offset:3px; border-radius:var(--r-sm);
   }
