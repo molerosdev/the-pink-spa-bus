@@ -1085,8 +1085,13 @@
   .rental-body{ padding:20px 22px 22px; display:flex; flex-direction:column; flex:1 }
   .rental-body h3{ font-family:'Playfair Display',serif; font-weight:500; font-size:22px; color:var(--ink); margin:0 0 8px }
   .rental-body p{ font-size:14.5px; line-height:1.55; color:var(--ink-soft); margin:0 0 18px; flex:1 }
-  .rental-foot{ margin-top:auto; border-top:1px solid var(--rule-soft); padding-top:14px }
-  .rental-price{ display:block; font-family:'Playfair Display',serif; font-weight:700; font-size:18px; color:var(--secondary); margin-bottom:8px }
+  .rental-foot{ margin-top:auto; border-top:1px solid var(--rule-soft); padding-top:14px;
+    display:flex; flex-direction:column; align-items:flex-start; gap:11px }
+  .rental-price{
+    font-family:'Playfair Display',serif; font-weight:700; font-size:17px;
+    color:var(--secondary); background:#EFE8F8; border:1px solid #DDD0EE;
+    border-radius:var(--r-pill); padding:6px 16px;
+  }
   .rental-cta{ font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--secondary) }
   .rental-cta:hover{ color:var(--primary-deep) }
   .rental-cta span{ transition:transform .2s; display:inline-block }
