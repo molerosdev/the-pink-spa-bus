@@ -1,13 +1,25 @@
 
   // ===== FORM CONFIG =====
-  // Forms POST to a Cloudflare Pages Function (functions/api/submit.js) that emails via Resend.
-  // Set RESEND_API_KEY (+ MAIL_TO, MAIL_FROM) as env vars in the Cloudflare Pages dashboard.
+  // Forms POST to Cloudflare Pages Functions that email via Resend + store in D1.
+  // Set RESEND_API_KEY, MAIL_FROM, and the DB D1 binding in the Cloudflare Pages dashboard.
   // When opened from file:// (no server) the forms run in safe DEMO mode (nothing is sent).
   const FORM_CONFIG = {
-    endpoint: '/api/submit',
+    endpoint: '/api/submit',            // legacy contact/waiver endpoint
+    disclosureEndpoint: '/api/disclosure/submit',
+    editEndpoint: '/api/disclosure/edit',
+    resendLinkEndpoint: '/api/disclosure/resend-link',
     businessName: 'The Pink Spa Bus'
   };
   const DEMO_MODE = location.protocol === 'file:';
+
+  // ===== EDIT MODE — detect ?edit=TOKEN on page load =====
+  let disclosureEditToken = null;
+  (function detectEditMode(){
+    const token = new URLSearchParams(location.search).get('edit');
+    if (!token) return;
+    disclosureEditToken = token;
+    loadForEdit(token);
+  })();
 
   // language toggle (EN / ES)
   function setLang(lang){
@@ -47,34 +59,100 @@
     document.querySelector('#disclosure .disclosure-card').scrollIntoView({behavior:'smooth', block:'start'});
   }
 
-  // add child
+  // ===== CHILDREN MANAGEMENT =====
   let childCount = 1;
+
+  function updateChildCounter(){
+    const max = parseInt(document.getElementById('f-num-children')?.value || '1', 10);
+    const added = document.querySelectorAll('#children-list .child-block').length;
+    const addedEl = document.getElementById('child-added-count');
+    const maxEl = document.getElementById('child-max-count');
+    if (addedEl) addedEl.textContent = added;
+    if (maxEl) maxEl.textContent = max;
+    // disable/enable the first child's remove button
+    const removeBtn = document.getElementById('c1-remove-btn');
+    if (removeBtn) removeBtn.disabled = added <= 1;
+    // disable all remove buttons when only 1 child
+    document.querySelectorAll('#children-list .child-block .remove').forEach(btn => {
+      btn.disabled = added <= 1;
+    });
+  }
+
+  // React to the number input changing
+  (function(){
+    const numInput = document.getElementById('f-num-children');
+    if (!numInput) return;
+    numInput.addEventListener('change', () => {
+      const target = Math.min(20, Math.max(1, parseInt(numInput.value, 10) || 1));
+      numInput.value = target;
+      updateChildCounter();
+    });
+  })();
+
   function addChild(){
-    childCount++;
     const list = document.getElementById('children-list');
+    const currentCount = list.querySelectorAll('.child-block').length;
+    if (currentCount >= 20) {
+      alert(currentLang === 'es' ? 'Máximo 20 niños permitidos.' : 'Maximum of 20 children allowed.');
+      return;
+    }
+    childCount++;
+    const n = childCount;
     const block = document.createElement('div');
     block.className = 'child-block';
-    block.dataset.child = childCount;
-    const isEs = currentLang==='es';
+    block.dataset.child = n;
+    const isEs = currentLang === 'es';
     block.innerHTML = `
-      <span class="num">${childCount}</span>
-      <button type="button" class="remove" onclick="this.parentNode.remove()">${isEs?'Quitar':'Remove'}</button>
+      <span class="num">${n}</span>
+      <button type="button" class="remove" onclick="removeChild(this)" data-en="Remove" data-es="Quitar">${isEs ? 'Quitar' : 'Remove'}</button>
       <div class="field-row">
         <div class="field">
-          <label>${isEs?'Nombre del niño':'Child name'}</label>
-          <input type="text">
+          <label>${isEs ? 'Nombre del niño' : 'Child name'}</label>
+          <input type="text" placeholder="${isEs ? '' : 'Luna'}">
         </div>
         <div class="field">
-          <label>${isEs?'Edad':'Age'}</label>
-          <input type="number" min="3" max="14">
+          <label>${isEs ? 'Edad' : 'Age'}</label>
+          <input type="number" min="3" max="14" placeholder="7">
         </div>
       </div>
+      <div class="field">
+        <label>${isEs ? 'Alergias / notas' : 'Allergies / notes'}</label>
+        <input type="text" placeholder="${isEs ? 'Ninguna / especificar' : 'None / specify'}">
+      </div>
+      <div class="field">
+        <label>${isEs ? 'Condiciones médicas' : 'Medical conditions'}</label>
+        <input type="text" placeholder="${isEs ? 'Ninguna / especificar' : 'None / specify'}">
+      </div>
       <div class="field" style="margin-bottom:0">
-        <label>${isEs?'Alergias / notas':'Allergies / notes'}</label>
-        <input type="text">
+        <label>${isEs ? 'Instrucciones especiales' : 'Special instructions'}</label>
+        <input type="text" placeholder="${isEs ? 'p.ej. solo cabello, sin esmalte' : 'e.g. hair-only, no nail polish'}">
       </div>
     `;
     list.appendChild(block);
+    updateChildCounter();
+  }
+
+  function removeChild(btn){
+    const block = btn.closest('.child-block');
+    if (!block) return;
+    const allBlocks = document.querySelectorAll('#children-list .child-block');
+    if (allBlocks.length <= 1) return; // should not happen, but guard
+    // Check if block has any data
+    const hasData = Array.from(block.querySelectorAll('input')).some(i => i.value.trim());
+    if (hasData) {
+      const confirm = window.confirm(currentLang === 'es'
+        ? '¿Eliminar este niño? Se perderán los datos ingresados.'
+        : 'Remove this child? Any entered data will be lost.');
+      if (!confirm) return;
+    }
+    block.remove();
+    // Re-number remaining blocks
+    document.querySelectorAll('#children-list .child-block').forEach((b, i) => {
+      const numEl = b.querySelector('.num');
+      if (numEl) numEl.textContent = i + 1;
+      b.dataset.child = i + 1;
+    });
+    updateChildCounter();
   }
 
   // signature pad
@@ -122,6 +200,15 @@
       placeholder.style.opacity='1'; hasInk=false;
     };
     window.getSignature = function(){ return hasInk ? canvas.toDataURL('image/png') : ''; };
+    window.restoreSignature = function(dataUrl){
+      const img = new Image();
+      img.onload = function(){
+        ctx.drawImage(img, 0, 0, canvas.getBoundingClientRect().width, canvas.getBoundingClientRect().height);
+        placeholder.style.opacity='0';
+        hasInk = true;
+      };
+      img.src = dataUrl.startsWith('data:') ? dataUrl : 'data:image/png;base64,' + dataUrl;
+    };
   })();
 
   // ---- field collection helpers ----
@@ -158,36 +245,266 @@
     }
   }
 
-  // ---- disclosure / waiver submit ----
-  async function submitForm(){
-    const card = document.querySelector('#disclosure .disclosure-card');
-    const fields = collectFields(card, '.child-block');
+  // ---- disclosure / waiver submit (new D1-backed version) ----
+  async function submitDisclosure(evt){
+    const btn = document.getElementById('submit-btn');
+    if (btn) { btn.disabled = true; btn.style.opacity = '.6'; }
 
-    // children blocks → structured list
+    // Collect children
     const children = [];
-    card.querySelectorAll('.child-block').forEach((b,i)=>{
-      const f = collectFields(b);
-      const parts = Object.entries(f).map(([k,v])=>`${k}: ${v}`).join(' · ');
-      if(parts) children.push(`Child ${i+1} — ${parts}`);
+    document.querySelectorAll('#children-list .child-block').forEach(b => {
+      const inputs = b.querySelectorAll('input');
+      // order: name, age, allergies, medical, special
+      children.push({
+        name:      inputs[0] ? inputs[0].value.trim() : '',
+        age:       inputs[1] ? inputs[1].value.trim() : '',
+        allergies: inputs[2] ? inputs[2].value.trim() : '',
+        medical:   inputs[3] ? inputs[3].value.trim() : '',
+        special:   inputs[4] ? inputs[4].value.trim() : ''
+      });
     });
 
+    const sig = window.getSignature ? window.getSignature() : '';
+
     const payload = {
-      type: 'waiver',
-      subject: 'New Spa Party Disclosure',
-      lang: currentLang,
-      fields,
+      customer_email:          (document.getElementById('f-email')?.value || '').trim(),
+      parent_name:             (document.getElementById('f-parent-name')?.value || '').trim(),
+      phone:                   (document.getElementById('f-phone')?.value || '').trim(),
+      event_date:              (document.getElementById('f-event-date')?.value || '').trim(),
+      event_address:           (document.getElementById('f-event-address')?.value || '').trim(),
+      emergency_name:          (document.getElementById('f-emergency-name')?.value || '').trim(),
+      emergency_relationship:  (document.getElementById('f-emergency-relationship')?.value || '').trim(),
+      emergency_phone:         (document.getElementById('f-emergency-phone')?.value || '').trim(),
+      signer_name:             (document.getElementById('f-signer-name')?.value || '').trim(),
+      sig_date:                (document.getElementById('sig-date')?.value || '').trim(),
+      waiver_accepted:         !!document.getElementById('agree')?.checked,
+      signature_b64:           sig,
       children,
-      accepted: !!document.getElementById('agree')?.checked,
-      signature: (window.getSignature && window.getSignature()) || ''
+      lang:                    currentLang
     };
 
-    const btn = event && event.target ? event.target : null;
-    if(btn){ btn.disabled = true; btn.style.opacity = '.6'; }
-    const ok = await sendForm(payload);
-    if(btn){ btn.disabled = false; btn.style.opacity = ''; }
+    // If in edit mode, submit as an update
+    if (disclosureEditToken) {
+      await submitDisclosureUpdate(payload, btn);
+      return;
+    }
 
-    if(ok){ goStep(6); }
-    else { alert(currentLang==='es' ? 'No se pudo enviar. Inténtelo de nuevo o contáctenos por WhatsApp.' : 'Could not send. Please try again or reach us on WhatsApp.'); }
+    if (DEMO_MODE) {
+      console.warn('[DEMO MODE] file:// — not sending. Payload:', payload);
+      showSuccessStep({ refNumber: 'TPS-DISC-DEMO-000001', customerEmailSent: false }, payload);
+      if (btn) { btn.disabled = false; btn.style.opacity = ''; }
+      return;
+    }
+
+    try {
+      const res = await fetch(FORM_CONFIG.disclosureEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json().catch(() => ({}));
+      if (btn) { btn.disabled = false; btn.style.opacity = ''; }
+
+      if (res.status === 409 && data.duplicate) {
+        showDupPanel();
+        return;
+      }
+      if (!res.ok || !data.ok) {
+        alert(currentLang === 'es'
+          ? 'No se pudo enviar. ' + (data.error || '') + ' Inténtelo de nuevo o contáctenos por WhatsApp.'
+          : 'Could not send. ' + (data.error || '') + ' Please try again or reach us on WhatsApp.');
+        return;
+      }
+      showSuccessStep(data, payload);
+    } catch (err) {
+      console.error('Disclosure submit failed', err);
+      if (btn) { btn.disabled = false; btn.style.opacity = ''; }
+      alert(currentLang === 'es'
+        ? 'Error de red. Inténtelo de nuevo o contáctenos por WhatsApp.'
+        : 'Network error. Please try again or reach us on WhatsApp.');
+    }
+  }
+
+  async function submitDisclosureUpdate(payload, btn){
+    if (DEMO_MODE) {
+      console.warn('[DEMO MODE] edit update — not sending. Payload:', payload);
+      showSuccessStep({ refNumber: 'TPS-DISC-DEMO-000001', customerEmailSent: false }, payload, true);
+      if (btn) { btn.disabled = false; btn.style.opacity = ''; }
+      return;
+    }
+    try {
+      const res = await fetch(`${FORM_CONFIG.editEndpoint}/${disclosureEditToken}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json().catch(() => ({}));
+      if (btn) { btn.disabled = false; btn.style.opacity = ''; }
+      if (!res.ok || !data.ok) {
+        alert(currentLang === 'es'
+          ? 'No se pudo actualizar. ' + (data.error || '') + ' Inténtelo de nuevo.'
+          : 'Could not update. ' + (data.error || '') + ' Please try again.');
+        return;
+      }
+      showSuccessStep(data, payload, true);
+    } catch (err) {
+      console.error('Disclosure update failed', err);
+      if (btn) { btn.disabled = false; btn.style.opacity = ''; }
+      alert(currentLang === 'es'
+        ? 'Error de red. Inténtelo de nuevo.'
+        : 'Network error. Please try again.');
+    }
+  }
+
+  function showSuccessStep(data, payload, isUpdate){
+    const refEl   = document.getElementById('success-ref');
+    const dateEl  = document.getElementById('success-date');
+    const emailEl = document.getElementById('success-email');
+    if (refEl) refEl.textContent = (isUpdate ? 'Updated · ' : '') + 'Reference: ' + (data.refNumber || '—');
+    if (dateEl) dateEl.textContent = 'Event: ' + (payload.event_date || '—');
+    if (emailEl) {
+      const sentMsg = data.customerEmailSent === false
+        ? (currentLang === 'es' ? 'El correo no pudo enviarse — contáctenos directamente.' : 'Email could not be sent — please contact us directly.')
+        : (currentLang === 'es' ? 'Copia enviada a: ' : 'A copy has been sent to: ') + (payload.customer_email || '');
+      emailEl.textContent = sentMsg;
+    }
+    goStep(6);
+  }
+
+  function showDupPanel(){
+    // Hide all step panes and show the dup panel instead
+    document.querySelectorAll('.step-pane').forEach(p => p.classList.remove('active'));
+    const dupPanel = document.getElementById('dup-panel');
+    if (dupPanel) dupPanel.style.display = '';
+  }
+
+  async function resendEditLink(){
+    const email = (document.getElementById('f-email')?.value || '').trim();
+    const feedback = document.getElementById('resend-feedback');
+    if (!email) {
+      if (feedback) { feedback.style.display = ''; feedback.textContent = currentLang === 'es' ? 'Ingrese su correo en el Paso II.' : 'Please enter your email in Step II.'; }
+      return;
+    }
+    if (DEMO_MODE) {
+      if (feedback) { feedback.style.display = ''; feedback.textContent = '[DEMO] Link would be resent to ' + email; }
+      return;
+    }
+    try {
+      const res = await fetch(FORM_CONFIG.resendLinkEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      if (feedback) {
+        feedback.style.display = '';
+        feedback.textContent = res.ok
+          ? (currentLang === 'es' ? 'Si tenemos un aviso para ese correo, el enlace fue enviado. Revise su bandeja.' : 'If we have a disclosure on file for that email, the link has been sent. Check your inbox.')
+          : (currentLang === 'es' ? 'No se pudo enviar. Contáctenos por WhatsApp.' : 'Could not send. Please reach us on WhatsApp.');
+      }
+    } catch {
+      if (feedback) { feedback.style.display = ''; feedback.textContent = currentLang === 'es' ? 'Error de red.' : 'Network error.'; }
+    }
+  }
+
+  // ---- load existing disclosure for edit mode ----
+  async function loadForEdit(token){
+    if (DEMO_MODE) {
+      console.warn('[DEMO MODE] edit mode — token:', token);
+      return;
+    }
+    try {
+      const res = await fetch(`${FORM_CONFIG.editEndpoint}/${token}`);
+      if (!res.ok) {
+        console.warn('Edit token not found or expired');
+        return;
+      }
+      const d = await res.json();
+      if (!d.ok) return;
+
+      // Pre-fill parent fields
+      const set = (id, val) => { const el = document.getElementById(id); if (el && val != null) el.value = val; };
+      set('f-parent-name', d.parent_name);
+      set('f-email', d.customer_email);
+      set('f-phone', d.phone);
+      set('f-event-date', d.event_date);
+      set('f-event-address', d.event_address);
+
+      // Pre-fill emergency contact
+      if (d.emergency) {
+        set('f-emergency-name', d.emergency.name);
+        set('f-emergency-relationship', d.emergency.relationship);
+        set('f-emergency-phone', d.emergency.phone);
+      }
+
+      // Pre-fill signer fields
+      set('f-signer-name', d.signer_name);
+      set('sig-date', d.sig_date);
+
+      // Restore signature if present
+      if (d.signature_b64 && window.restoreSignature) {
+        window.restoreSignature(d.signature_b64);
+      }
+
+      // Rebuild children list
+      const children = d.children || [];
+      if (children.length > 0) {
+        const list = document.getElementById('children-list');
+        // Fill first child block
+        const firstBlock = list.querySelector('.child-block[data-child="1"]');
+        if (firstBlock) {
+          const inputs = firstBlock.querySelectorAll('input');
+          if (inputs[0]) inputs[0].value = children[0].name || '';
+          if (inputs[1]) inputs[1].value = children[0].age || '';
+          if (inputs[2]) inputs[2].value = children[0].allergies || '';
+          if (inputs[3]) inputs[3].value = children[0].medical || '';
+          if (inputs[4]) inputs[4].value = children[0].special || '';
+        }
+        // Add remaining children
+        for (let i = 1; i < children.length; i++) {
+          addChild();
+          const blocks = list.querySelectorAll('.child-block');
+          const block = blocks[i];
+          if (block) {
+            const inputs = block.querySelectorAll('input');
+            if (inputs[0]) inputs[0].value = children[i].name || '';
+            if (inputs[1]) inputs[1].value = children[i].age || '';
+            if (inputs[2]) inputs[2].value = children[i].allergies || '';
+            if (inputs[3]) inputs[3].value = children[i].medical || '';
+            if (inputs[4]) inputs[4].value = children[i].special || '';
+          }
+        }
+        // Update num-children input
+        const numInput = document.getElementById('f-num-children');
+        if (numInput) numInput.value = children.length;
+        updateChildCounter();
+      }
+
+      // Update the disclosure card header to show edit mode
+      const titleEl = document.querySelector('#disclosure .disclosure-card .title');
+      if (titleEl) {
+        titleEl.innerHTML = currentLang === 'es'
+          ? '<em>Editar</em> Aviso'
+          : '<em>Edit</em> Disclosure';
+      }
+      const subEl = document.querySelector('#disclosure .disclosure-card .sub');
+      if (subEl) {
+        subEl.textContent = currentLang === 'es'
+          ? 'Actualice sus datos y vuelva a firmar.'
+          : 'Update your information and re-sign.';
+      }
+      // Update submit button text
+      const submitBtn = document.getElementById('submit-btn');
+      if (submitBtn) {
+        submitBtn.setAttribute('data-en', 'Update Disclosure →');
+        submitBtn.setAttribute('data-es', 'Actualizar Aviso →');
+        submitBtn.textContent = currentLang === 'es' ? 'Actualizar Aviso →' : 'Update Disclosure →';
+      }
+
+      // Skip step 1 agreement if re-editing (waiver already accepted)
+      goStep(2);
+    } catch (err) {
+      console.error('loadForEdit failed', err);
+    }
   }
 
   // ---- contact form submit ----

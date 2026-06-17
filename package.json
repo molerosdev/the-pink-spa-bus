@@ -7,6 +7,9 @@
     "dev": "wrangler pages dev",
     "deploy": "wrangler pages deploy"
   },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  },
   "devDependencies": {
     "wrangler": "^4.20.0"
   }
