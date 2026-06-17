@@ -51,6 +51,8 @@
       return;
     }
     document.querySelectorAll('.step-pane').forEach(p=>p.classList.toggle('active', +p.dataset.step===n));
+    // re-size the signature canvas when step V becomes visible
+    if(n===5 && window._sigResize) setTimeout(window._sigResize, 30);
     document.querySelectorAll('.step-node').forEach(s=>{
       const sn = +s.dataset.step;
       s.classList.toggle('active', sn===n);
@@ -163,13 +165,15 @@
     const placeholder = document.getElementById('sig-placeholder');
     function size(){
       const r = canvas.getBoundingClientRect();
+      if(!r.width) return; // still hidden — skip
       canvas.width = r.width * (window.devicePixelRatio||1);
       canvas.height = r.height * (window.devicePixelRatio||1);
       ctx.scale(window.devicePixelRatio||1, window.devicePixelRatio||1);
-      ctx.lineWidth = 1.4;
+      ctx.lineWidth = 2;
       ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-      ctx.strokeStyle = '#2B1B22';
+      ctx.strokeStyle = '#1a0a2e';
     }
+    window._sigResize = size;
     setTimeout(size, 50);
     window.addEventListener('resize', size);
     let drawing=false, last=null;
