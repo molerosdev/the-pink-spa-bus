@@ -463,48 +463,42 @@
   /* center the lone 4th (Coquette) card under the 3-up row on desktop */
   @media (min-width:1200px){ .pkg-grid > .pkg-coquette{ grid-column:2 } }
   .pkg-card.pkg-coquette .pkg-badge{ background:var(--tertiary) }
-  /* flip container */
-  .pkg-card{ position:relative; perspective:1600px; transition:transform .25s; cursor:pointer }
+  /* card — crossfade flip (no 3D, renders correctly on iOS / Samsung / all) */
+  .pkg-card{ position:relative; transition:transform .25s; cursor:pointer }
   .pkg-card:hover{ transform:translateY(-6px) }
-  .pkg-inner{
-    position:relative; transform-style:preserve-3d;
-    transition:transform .5s cubic-bezier(.4,0,.2,1);
-  }
-  .pkg-inner.is-flipped{ transform:rotateY(180deg) }
-  @media (prefers-reduced-motion:reduce){ .pkg-inner{ transition:none } }
+  .pkg-inner{ position:relative }
   .pkg-face{
     background:var(--surface); border:1px solid var(--rule-soft); border-radius:var(--r-lg);
     box-shadow:var(--shadow-card); overflow:hidden;
-    backface-visibility:hidden; -webkit-backface-visibility:hidden;
   }
   .pkg-card:hover .pkg-face{ box-shadow:var(--shadow-card-lift) }
-  .pkg-front{ position:relative; display:block }                    /* in flow → defines height */
+  /* front is in flow → it sets the card height; back overlays it */
+  .pkg-front{ position:relative; display:flex; flex-direction:column; transition:opacity .3s ease }
   .pkg-back{
-    position:absolute; inset:0; transform:rotateY(180deg);
-    display:flex; flex-direction:column;
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    opacity:0; visibility:hidden; transition:opacity .3s ease;
   }
+  .pkg-inner.is-flipped .pkg-front{ opacity:0; visibility:hidden; pointer-events:none }
+  .pkg-inner.is-flipped .pkg-back{ opacity:1; visibility:visible }
+  @media (prefers-reduced-motion:reduce){ .pkg-front, .pkg-back{ transition:none } }
   .pkg-card.featured .pkg-face{ border-color:var(--primary); box-shadow:var(--shadow-card-lift) }
-  /* only the visible face is interactive */
-  .pkg-inner:not(.is-flipped) .pkg-back{ pointer-events:none }
-  .pkg-inner.is-flipped .pkg-front{ pointer-events:none }
-  .pkg-media{ position:relative; aspect-ratio:1000/1937; overflow:hidden; background:#FBEAF4 }
-  .pkg-media img{ width:100%; height:100%; object-fit:contain; object-position:top center; display:block }
+  /* coquette graphic as a header band */
+  .pkg-media{ position:relative; height:clamp(150px,34vw,190px); overflow:hidden; background:#FBEAF4; flex-shrink:0 }
+  .pkg-media img{ width:100%; height:100%; object-fit:cover; object-position:center top; display:block }
   .pkg-badge{
     position:absolute; top:14px; right:14px; z-index:5;   /* relative to .pkg-card */
     background:var(--primary); color:#fff;
     font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
     padding:7px 16px; border-radius:var(--r-pill); white-space:nowrap;
-    box-shadow:0 6px 16px rgba(46,26,71,.25);
+    box-shadow:0 6px 16px rgba(46,26,71,.25); transition:opacity .3s;
   }
   .pkg-card.featured .pkg-badge{ background:var(--tertiary) }
-  .pkg-badge{ transition:opacity .3s }
   .pkg-card:has(.pkg-inner.is-flipped) .pkg-badge{ opacity:0; pointer-events:none }  /* clears the back button */
-  /* content overlaid on the panel (frosted), not below the image */
+  /* content in normal flow → the card sizes to it (no blank space) */
   .pkg-body{
-    position:absolute; left:0; right:0; top:12%; bottom:0; z-index:1;
-    padding:16px 26px 30px; display:flex; flex-direction:column;
-    background:linear-gradient(180deg, rgba(255,250,253,.35) 0%, rgba(255,250,253,.78) 10%, rgba(255,250,253,.86) 100%);
-    -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);
+    position:relative; z-index:1; flex:1;
+    padding:22px 26px 26px; display:flex; flex-direction:column;
+    background:var(--surface);
   }
   .pkg-body > *{ flex-shrink:0 }   /* don't squeeze the meta grid / lists */
   .pkg-body h3{
