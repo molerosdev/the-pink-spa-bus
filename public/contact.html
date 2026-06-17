@@ -33,14 +33,18 @@
       <img class="brand-logo" src="images/logo.png" alt="The Pink Spa Bus · Party Mobile">
     </a>
         <ul>
-      <li><a href="index.html">The Experience</a></li>
-      <li><a href="about.html">About us</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="packages.html">Services</a></li>
-      <li><a href="disclosure.html">Disclosure</a></li>
-      <li><a class="active" href="contact.html">Contact</a></li>
+      <li><a href="index.html" data-en="The Experience" data-es="La Experiencia">The Experience</a></li>
+      <li><a href="about.html" data-en="About us" data-es="Nosotros">About us</a></li>
+      <li><a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a></li>
+      <li><a href="packages.html" data-en="Services" data-es="Paquetes">Services</a></li>
+      <li><a href="disclosure.html" data-en="Disclosure" data-es="Aviso">Disclosure</a></li>
+      <li><a class="active" href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
     </ul>
-    <a href="contact.html" class="rsvp">Reserve</a>
+    <a href="contact.html" class="rsvp" data-en="Reserve" data-es="Reservar">Reserve</a>
+    <div class="lang-toggle" role="tablist">
+      <button class="active" data-lang="en" onclick="setLang('en')">English</button>
+      <button data-lang="es" onclick="setLang('es')">Español</button>
+    </div>
     <button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('nav').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
@@ -50,8 +54,8 @@
 <section class="block has-mascot" id="contact">
   <div class="container">
     <div class="section-head">
-      <span class="display-italic">— write to us —</span>
-      <h2>Contact <em>the hostess</em>.</h2>
+      <span class="display-italic" data-en="— write to us —" data-es="— escríbenos —">— write to us —</span>
+      <h2 data-en="Contact <em>the hostess</em>." data-es="Contáctanos con <em>la anfitriona</em>.">Contact <em>the hostess</em>.</h2>
       <div class="ornament gold-ornament-rule">
         <span class="line"></span><span class="diamond"></span><span class="line"></span>
       </div>
@@ -59,27 +63,27 @@
 
     <div class="postcard" style="position:relative">
       <div class="left">
-        <h3>We come <em>to you</em>.</h3>
-        <p class="sub">— a mobile spa bus across Central Florida —</p>
+        <h3 data-en="We come <em>to you</em>." data-es="Nosotros vamos <em>a ti</em>.">We come <em>to you</em>.</h3>
+        <p class="sub" data-en="— a mobile spa bus across Central Florida —" data-es="— un autobús spa móvil por todo Central Florida —">— a mobile spa bus across Central Florida —</p>
         <ul class="info">
           <li>
-            <span class="lbl">Based in</span>
-            <span class="val">Central Florida<small>Mobile — we come to you</small></span>
+            <span class="lbl" data-en="Based in" data-es="Con base en">Based in</span>
+            <span class="val">Central Florida<small data-en="Mobile — we come to you" data-es="Móvil — vamos a ti">Mobile — we come to you</small></span>
           </li>
           <li>
-            <span class="lbl">Hours</span>
-            <span class="val">Tue – Sun · 9–5<small>Mon by appointment</small></span>
+            <span class="lbl" data-en="Hours" data-es="Horario">Hours</span>
+            <span class="val" data-en="Tue – Sun · 9–5<small>Mon by appointment</small>" data-es="Mar – Dom · 9–5<small>Lun con cita previa</small>">Tue – Sun · 9–5<small>Mon by appointment</small></span>
           </li>
           <li>
-            <span class="lbl">Phone</span>
-            <span class="val"><a href="tel:+18632967303">+1 (863) 296-7303</a><small>Tap to call</small></span>
+            <span class="lbl" data-en="Phone" data-es="Teléfono">Phone</span>
+            <span class="val"><a href="tel:+18632967303">+1 (863) 296-7303</a><small data-en="Tap to call" data-es="Toca para llamar">Tap to call</small></span>
           </li>
           <li>
-            <span class="lbl">Email</span>
-            <span class="val"><a href="mailto:thepinkspabus@gmail.com">thepinkspabus@gmail.com</a><small>Replies within 24 hrs</small></span>
+            <span class="lbl" data-en="Email" data-es="Correo">Email</span>
+            <span class="val"><a href="mailto:thepinkspabus@gmail.com">thepinkspabus@gmail.com</a><small data-en="Replies within 24 hrs" data-es="Respondemos en 24 hrs">Replies within 24 hrs</small></span>
           </li>
           <li>
-            <span class="lbl">Social</span>
+            <span class="lbl" data-en="Social" data-es="Redes">Social</span>
             <span class="val">@thepinkspabus<small>Instagram · Facebook · TikTok</small></span>
           </li>
         </ul>
@@ -90,58 +94,58 @@
           <img class="stamp-logo" src="images/logo.png" alt="The Pink Spa Bus">
           <div class="stamp-text">Central Florida<br>Mobile</div>
         </div>
-        <h3 style="margin-bottom:24px">Send <em>a note</em>.</h3>
+        <h3 style="margin-bottom:24px" data-en="Send <em>a note</em>." data-es="Envíanos <em>un mensaje</em>.">Send <em>a note</em>.</h3>
         <form onsubmit="event.preventDefault(); contactSubmit();">
           <div class="field">
-            <label>Package of interest</label>
+            <label data-en="Package of interest" data-es="Paquete de interés">Package of interest</label>
             <select id="packageSelect" name="Package">
-              <option value="">Select a package (optional)</option>
-              <option value="Pink Star Package">Pink Star Package from $550</option>
-              <option value="Pink Super Star Package">Pink Super Star Package from $750</option>
-              <option value="Pink Special Package">Pink Special Package from $1,000</option>
-              <option value="Pink Coquette Package">Pink Coquette Package from $559.99</option>
-              <option value="Not sure yet / Custom">Not sure yet / Custom</option>
+              <option value="" data-en="Select a package (optional)" data-es="Selecciona un paquete (opcional)">Select a package (optional)</option>
+              <option value="Pink Star Package" data-en="Pink Star Package from $550" data-es="Paquete Pink Star desde $550">Pink Star Package from $550</option>
+              <option value="Pink Super Star Package" data-en="Pink Super Star Package from $750" data-es="Paquete Pink Super Star desde $750">Pink Super Star Package from $750</option>
+              <option value="Pink Special Package" data-en="Pink Special Package from $1,000" data-es="Paquete Pink Special desde $1,000">Pink Special Package from $1,000</option>
+              <option value="Pink Coquette Package" data-en="Pink Coquette Package from $559.99" data-es="Paquete Pink Coquette desde $559.99">Pink Coquette Package from $559.99</option>
+              <option value="Not sure yet / Custom" data-en="Not sure yet / Custom" data-es="Aún no sé / Personalizado">Not sure yet / Custom</option>
             </select>
           </div>
           <div class="field">
-            <label>Parent name</label>
+            <label data-en="Parent name" data-es="Nombre del padre/madre">Parent name</label>
             <input type="text" required>
           </div>
           <div class="field-row">
             <div class="field">
-              <label>Email</label>
+              <label data-en="Email" data-es="Correo electrónico">Email</label>
               <input type="email" required>
             </div>
             <div class="field">
-              <label>Phone</label>
+              <label data-en="Phone" data-es="Teléfono">Phone</label>
               <input type="tel">
             </div>
           </div>
           <div class="field-row">
             <div class="field">
-              <label>Event date</label>
+              <label data-en="Event date" data-es="Fecha del evento">Event date</label>
               <input type="date">
             </div>
             <div class="field">
-              <label># of children</label>
+              <label data-en="# of children" data-es="# de niñas"># of children</label>
               <input type="number" min="1" max="20">
             </div>
           </div>
           <div class="field">
-            <label>Preferred time</label>
+            <label data-en="Preferred time" data-es="Horario preferido">Preferred time</label>
             <select name="Preferred time">
-              <option value="">Select a time (optional)</option>
-              <option value="Morning">Morning</option>
-              <option value="Afternoon">Afternoon</option>
-              <option value="Evening">Evening</option>
+              <option value="" data-en="Select a time (optional)" data-es="Selecciona un horario (opcional)">Select a time (optional)</option>
+              <option value="Morning" data-en="Morning" data-es="Mañana">Morning</option>
+              <option value="Afternoon" data-en="Afternoon" data-es="Tarde">Afternoon</option>
+              <option value="Evening" data-en="Evening" data-es="Noche">Evening</option>
             </select>
           </div>
           <div class="field">
-            <label>Message</label>
-            <textarea rows="4" placeholder="Tell us about the celebration…"></textarea>
+            <label data-en="Message" data-es="Mensaje">Message</label>
+            <textarea rows="4" placeholder="Tell us about the celebration…" data-en="Tell us about the celebration…" data-es="Cuéntanos sobre la celebración…"></textarea>
           </div>
           <div class="submit-row">
-            <button type="submit" class="btn btn-primary">Send Note</button>
+            <button type="submit" class="btn btn-primary" data-en="Send Note" data-es="Enviar Mensaje">Send Note</button>
           </div>
         </form>
       </div>
@@ -149,60 +153,60 @@
 
     <!-- ===== FAQ (click a question's + to reveal the answer) ===== -->
     <div class="faq-head">
-      <h3>Frequently asked <em>questions</em>.</h3>
+      <h3 data-en="Frequently asked <em>questions</em>." data-es="Preguntas <em>frecuentes</em>.">Frequently asked <em>questions</em>.</h3>
     </div>
     <div class="faq">
       <details class="faq-item">
-        <summary>What areas do you serve?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>We serve Orlando and surrounding areas. Additional travel fees may apply for locations outside our standard service area.</p></div>
+        <summary data-en="What areas do you serve?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Qué áreas atienden?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">What areas do you serve?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="We serve Orlando and surrounding areas. Additional travel fees may apply for locations outside our standard service area." data-es="Atendemos Orlando y sus alrededores. Pueden aplicarse cargos adicionales por desplazamiento para ubicaciones fuera de nuestra área de servicio estándar.">We serve Orlando and surrounding areas. Additional travel fees may apply for locations outside our standard service area.</p></div>
       </details>
       <details class="faq-item">
-        <summary>How many guests can attend?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>Each package includes a specific number of guests. Additional guests can be added for an extra fee, subject to availability.</p></div>
+        <summary data-en="How many guests can attend?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Cuántas invitadas pueden asistir?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">How many guests can attend?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="Each package includes a specific number of guests. Additional guests can be added for an extra fee, subject to availability." data-es="Cada paquete incluye un número específico de invitadas. Se pueden agregar invitadas adicionales con un costo extra, sujeto a disponibilidad.">Each package includes a specific number of guests. Additional guests can be added for an extra fee, subject to availability.</p></div>
       </details>
       <details class="faq-item">
-        <summary>What age group is the Pink Spa Bus for?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>Our spa parties are designed for girls aged 3 to 12. We create a fun, safe, and age-appropriate experience for every guest.</p></div>
+        <summary data-en="What age group is the Pink Spa Bus for?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Para qué grupo de edad es el Pink Spa Bus?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">What age group is the Pink Spa Bus for?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="Our spa parties are designed for girls aged 3 to 12. We create a fun, safe, and age-appropriate experience for every guest." data-es="Nuestras fiestas de spa están diseñadas para niñas de 3 a 12 años. Creamos una experiencia divertida, segura y adecuada para cada invitada.">Our spa parties are designed for girls aged 3 to 12. We create a fun, safe, and age-appropriate experience for every guest.</p></div>
       </details>
       <details class="faq-item">
-        <summary>Do you travel to our location?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>Yes! We are a mobile spa bus, and we bring the experience directly to your home or the venue of your choice.</p></div>
+        <summary data-en="Do you travel to our location?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Viajan a nuestra ubicación?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">Do you travel to our location?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="Yes! We are a mobile spa bus, and we bring the experience directly to your home or the venue of your choice." data-es="¡Sí! Somos un autobús spa móvil y llevamos la experiencia directamente a tu hogar o al lugar que elijas.">Yes! We are a mobile spa bus, and we bring the experience directly to your home or the venue of your choice.</p></div>
       </details>
       <details class="faq-item">
-        <summary>Is a deposit required?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>Yes. A non-refundable deposit of $150 is required to secure your reservation. The remaining balance must be paid 48 hours before the event.</p></div>
+        <summary data-en="Is a deposit required?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Se requiere un depósito?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">Is a deposit required?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="Yes. A non-refundable deposit of $150 is required to secure your reservation. The remaining balance must be paid 48 hours before the event." data-es="Sí. Se requiere un depósito no reembolsable de $150 para asegurar tu reservación. El saldo restante debe pagarse 48 horas antes del evento.">Yes. A non-refundable deposit of $150 is required to secure your reservation. The remaining balance must be paid 48 hours before the event.</p></div>
       </details>
       <details class="faq-item">
-        <summary>What is your cancellation policy?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>While we do not offer refunds for cancellations, we offer the opportunity to reschedule your party for another available date within 3 months of the original party date (subject to availability).</p></div>
+        <summary data-en="What is your cancellation policy?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Cuál es su política de cancelación?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">What is your cancellation policy?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="While we do not offer refunds for cancellations, we offer the opportunity to reschedule your party for another available date within 3 months of the original party date (subject to availability)." data-es="Si bien no ofrecemos reembolsos por cancelaciones, ofrecemos la oportunidad de reprogramar tu fiesta para otra fecha disponible dentro de los 3 meses siguientes a la fecha original (sujeto a disponibilidad).">While we do not offer refunds for cancellations, we offer the opportunity to reschedule your party for another available date within 3 months of the original party date (subject to availability).</p></div>
       </details>
       <details class="faq-item">
-        <summary>What happens in the event of dangerous weather conditions?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>The Pink Spa Bus reserves the right to postpone an event due to adverse or dangerous weather conditions.</p></div>
+        <summary data-en="What happens in the event of dangerous weather conditions?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Qué sucede si hay condiciones climáticas peligrosas?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">What happens in the event of dangerous weather conditions?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="The Pink Spa Bus reserves the right to postpone an event due to adverse or dangerous weather conditions." data-es="The Pink Spa Bus se reserva el derecho de posponer un evento debido a condiciones climáticas adversas o peligrosas.">The Pink Spa Bus reserves the right to postpone an event due to adverse or dangerous weather conditions.</p></div>
       </details>
       <details class="faq-item">
-        <summary>Are your products safe for girls?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>All treatments are for entertainment and play purposes only and are not performed by licensed professionals.</p></div>
+        <summary data-en="Are your products safe for girls?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Sus productos son seguros para las niñas?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">Are your products safe for girls?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="All treatments are for entertainment and play purposes only and are not performed by licensed professionals." data-es="Todos los tratamientos son solo con fines de entretenimiento y juego, y no son realizados por profesionales con licencia.">All treatments are for entertainment and play purposes only and are not performed by licensed professionals.</p></div>
       </details>
       <details class="faq-item">
-        <summary>Can parents stay during the party?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>For the safety of all guests, adults are not permitted inside the spa bus during the party. Parents may enter briefly only when strictly necessary and are welcome to stay nearby throughout the event.</p></div>
+        <summary data-en="Can parents stay during the party?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Pueden los padres quedarse durante la fiesta?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">Can parents stay during the party?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="For the safety of all guests, adults are not permitted inside the spa bus during the party. Parents may enter briefly only when strictly necessary and are welcome to stay nearby throughout the event." data-es="Por la seguridad de todas las invitadas, no se permite la entrada de adultos al autobús spa durante la fiesta. Los padres solo podrán entrar brevemente cuando sea estrictamente necesario y son bienvenidos a permanecer cerca durante todo el evento.">For the safety of all guests, adults are not permitted inside the spa bus during the party. Parents may enter briefly only when strictly necessary and are welcome to stay nearby throughout the event.</p></div>
       </details>
       <details class="faq-item">
-        <summary>How far in advance should I book?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>We recommend booking as soon as possible, especially for weekends and holidays.</p></div>
+        <summary data-en="How far in advance should I book?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Con cuánta anticipación debo reservar?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">How far in advance should I book?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="We recommend booking as soon as possible, especially for weekends and holidays." data-es="Recomendamos reservar lo antes posible, especialmente para fines de semana y días festivos.">We recommend booking as soon as possible, especially for weekends and holidays.</p></div>
       </details>
       <details class="faq-item">
-        <summary>Do you offer party extras?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>Yes! We offer bounce houses, chairs, tables, popcorn machines, cotton candy machines, and yard games.</p></div>
+        <summary data-en="Do you offer party extras?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Ofrecen extras para la fiesta?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">Do you offer party extras?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="Yes! We offer bounce houses, chairs, tables, popcorn machines, cotton candy machines, and yard games." data-es="¡Sí! Ofrecemos casas inflables, sillas, mesas, máquinas de palomitas, máquinas de algodón de azúcar y juegos para jardín.">Yes! We offer bounce houses, chairs, tables, popcorn machines, cotton candy machines, and yard games.</p></div>
       </details>
       <details class="faq-item">
-        <summary>Is a liability waiver required?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>Yes. A parent or legal guardian must complete our liability waiver before participation.</p></div>
+        <summary data-en="Is a liability waiver required?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Se requiere un formulario de exención de responsabilidad?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">Is a liability waiver required?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="Yes. A parent or legal guardian must complete our liability waiver before participation." data-es="Sí. Un padre o tutor legal debe completar nuestro formulario de exención de responsabilidad antes de la participación.">Yes. A parent or legal guardian must complete our liability waiver before participation.</p></div>
       </details>
       <details class="faq-item">
-        <summary>What happens if a guest arrives late?<span class="faq-ico" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>The party start time does not depend on the arrival of all guests. Late arrivals may still participate, but they may not receive all the originally offered services within the allotted time.</p></div>
+        <summary data-en="What happens if a guest arrives late?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>" data-es="¿Qué sucede si una invitada llega tarde?<span class=&quot;faq-ico&quot; aria-hidden=&quot;true&quot;></span>">What happens if a guest arrives late?<span class="faq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p data-en="The party start time does not depend on the arrival of all guests. Late arrivals may still participate, but they may not receive all the originally offered services within the allotted time." data-es="La hora de inicio de la fiesta no depende de la llegada de todas las invitadas. Las llegadas tardías podrán participar, pero es posible que no reciban todos los servicios originalmente ofrecidos dentro del tiempo asignado.">The party start time does not depend on the arrival of all guests. Late arrivals may still participate, but they may not receive all the originally offered services within the allotted time.</p></div>
       </details>
     </div>
   </div>
@@ -222,7 +226,7 @@
         <div class="brand-row">
           <img class="brand-logo" src="images/logo.png" alt="The Pink Spa Bus · Party Mobile">
         </div>
-        <p>A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour.</p>
+        <p data-en="A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour." data-es="Un autobús spa móvil para celebraciones infantiles en todo Central Florida. Llegamos con todo — el glam, los productos y una anfitriona que trata a cada invitada como la invitada de honor.">A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour.</p>
         <div class="socials">
           <a href="https://instagram.com/thepinkspabus" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -236,27 +240,27 @@
         </div>
       </div>
       <div>
-        <h6>Explore</h6>
+        <h6 data-en="Explore" data-es="Explorar">Explore</h6>
         <ul>
-          <li><a href="index.html">The Experience</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="packages.html">Services</a></li>
+          <li><a href="index.html" data-en="The Experience" data-es="La Experiencia">The Experience</a></li>
+          <li><a href="about.html" data-en="About us" data-es="Nosotros">About us</a></li>
+          <li><a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a></li>
+          <li><a href="packages.html" data-en="Services" data-es="Paquetes">Services</a></li>
         </ul>
       </div>
       <div>
-        <h6>Reserve</h6>
+        <h6 data-en="Reserve" data-es="Reservar">Reserve</h6>
         <ul>
-          <li><a href="disclosure.html">Disclosure Form</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="disclosure.html" data-en="Disclosure Form" data-es="Formulario de Aviso">Disclosure Form</a></li>
+          <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
           <li><a href="tel:+18632967303">+1 (863) 296-7303</a></li>
           <li><a href="mailto:thepinkspabus@gmail.com">thepinkspabus@gmail.com</a></li>
         </ul>
       </div>
     </div>
     <div class="bottom">
-      <div>© 2026 The Pink Spa Bus <span class="dot">·</span> All rights reserved</div>
-      <div>Central Florida <span class="dot">·</span> Mobile Spa Bus <span class="dot">·</span> Glamour, Fun, Amazing Moments</div>
+      <div data-en="© 2026 The Pink Spa Bus <span class=&quot;dot&quot;>·</span> All rights reserved" data-es="© 2026 The Pink Spa Bus <span class=&quot;dot&quot;>·</span> Todos los derechos reservados">© 2026 The Pink Spa Bus <span class="dot">·</span> All rights reserved</div>
+      <div data-en="Central Florida <span class=&quot;dot&quot;>·</span> Mobile Spa Bus <span class=&quot;dot&quot;>·</span> Glamour, Fun, Amazing Moments" data-es="Central Florida <span class=&quot;dot&quot;>·</span> Autobús Spa Móvil <span class=&quot;dot&quot;>·</span> Glamour, Diversión, Momentos Increíbles">Central Florida <span class="dot">·</span> Mobile Spa Bus <span class="dot">·</span> Glamour, Fun, Amazing Moments</div>
     </div>
   </div>
 </footer>

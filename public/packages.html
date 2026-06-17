@@ -33,14 +33,18 @@
       <img class="brand-logo" src="images/logo.png" alt="The Pink Spa Bus · Party Mobile">
     </a>
         <ul>
-      <li><a href="index.html">The Experience</a></li>
-      <li><a href="about.html">About us</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a class="active" href="packages.html">Services</a></li>
-      <li><a href="disclosure.html">Disclosure</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html" data-en="The Experience" data-es="La Experiencia">The Experience</a></li>
+      <li><a href="about.html" data-en="About us" data-es="Nosotros">About us</a></li>
+      <li><a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a></li>
+      <li><a class="active" href="packages.html" data-en="Services" data-es="Paquetes">Services</a></li>
+      <li><a href="disclosure.html" data-en="Disclosure" data-es="Aviso">Disclosure</a></li>
+      <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
     </ul>
-    <a href="contact.html" class="rsvp">Reserve</a>
+    <a href="contact.html" class="rsvp" data-en="Reserve" data-es="Reservar">Reserve</a>
+    <div class="lang-toggle" role="tablist">
+      <button class="active" data-lang="en" onclick="setLang('en')">English</button>
+      <button data-lang="es" onclick="setLang('es')">Español</button>
+    </div>
     <button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('nav').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
@@ -50,8 +54,8 @@
 <section class="block has-mascot" id="programme">
   <div class="container">
     <div class="section-head">
-      <span class="display-italic">— our packages —</span>
-      <h2>Choose your <em>spa party</em>.</h2>
+      <span class="display-italic" data-en="— our packages —" data-es="— nuestros paquetes —">— our packages —</span>
+      <h2 data-en="Choose your <em>spa party</em>." data-es="Elige tu <em>fiesta de spa</em>.">Choose your <em>spa party</em>.</h2>
       <div class="ornament gold-ornament-rule">
         <span class="line"></span><span class="diamond"></span><span class="line"></span>
       </div>
@@ -60,7 +64,7 @@
     <div class="pkg-grid">
 
       <article class="pkg-card">
-        <span class="pkg-badge">★ Pink Star</span>
+        <span class="pkg-badge" data-en="★ Pink Star" data-es="★ Pink Star">★ Pink Star</span>
         <div class="pkg-inner">
 
           <div class="pkg-face pkg-front">
@@ -68,66 +72,66 @@
               <img src="images/cards/coquette.jpg" alt="The Pink Spa Bus — Pink Coquette package card" loading="lazy">
             </div>
             <div class="pkg-body">
-              <h3>Pink Star Package</h3>
-              <div class="pkg-price">Starting at <strong>$550</strong> <small>+ Tax</small></div>
-              <p class="pkg-summary">Perfect for smaller celebrations and intimate spa parties.</p>
+              <h3 data-en="Pink Star Package" data-es="Paquete Pink Star">Pink Star Package</h3>
+              <div class="pkg-price" data-en="Starting at <strong>$550</strong> <small>+ Tax</small>" data-es="Desde <strong>$550</strong> <small>+ Impuesto</small>">Starting at <strong>$550</strong> <small>+ Tax</small></div>
+              <p class="pkg-summary" data-en="Perfect for smaller celebrations and intimate spa parties." data-es="Ideal para celebraciones más pequeñas y fiestas de spa íntimas.">Perfect for smaller celebrations and intimate spa parties.</p>
               <ul class="pkg-meta">
-                <li><span>Duration</span><strong>2 Hours</strong></li>
-                <li><span>Ages</span><strong>3–12</strong></li>
-                <li><span>Guests</span><strong>Up to 8</strong></li>
-                <li><span>Add'l guest</span><strong>$50 each</strong></li>
+                <li><span data-en="Duration" data-es="Duración">Duration</span><strong data-en="2 Hours" data-es="2 Horas">2 Hours</strong></li>
+                <li><span data-en="Ages" data-es="Edades">Ages</span><strong>3–12</strong></li>
+                <li><span data-en="Guests" data-es="Invitadas">Guests</span><strong data-en="Up to 8" data-es="Hasta 8">Up to 8</strong></li>
+                <li><span data-en="Add'l guest" data-es="Invitada extra">Add'l guest</span><strong data-en="$50 each" data-es="$50 c/u">$50 each</strong></li>
               </ul>
               <ul class="pkg-highlights">
-              <li>Mini Spa Experience</li>
-              <li>Hair &amp; Makeup Station</li>
-              <li>Karaoke &amp; Just Dance</li>
-              <li>Surprise Gift for Birthday Girl</li>
+              <li data-en="Mini Spa Experience" data-es="Mini Experiencia de Spa">Mini Spa Experience</li>
+              <li data-en="Hair &amp; Makeup Station" data-es="Estación de Cabello y Maquillaje">Hair &amp; Makeup Station</li>
+              <li data-en="Karaoke &amp; Just Dance" data-es="Karaoke y Just Dance">Karaoke &amp; Just Dance</li>
+              <li data-en="Surprise Gift for Birthday Girl" data-es="Regalo Sorpresa para la Cumpleañera">Surprise Gift for Birthday Girl</li>
               </ul>
-              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Star%20Package">Book This Package</a>
+              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Star%20Package" data-en="Book This Package" data-es="Reservar Este Paquete">Book This Package</a>
               <button type="button" class="pkg-flip-btn" aria-expanded="false">
-                <span>View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
+                <span data-en="View Full Details" data-es="Ver Detalles Completos">View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
               </button>
             </div>
           </div>
 
           <div class="pkg-face pkg-back" aria-hidden="true">
             <button type="button" class="pkg-back-btn">
-              <span aria-hidden="true">←</span> Back to Package Summary
+              <span aria-hidden="true">←</span> <span data-en="Back to Package Summary" data-es="Volver al Resumen">Back to Package Summary</span>
             </button>
             <div class="pkg-back-scroll">
-              <h4>Pink Star Package</h4>
-              <h5>What's Included</h5>
+              <h4 data-en="Pink Star Package" data-es="Paquete Pink Star">Pink Star Package</h4>
+              <h5 data-en="What's Included" data-es="Qué Incluye">What's Included</h5>
               <ul>
-                <li>Spa robes (for use inside the bus)</li>
-                <li>Spa headbands (for use inside the bus)</li>
-                <li>Facial mask experience</li>
-                <li>Cleansing pads</li>
-                <li>Facial massage</li>
-                <li>Mini manicure</li>
-                <li>Hand massage</li>
-                <li>Fashion accessories</li>
-                <li>Colored hair extensions</li>
-                <li>Hair bows or clips</li>
-                <li>Makeup application</li>
-                <li>Face gems</li>
-                <li>Bracelet and necklace activities</li>
+                <li data-en="Spa robes (for use inside the bus)" data-es="Batas de spa (para uso dentro del autobús)">Spa robes (for use inside the bus)</li>
+                <li data-en="Spa headbands (for use inside the bus)" data-es="Diademas de spa (para uso dentro del autobús)">Spa headbands (for use inside the bus)</li>
+                <li data-en="Facial mask experience" data-es="Experiencia de mascarilla facial">Facial mask experience</li>
+                <li data-en="Cleansing pads" data-es="Almohadillas limpiadoras">Cleansing pads</li>
+                <li data-en="Facial massage" data-es="Masaje facial">Facial massage</li>
+                <li data-en="Mini manicure" data-es="Mini manicura">Mini manicure</li>
+                <li data-en="Hand massage" data-es="Masaje de manos">Hand massage</li>
+                <li data-en="Fashion accessories" data-es="Accesorios de moda">Fashion accessories</li>
+                <li data-en="Colored hair extensions" data-es="Extensiones de cabello de colores">Colored hair extensions</li>
+                <li data-en="Hair bows or clips" data-es="Lazos o clips para el cabello">Hair bows or clips</li>
+                <li data-en="Makeup application" data-es="Aplicación de maquillaje">Makeup application</li>
+                <li data-en="Face gems" data-es="Gemas faciales">Face gems</li>
+                <li data-en="Bracelet and necklace activities" data-es="Actividades de pulseras y collares">Bracelet and necklace activities</li>
                 <li>Karaoke</li>
                 <li>Just Dance</li>
-                <li>Fashion show</li>
-                <li>Surprise gift for the birthday girl</li>
-                <li>Up to 3 hostesses</li>
+                <li data-en="Fashion show" data-es="Desfile de moda">Fashion show</li>
+                <li data-en="Surprise gift for the birthday girl" data-es="Regalo sorpresa para la cumpleañera">Surprise gift for the birthday girl</li>
+                <li data-en="Up to 3 hostesses" data-es="Hasta 3 anfitrionas">Up to 3 hostesses</li>
               </ul>
-              <h5>The Experience</h5>
-                <p>Guests are welcomed aboard The Pink Spa Bus and enjoy a magical spa-themed celebration. Each child receives a mini manicure, relaxing facial treatment, hair styling, makeup application, and fun accessory enhancements.</p>
-                <p>While taking turns at the beauty stations, guests participate in creative bracelet and necklace activities before enjoying music, dancing, karaoke, and a fashion show.</p>
-                <p>Activities are guided according to the interests and participation preferences of each child.</p>
-              <h5>Important Information</h5>
+              <h5 data-en="The Experience" data-es="La Experiencia">The Experience</h5>
+                <p data-en="Guests are welcomed aboard The Pink Spa Bus and enjoy a magical spa-themed celebration. Each child receives a mini manicure, relaxing facial treatment, hair styling, makeup application, and fun accessory enhancements." data-es="Las invitadas son bienvenidas a bordo de The Pink Spa Bus y disfrutan de una mágica celebración temática de spa. Cada niña recibe una mini manicura, tratamiento facial relajante, peinado, maquillaje y entretenidos accesorios.">Guests are welcomed aboard The Pink Spa Bus and enjoy a magical spa-themed celebration. Each child receives a mini manicure, relaxing facial treatment, hair styling, makeup application, and fun accessory enhancements.</p>
+                <p data-en="While taking turns at the beauty stations, guests participate in creative bracelet and necklace activities before enjoying music, dancing, karaoke, and a fashion show." data-es="Mientras esperan su turno en las estaciones de belleza, las invitadas participan en actividades creativas de pulseras y collares antes de disfrutar de música, baile, karaoke y un desfile de moda.">While taking turns at the beauty stations, guests participate in creative bracelet and necklace activities before enjoying music, dancing, karaoke, and a fashion show.</p>
+                <p data-en="Activities are guided according to the interests and participation preferences of each child." data-es="Las actividades se guían según los intereses y preferencias de participación de cada niña.">Activities are guided according to the interests and participation preferences of each child.</p>
+              <h5 data-en="Important Information" data-es="Información Importante">Important Information</h5>
               <ul>
-                <li>Adults are not permitted inside the spa bus once activities begin.</li>
-                <li>Parents or guardians may enter only when necessary.</li>
-                <li>Additional guests are $50 each.</li>
-                <li>Package changes or refunds are not available on the event day.</li>
-                <li>Service duration ranges from 1 hour 30 minutes to 2 hours.</li>
+                <li data-en="Adults are not permitted inside the spa bus once activities begin." data-es="No se permite la entrada de adultos al autobús spa una vez que comienzan las actividades.">Adults are not permitted inside the spa bus once activities begin.</li>
+                <li data-en="Parents or guardians may enter only when necessary." data-es="Los padres o tutores solo podrán ingresar cuando sea estrictamente necesario.">Parents or guardians may enter only when necessary.</li>
+                <li data-en="Additional guests are $50 each." data-es="Las invitadas adicionales tienen un costo de $50 cada una.">Additional guests are $50 each.</li>
+                <li data-en="Package changes or refunds are not available on the event day." data-es="No se realizan cambios de paquete ni reembolsos el día del evento.">Package changes or refunds are not available on the event day.</li>
+                <li data-en="Service duration ranges from 1 hour 30 minutes to 2 hours." data-es="La duración del servicio va de 1 hora 30 minutos a 2 horas.">Service duration ranges from 1 hour 30 minutes to 2 hours.</li>
               </ul>
             </div>
           </div>
@@ -136,7 +140,7 @@
       </article>
 
       <article class="pkg-card featured">
-        <span class="pkg-badge">★★ Most Popular</span>
+        <span class="pkg-badge" data-en="★★ Most Popular" data-es="★★ Más Popular">★★ Most Popular</span>
         <div class="pkg-inner">
 
           <div class="pkg-face pkg-front">
@@ -144,66 +148,66 @@
               <img src="images/cards/coquette.jpg" alt="The Pink Spa Bus — Pink Coquette package card" loading="lazy">
             </div>
             <div class="pkg-body">
-              <h3>Pink Super Star Package</h3>
-              <div class="pkg-price">Starting at <strong>$750</strong> <small>+ Tax</small></div>
-              <p class="pkg-summary">Our most popular package for larger celebrations and extra fun.</p>
+              <h3 data-en="Pink Super Star Package" data-es="Paquete Pink Super Star">Pink Super Star Package</h3>
+              <div class="pkg-price" data-en="Starting at <strong>$750</strong> <small>+ Tax</small>" data-es="Desde <strong>$750</strong> <small>+ Impuesto</small>">Starting at <strong>$750</strong> <small>+ Tax</small></div>
+              <p class="pkg-summary" data-en="Our most popular package for larger celebrations and extra fun." data-es="Nuestro paquete más popular para celebraciones más grandes y más diversión.">Our most popular package for larger celebrations and extra fun.</p>
               <ul class="pkg-meta">
-                <li><span>Duration</span><strong>2 – 2.5 Hours</strong></li>
-                <li><span>Ages</span><strong>3–12</strong></li>
-                <li><span>Guests</span><strong>Up to 13</strong></li>
-                <li><span>Add'l guest</span><strong>$50 each</strong></li>
+                <li><span data-en="Duration" data-es="Duración">Duration</span><strong data-en="2 – 2.5 Hours" data-es="2 – 2.5 Horas">2 – 2.5 Hours</strong></li>
+                <li><span data-en="Ages" data-es="Edades">Ages</span><strong>3–12</strong></li>
+                <li><span data-en="Guests" data-es="Invitadas">Guests</span><strong data-en="Up to 13" data-es="Hasta 13">Up to 13</strong></li>
+                <li><span data-en="Add'l guest" data-es="Invitada extra">Add'l guest</span><strong data-en="$50 each" data-es="$50 c/u">$50 each</strong></li>
               </ul>
               <ul class="pkg-highlights">
-              <li>Full Spa Experience</li>
-              <li>Hair &amp; Makeup Station</li>
-              <li>Karaoke &amp; Just Dance</li>
-              <li>Surprise Gift for Birthday Girl</li>
+              <li data-en="Full Spa Experience" data-es="Experiencia Completa de Spa">Full Spa Experience</li>
+              <li data-en="Hair &amp; Makeup Station" data-es="Estación de Cabello y Maquillaje">Hair &amp; Makeup Station</li>
+              <li data-en="Karaoke &amp; Just Dance" data-es="Karaoke y Just Dance">Karaoke &amp; Just Dance</li>
+              <li data-en="Surprise Gift for Birthday Girl" data-es="Regalo Sorpresa para la Cumpleañera">Surprise Gift for Birthday Girl</li>
               </ul>
-              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Super%20Star%20Package">Book This Package</a>
+              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Super%20Star%20Package" data-en="Book This Package" data-es="Reservar Este Paquete">Book This Package</a>
               <button type="button" class="pkg-flip-btn" aria-expanded="false">
-                <span>View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
+                <span data-en="View Full Details" data-es="Ver Detalles Completos">View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
               </button>
             </div>
           </div>
 
           <div class="pkg-face pkg-back" aria-hidden="true">
             <button type="button" class="pkg-back-btn">
-              <span aria-hidden="true">←</span> Back to Package Summary
+              <span aria-hidden="true">←</span> <span data-en="Back to Package Summary" data-es="Volver al Resumen">Back to Package Summary</span>
             </button>
             <div class="pkg-back-scroll">
-              <h4>Pink Super Star Package</h4>
-              <h5>What's Included</h5>
+              <h4 data-en="Pink Super Star Package" data-es="Paquete Pink Super Star">Pink Super Star Package</h4>
+              <h5 data-en="What's Included" data-es="Qué Incluye">What's Included</h5>
               <ul>
-                <li>Spa robes (for use inside the bus)</li>
-                <li>Spa headbands (for use inside the bus)</li>
-                <li>Facial mask experience</li>
-                <li>Cleansing pads</li>
-                <li>Facial massage</li>
-                <li>Mini manicure</li>
-                <li>Hand massage</li>
-                <li>Fashion accessories</li>
-                <li>Colored hair extensions</li>
-                <li>Hair bows or clips</li>
-                <li>Makeup application</li>
-                <li>Face gems</li>
-                <li>Bracelet and necklace activities</li>
+                <li data-en="Spa robes (for use inside the bus)" data-es="Batas de spa (para uso dentro del autobús)">Spa robes (for use inside the bus)</li>
+                <li data-en="Spa headbands (for use inside the bus)" data-es="Diademas de spa (para uso dentro del autobús)">Spa headbands (for use inside the bus)</li>
+                <li data-en="Facial mask experience" data-es="Experiencia de mascarilla facial">Facial mask experience</li>
+                <li data-en="Cleansing pads" data-es="Almohadillas limpiadoras">Cleansing pads</li>
+                <li data-en="Facial massage" data-es="Masaje facial">Facial massage</li>
+                <li data-en="Mini manicure" data-es="Mini manicura">Mini manicure</li>
+                <li data-en="Hand massage" data-es="Masaje de manos">Hand massage</li>
+                <li data-en="Fashion accessories" data-es="Accesorios de moda">Fashion accessories</li>
+                <li data-en="Colored hair extensions" data-es="Extensiones de cabello de colores">Colored hair extensions</li>
+                <li data-en="Hair bows or clips" data-es="Lazos o clips para el cabello">Hair bows or clips</li>
+                <li data-en="Makeup application" data-es="Aplicación de maquillaje">Makeup application</li>
+                <li data-en="Face gems" data-es="Gemas faciales">Face gems</li>
+                <li data-en="Bracelet and necklace activities" data-es="Actividades de pulseras y collares">Bracelet and necklace activities</li>
                 <li>Karaoke</li>
                 <li>Just Dance</li>
-                <li>Fashion show</li>
-                <li>Surprise gift for the birthday girl</li>
-                <li>Up to 3 hostesses</li>
+                <li data-en="Fashion show" data-es="Desfile de moda">Fashion show</li>
+                <li data-en="Surprise gift for the birthday girl" data-es="Regalo sorpresa para la cumpleañera">Surprise gift for the birthday girl</li>
+                <li data-en="Up to 3 hostesses" data-es="Hasta 3 anfitrionas">Up to 3 hostesses</li>
               </ul>
-              <h5>The Experience</h5>
-                <p>Guests enjoy an immersive spa celebration aboard The Pink Spa Bus. Each child receives a pampering experience that includes mini manicures, relaxing facial treatments, hair styling, makeup, and fun accessories.</p>
-                <p>Creative activities, dancing, karaoke, and a fashion show create a memorable experience designed to celebrate confidence, friendship, and fun.</p>
-                <p>Activities are adapted to the personalities and interests of the guests while encouraging participation in a comfortable and enjoyable environment.</p>
-              <h5>Important Information</h5>
+              <h5 data-en="The Experience" data-es="La Experiencia">The Experience</h5>
+                <p data-en="Guests enjoy an immersive spa celebration aboard The Pink Spa Bus. Each child receives a pampering experience that includes mini manicures, relaxing facial treatments, hair styling, makeup, and fun accessories." data-es="Las invitadas disfrutan de una inmersiva celebración de spa a bordo de The Pink Spa Bus. Cada niña recibe una experiencia de mimos que incluye mini manicuras, tratamientos faciales relajantes, peinado, maquillaje y divertidos accesorios.">Guests enjoy an immersive spa celebration aboard The Pink Spa Bus. Each child receives a pampering experience that includes mini manicures, relaxing facial treatments, hair styling, makeup, and fun accessories.</p>
+                <p data-en="Creative activities, dancing, karaoke, and a fashion show create a memorable experience designed to celebrate confidence, friendship, and fun." data-es="Las actividades creativas, el baile, el karaoke y el desfile de moda crean una experiencia memorable diseñada para celebrar la confianza, la amistad y la diversión.">Creative activities, dancing, karaoke, and a fashion show create a memorable experience designed to celebrate confidence, friendship, and fun.</p>
+                <p data-en="Activities are adapted to the personalities and interests of the guests while encouraging participation in a comfortable and enjoyable environment." data-es="Las actividades se adaptan a las personalidades e intereses de las invitadas, fomentando la participación en un ambiente cómodo y agradable.">Activities are adapted to the personalities and interests of the guests while encouraging participation in a comfortable and enjoyable environment.</p>
+              <h5 data-en="Important Information" data-es="Información Importante">Important Information</h5>
               <ul>
-                <li>Adults are not permitted inside the spa bus once activities begin.</li>
-                <li>Parents or guardians may enter only when necessary.</li>
-                <li>Additional guests are $50 each.</li>
-                <li>Package changes or refunds are not available on the event day.</li>
-                <li>Service duration ranges from 2 hours to 2 hours 30 minutes.</li>
+                <li data-en="Adults are not permitted inside the spa bus once activities begin." data-es="No se permite la entrada de adultos al autobús spa una vez que comienzan las actividades.">Adults are not permitted inside the spa bus once activities begin.</li>
+                <li data-en="Parents or guardians may enter only when necessary." data-es="Los padres o tutores solo podrán ingresar cuando sea estrictamente necesario.">Parents or guardians may enter only when necessary.</li>
+                <li data-en="Additional guests are $50 each." data-es="Las invitadas adicionales tienen un costo de $50 cada una.">Additional guests are $50 each.</li>
+                <li data-en="Package changes or refunds are not available on the event day." data-es="No se realizan cambios de paquete ni reembolsos el día del evento.">Package changes or refunds are not available on the event day.</li>
+                <li data-en="Service duration ranges from 2 hours to 2 hours 30 minutes." data-es="La duración del servicio va de 2 horas a 2 horas 30 minutos.">Service duration ranges from 2 hours to 2 hours 30 minutes.</li>
               </ul>
             </div>
           </div>
@@ -212,7 +216,7 @@
       </article>
 
       <article class="pkg-card">
-        <span class="pkg-badge">★★★ Premium</span>
+        <span class="pkg-badge" data-en="★★★ Premium" data-es="★★★ Premium">★★★ Premium</span>
         <div class="pkg-inner">
 
           <div class="pkg-face pkg-front">
@@ -220,66 +224,66 @@
               <img src="images/cards/coquette.jpg" alt="The Pink Spa Bus — Pink Coquette package card" loading="lazy">
             </div>
             <div class="pkg-body">
-              <h3>Pink Special Package</h3>
-              <div class="pkg-price">Starting at <strong>$1,000</strong> <small>+ Tax</small></div>
-              <p class="pkg-summary">The ultimate Pink Spa Bus celebration for larger groups and unforgettable memories.</p>
+              <h3 data-en="Pink Special Package" data-es="Paquete Pink Special">Pink Special Package</h3>
+              <div class="pkg-price" data-en="Starting at <strong>$1,000</strong> <small>+ Tax</small>" data-es="Desde <strong>$1,000</strong> <small>+ Impuesto</small>">Starting at <strong>$1,000</strong> <small>+ Tax</small></div>
+              <p class="pkg-summary" data-en="The ultimate Pink Spa Bus celebration for larger groups and unforgettable memories." data-es="La celebración más completa de The Pink Spa Bus para grupos grandes y recuerdos inolvidables.">The ultimate Pink Spa Bus celebration for larger groups and unforgettable memories.</p>
               <ul class="pkg-meta">
-                <li><span>Duration</span><strong>2.5 – 3 Hours</strong></li>
-                <li><span>Ages</span><strong>3–12</strong></li>
-                <li><span>Guests</span><strong>Up to 18</strong></li>
-                <li><span>Add'l guest</span><strong>$50 each</strong></li>
+                <li><span data-en="Duration" data-es="Duración">Duration</span><strong data-en="2.5 – 3 Hours" data-es="2.5 – 3 Horas">2.5 – 3 Hours</strong></li>
+                <li><span data-en="Ages" data-es="Edades">Ages</span><strong>3–12</strong></li>
+                <li><span data-en="Guests" data-es="Invitadas">Guests</span><strong data-en="Up to 18" data-es="Hasta 18">Up to 18</strong></li>
+                <li><span data-en="Add'l guest" data-es="Invitada extra">Add'l guest</span><strong data-en="$50 each" data-es="$50 c/u">$50 each</strong></li>
               </ul>
               <ul class="pkg-highlights">
-              <li>Premium Spa Experience</li>
-              <li>Hair &amp; Makeup Station</li>
-              <li>Karaoke &amp; Just Dance</li>
-              <li>Surprise Gift for Birthday Girl</li>
+              <li data-en="Premium Spa Experience" data-es="Experiencia Premium de Spa">Premium Spa Experience</li>
+              <li data-en="Hair &amp; Makeup Station" data-es="Estación de Cabello y Maquillaje">Hair &amp; Makeup Station</li>
+              <li data-en="Karaoke &amp; Just Dance" data-es="Karaoke y Just Dance">Karaoke &amp; Just Dance</li>
+              <li data-en="Surprise Gift for Birthday Girl" data-es="Regalo Sorpresa para la Cumpleañera">Surprise Gift for Birthday Girl</li>
               </ul>
-              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Special%20Package">Book This Package</a>
+              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Special%20Package" data-en="Book This Package" data-es="Reservar Este Paquete">Book This Package</a>
               <button type="button" class="pkg-flip-btn" aria-expanded="false">
-                <span>View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
+                <span data-en="View Full Details" data-es="Ver Detalles Completos">View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
               </button>
             </div>
           </div>
 
           <div class="pkg-face pkg-back" aria-hidden="true">
             <button type="button" class="pkg-back-btn">
-              <span aria-hidden="true">←</span> Back to Package Summary
+              <span aria-hidden="true">←</span> <span data-en="Back to Package Summary" data-es="Volver al Resumen">Back to Package Summary</span>
             </button>
             <div class="pkg-back-scroll">
-              <h4>Pink Special Package</h4>
-              <h5>What's Included</h5>
+              <h4 data-en="Pink Special Package" data-es="Paquete Pink Special">Pink Special Package</h4>
+              <h5 data-en="What's Included" data-es="Qué Incluye">What's Included</h5>
               <ul>
-                <li>Spa robes (for use inside the bus)</li>
-                <li>Spa headbands (for use inside the bus)</li>
-                <li>Facial mask experience</li>
-                <li>Cleansing pads</li>
-                <li>Facial massage</li>
-                <li>Mini manicure</li>
-                <li>Hand massage</li>
-                <li>Fashion accessories</li>
-                <li>Colored hair extensions</li>
-                <li>Hair bows or clips</li>
-                <li>Makeup application</li>
-                <li>Face gems</li>
-                <li>Bracelet and necklace activities</li>
+                <li data-en="Spa robes (for use inside the bus)" data-es="Batas de spa (para uso dentro del autobús)">Spa robes (for use inside the bus)</li>
+                <li data-en="Spa headbands (for use inside the bus)" data-es="Diademas de spa (para uso dentro del autobús)">Spa headbands (for use inside the bus)</li>
+                <li data-en="Facial mask experience" data-es="Experiencia de mascarilla facial">Facial mask experience</li>
+                <li data-en="Cleansing pads" data-es="Almohadillas limpiadoras">Cleansing pads</li>
+                <li data-en="Facial massage" data-es="Masaje facial">Facial massage</li>
+                <li data-en="Mini manicure" data-es="Mini manicura">Mini manicure</li>
+                <li data-en="Hand massage" data-es="Masaje de manos">Hand massage</li>
+                <li data-en="Fashion accessories" data-es="Accesorios de moda">Fashion accessories</li>
+                <li data-en="Colored hair extensions" data-es="Extensiones de cabello de colores">Colored hair extensions</li>
+                <li data-en="Hair bows or clips" data-es="Lazos o clips para el cabello">Hair bows or clips</li>
+                <li data-en="Makeup application" data-es="Aplicación de maquillaje">Makeup application</li>
+                <li data-en="Face gems" data-es="Gemas faciales">Face gems</li>
+                <li data-en="Bracelet and necklace activities" data-es="Actividades de pulseras y collares">Bracelet and necklace activities</li>
                 <li>Karaoke</li>
                 <li>Just Dance</li>
-                <li>Fashion show</li>
-                <li>Surprise gift for the birthday girl</li>
-                <li>Up to 3 hostesses</li>
+                <li data-en="Fashion show" data-es="Desfile de moda">Fashion show</li>
+                <li data-en="Surprise gift for the birthday girl" data-es="Regalo sorpresa para la cumpleañera">Surprise gift for the birthday girl</li>
+                <li data-en="Up to 3 hostesses" data-es="Hasta 3 anfitrionas">Up to 3 hostesses</li>
               </ul>
-              <h5>The Experience</h5>
-                <p>Our most complete spa celebration package provides extended party time and accommodates larger groups while maintaining the signature Pink Spa Bus experience.</p>
-                <p>Guests enjoy mini manicures, facial treatments, hair styling, makeup, creative activities, dancing, karaoke, and a fashion show in a fun, safe, and engaging environment.</p>
-                <p>Each celebration is guided by our team and adapted to the interests of the group.</p>
-              <h5>Important Information</h5>
+              <h5 data-en="The Experience" data-es="La Experiencia">The Experience</h5>
+                <p data-en="Our most complete spa celebration package provides extended party time and accommodates larger groups while maintaining the signature Pink Spa Bus experience." data-es="Nuestro paquete de celebración de spa más completo ofrece más tiempo de fiesta y puede atender grupos más grandes, manteniendo la experiencia característica de The Pink Spa Bus.">Our most complete spa celebration package provides extended party time and accommodates larger groups while maintaining the signature Pink Spa Bus experience.</p>
+                <p data-en="Guests enjoy mini manicures, facial treatments, hair styling, makeup, creative activities, dancing, karaoke, and a fashion show in a fun, safe, and engaging environment." data-es="Las invitadas disfrutan de mini manicuras, tratamientos faciales, peinado, maquillaje, actividades creativas, baile, karaoke y un desfile de moda en un ambiente divertido, seguro y entretenido.">Guests enjoy mini manicures, facial treatments, hair styling, makeup, creative activities, dancing, karaoke, and a fashion show in a fun, safe, and engaging environment.</p>
+                <p data-en="Each celebration is guided by our team and adapted to the interests of the group." data-es="Cada celebración es guiada por nuestro equipo y adaptada a los intereses del grupo.">Each celebration is guided by our team and adapted to the interests of the group.</p>
+              <h5 data-en="Important Information" data-es="Información Importante">Important Information</h5>
               <ul>
-                <li>Adults are not permitted inside the spa bus once activities begin.</li>
-                <li>Parents or guardians may enter only when necessary.</li>
-                <li>Additional guests are $50 each.</li>
-                <li>Package changes or refunds are not available on the event day.</li>
-                <li>Service duration ranges from 2 hours 30 minutes to 3 hours.</li>
+                <li data-en="Adults are not permitted inside the spa bus once activities begin." data-es="No se permite la entrada de adultos al autobús spa una vez que comienzan las actividades.">Adults are not permitted inside the spa bus once activities begin.</li>
+                <li data-en="Parents or guardians may enter only when necessary." data-es="Los padres o tutores solo podrán ingresar cuando sea estrictamente necesario.">Parents or guardians may enter only when necessary.</li>
+                <li data-en="Additional guests are $50 each." data-es="Las invitadas adicionales tienen un costo de $50 cada una.">Additional guests are $50 each.</li>
+                <li data-en="Package changes or refunds are not available on the event day." data-es="No se realizan cambios de paquete ni reembolsos el día del evento.">Package changes or refunds are not available on the event day.</li>
+                <li data-en="Service duration ranges from 2 hours 30 minutes to 3 hours." data-es="La duración del servicio va de 2 horas 30 minutos a 3 horas.">Service duration ranges from 2 hours 30 minutes to 3 hours.</li>
               </ul>
             </div>
           </div>
@@ -289,7 +293,7 @@
 
       <!-- Package 4 — Pink Coquette -->
       <article class="pkg-card pkg-coquette">
-        <span class="pkg-badge">♡ Coquette</span>
+        <span class="pkg-badge" data-en="♡ Coquette" data-es="♡ Coquette">♡ Coquette</span>
         <div class="pkg-inner">
 
           <div class="pkg-face pkg-front">
@@ -297,60 +301,60 @@
               <img src="images/cards/coquette.jpg" alt="The Pink Spa Bus — Pink Coquette package card" loading="lazy">
             </div>
             <div class="pkg-body">
-              <h3>Pink Coquette Package</h3>
-              <div class="pkg-price">Starting at <strong>$559.99</strong> <small>+ Tax</small></div>
-              <p class="pkg-summary">A soft, elegant coquette spa experience — bows, glam and pretty details for the big girls.</p>
+              <h3 data-en="Pink Coquette Package" data-es="Paquete Pink Coquette">Pink Coquette Package</h3>
+              <div class="pkg-price" data-en="Starting at <strong>$559.99</strong> <small>+ Tax</small>" data-es="Desde <strong>$559.99</strong> <small>+ Impuesto</small>">Starting at <strong>$559.99</strong> <small>+ Tax</small></div>
+              <p class="pkg-summary" data-en="A soft, elegant coquette spa experience — bows, glam and pretty details for the big girls." data-es="Una suave y elegante experiencia de spa coquette — lazos, glam y detalles delicados para las niñas más grandes.">A soft, elegant coquette spa experience — bows, glam and pretty details for the big girls.</p>
               <ul class="pkg-meta">
-                <li><span>Duration</span><strong>1.5 – 2 Hours</strong></li>
-                <li><span>Ages</span><strong>10–12</strong></li>
-                <li><span>Guests</span><strong>Up to 8</strong></li>
-                <li><span>Add'l guest</span><strong>$50 each</strong></li>
+                <li><span data-en="Duration" data-es="Duración">Duration</span><strong data-en="1.5 – 2 Hours" data-es="1.5 – 2 Horas">1.5 – 2 Hours</strong></li>
+                <li><span data-en="Ages" data-es="Edades">Ages</span><strong>10–12</strong></li>
+                <li><span data-en="Guests" data-es="Invitadas">Guests</span><strong data-en="Up to 8" data-es="Hasta 8">Up to 8</strong></li>
+                <li><span data-en="Add'l guest" data-es="Invitada extra">Add'l guest</span><strong data-en="$50 each" data-es="$50 c/u">$50 each</strong></li>
               </ul>
               <ul class="pkg-highlights">
-                <li>Spa &amp; Water-Based Facial</li>
-                <li>Hair &amp; Makeup Station</li>
-                <li>Coquette Bows &amp; Accessories</li>
-                <li>Surprise Gift for Birthday Girl</li>
+                <li data-en="Spa &amp; Water-Based Facial" data-es="Spa y Facial con Base de Agua">Spa &amp; Water-Based Facial</li>
+                <li data-en="Hair &amp; Makeup Station" data-es="Estación de Cabello y Maquillaje">Hair &amp; Makeup Station</li>
+                <li data-en="Coquette Bows &amp; Accessories" data-es="Lazos y Accesorios Coquette">Coquette Bows &amp; Accessories</li>
+                <li data-en="Surprise Gift for Birthday Girl" data-es="Regalo Sorpresa para la Cumpleañera">Surprise Gift for Birthday Girl</li>
               </ul>
-              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Coquette%20Package">Book This Package</a>
+              <a class="btn btn-primary pkg-cta" href="contact.html?package=Pink%20Coquette%20Package" data-en="Book This Package" data-es="Reservar Este Paquete">Book This Package</a>
               <button type="button" class="pkg-flip-btn" aria-expanded="false">
-                <span>View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
+                <span data-en="View Full Details" data-es="Ver Detalles Completos">View Full Details</span><span class="pkg-plus" aria-hidden="true">+</span>
               </button>
             </div>
           </div>
 
           <div class="pkg-face pkg-back" aria-hidden="true">
             <button type="button" class="pkg-back-btn">
-              <span aria-hidden="true">←</span> Back to Package Summary
+              <span aria-hidden="true">←</span> <span data-en="Back to Package Summary" data-es="Volver al Resumen">Back to Package Summary</span>
             </button>
             <div class="pkg-back-scroll">
-              <h4>Pink Coquette Package</h4>
-              <h5>What's Included</h5>
+              <h4 data-en="Pink Coquette Package" data-es="Paquete Pink Coquette">Pink Coquette Package</h4>
+              <h5 data-en="What's Included" data-es="Qué Incluye">What's Included</h5>
               <ul>
-                <li>Spa robes (for use inside the bus only)</li>
-                <li>Headbands (for use inside the bus only)</li>
-                <li>Water-based facial mask (non-toxic)</li>
-                <li>Facial cleansing pads + facial massage</li>
-                <li>Mini manicure (we file and polish — we do NOT cut nails)</li>
-                <li>Makeup + face gems</li>
-                <li>DYE accessories</li>
-                <li>Coquette details (hair bows or clips)</li>
-                <li>Bracelet and necklace making</li>
-                <li>Toast with the Guest of Honor</li>
+                <li data-en="Spa robes (for use inside the bus only)" data-es="Batas de spa (solo para uso dentro del autobús)">Spa robes (for use inside the bus only)</li>
+                <li data-en="Headbands (for use inside the bus only)" data-es="Diademas (solo para uso dentro del autobús)">Headbands (for use inside the bus only)</li>
+                <li data-en="Water-based facial mask (non-toxic)" data-es="Mascarilla facial con base de agua (no tóxica)">Water-based facial mask (non-toxic)</li>
+                <li data-en="Facial cleansing pads + facial massage" data-es="Almohadillas limpiadoras + masaje facial">Facial cleansing pads + facial massage</li>
+                <li data-en="Mini manicure (we file and polish — we do NOT cut nails)" data-es="Mini manicura (limamos y pintamos — NO cortamos uñas)">Mini manicure (we file and polish — we do NOT cut nails)</li>
+                <li data-en="Makeup + face gems" data-es="Maquillaje + gemas faciales">Makeup + face gems</li>
+                <li data-en="DYE accessories" data-es="Accesorios DYE">DYE accessories</li>
+                <li data-en="Coquette details (hair bows or clips)" data-es="Detalles coquette (lazos o clips para el cabello)">Coquette details (hair bows or clips)</li>
+                <li data-en="Bracelet and necklace making" data-es="Elaboración de pulseras y collares">Bracelet and necklace making</li>
+                <li data-en="Toast with the Guest of Honor" data-es="Brindis con la Invitada de Honor">Toast with the Guest of Honor</li>
                 <li>Karaoke</li>
-                <li>Surprise gift for the birthday girl</li>
-                <li>Up to 3 hosts included</li>
+                <li data-en="Surprise gift for the birthday girl" data-es="Regalo sorpresa para la cumpleañera">Surprise gift for the birthday girl</li>
+                <li data-en="Up to 3 hosts included" data-es="Hasta 3 anfitrionas incluidas">Up to 3 hosts included</li>
               </ul>
-              <h5>The Experience</h5>
-                <p>Girls will be welcomed aboard the Pink Spa Bus and will enjoy the illusion of a real spa experience. Wearing beautiful spa robes and headbands, they will receive a mini manicure and a relaxing water-based facial mask.</p>
-                <p>During the event, each girl will rotate through the hair and makeup station while the rest of the group participates in an additional activity selected for the day. They will then share fun moments with a toast for the Guest of Honor, karaoke, and other special activities.</p>
-                <p>Activities are carried out spontaneously according to the girls' interests and personalities, always respecting which activities they choose to participate in.</p>
-              <h5>Important Information</h5>
+              <h5 data-en="The Experience" data-es="La Experiencia">The Experience</h5>
+                <p data-en="Girls will be welcomed aboard the Pink Spa Bus and will enjoy the illusion of a real spa experience. Wearing beautiful spa robes and headbands, they will receive a mini manicure and a relaxing water-based facial mask." data-es="Las niñas serán bienvenidas a bordo del The Pink Spa Bus y disfrutarán de la ilusión de una experiencia de spa real. Con hermosas batas de spa y diademas, recibirán una mini manicura y una relajante mascarilla facial con base de agua.">Girls will be welcomed aboard the Pink Spa Bus and will enjoy the illusion of a real spa experience. Wearing beautiful spa robes and headbands, they will receive a mini manicure and a relaxing water-based facial mask.</p>
+                <p data-en="During the event, each girl will rotate through the hair and makeup station while the rest of the group participates in an additional activity selected for the day. They will then share fun moments with a toast for the Guest of Honor, karaoke, and other special activities." data-es="Durante el evento, cada niña rotará por la estación de cabello y maquillaje mientras el resto del grupo participa en una actividad adicional seleccionada para el día. Luego compartirán momentos divertidos con un brindis para la Invitada de Honor, karaoke y otras actividades especiales.">During the event, each girl will rotate through the hair and makeup station while the rest of the group participates in an additional activity selected for the day. They will then share fun moments with a toast for the Guest of Honor, karaoke, and other special activities.</p>
+                <p data-en="Activities are carried out spontaneously according to the girls' interests and personalities, always respecting which activities they choose to participate in." data-es="Las actividades se llevan a cabo de forma espontánea según los intereses y personalidades de las niñas, respetando siempre en qué actividades eligen participar.">Activities are carried out spontaneously according to the girls' interests and personalities, always respecting which activities they choose to participate in.</p>
+              <h5 data-en="Important Information" data-es="Información Importante">Important Information</h5>
               <ul>
-                <li>Adults are not allowed on the spa bus due to comfort and space limitations. Parents or guardians may board only when strictly necessary.</li>
-                <li>Please choose the package that best suits your event. If fewer girls attend on the day than originally paid for, no adjustments or refunds will be made.</li>
-                <li>The service duration ranges from 1 hour 30 minutes to 2 hours.</li>
-                <li>Booking for a larger number of girls? Let us know and we'll be happy to provide options and pricing.</li>
+                <li data-en="Adults are not allowed on the spa bus due to comfort and space limitations. Parents or guardians may board only when strictly necessary." data-es="No se permite la entrada de adultos al autobús spa por comodidad y espacio. Los padres o tutores solo podrán subir a bordo cuando sea estrictamente necesario.">Adults are not allowed on the spa bus due to comfort and space limitations. Parents or guardians may board only when strictly necessary.</li>
+                <li data-en="Please choose the package that best suits your event. If fewer girls attend on the day than originally paid for, no adjustments or refunds will be made." data-es="Por favor elige el paquete que mejor se adapte a tu evento. Si el día del evento asisten menos niñas de las pagadas originalmente, no se realizarán ajustes ni reembolsos.">Please choose the package that best suits your event. If fewer girls attend on the day than originally paid for, no adjustments or refunds will be made.</li>
+                <li data-en="The service duration ranges from 1 hour 30 minutes to 2 hours." data-es="La duración del servicio va de 1 hora 30 minutos a 2 horas.">The service duration ranges from 1 hour 30 minutes to 2 hours.</li>
+                <li data-en="Booking for a larger number of girls? Let us know and we'll be happy to provide options and pricing." data-es="¿Reservas para un grupo más grande? Dinos y con gusto te ofrecemos opciones y precios.">Booking for a larger number of girls? Let us know and we'll be happy to provide options and pricing.</li>
               </ul>
             </div>
           </div>
@@ -367,24 +371,24 @@
 <section class="block alt" id="rentals">
   <div class="container">
     <div class="section-head">
-      <span class="display-italic">— party rentals —</span>
-      <h2>Party <em>Rentals</em>.</h2>
-      <p class="rentals-sub">Add extra fun, seating, and party essentials to your celebration.</p>
+      <span class="display-italic" data-en="— party rentals —" data-es="— alquiler de fiesta —">— party rentals —</span>
+      <h2 data-en="Party <em>Rentals</em>." data-es="Alquiler para <em>Fiestas</em>.">Party <em>Rentals</em>.</h2>
+      <p class="rentals-sub" data-en="Add extra fun, seating, and party essentials to your celebration." data-es="Agrega más diversión, asientos y artículos esenciales para tu celebración.">Add extra fun, seating, and party essentials to your celebration.</p>
       <div class="ornament gold-ornament-rule">
         <span class="line"></span><span class="diamond"></span><span class="line"></span>
       </div>
     </div>
-    <p class="rentals-intro">Make your event even more special with our rental options. From kids tables and chairs to inflatables, games, and sweet party extras, our rentals help complete the full Pink Experience.</p>
+    <p class="rentals-intro" data-en="Make your event even more special with our rental options. From kids tables and chairs to inflatables, games, and sweet party extras, our rentals help complete the full Pink Experience." data-es="Haz tu evento aún más especial con nuestras opciones de alquiler. Desde mesas y sillas infantiles hasta inflables, juegos y dulces extras para la fiesta, nuestros alquileres ayudan a completar la experiencia Pink completa.">Make your event even more special with our rental options. From kids tables and chairs to inflatables, games, and sweet party extras, our rentals help complete the full Pink Experience.</p>
 
     <div class="rentals-grid">
       <article class="rental-card">
         <div class="rental-media"><img src="images/rentals/inflatables.webp" data-full="images/rentals/full/inflatables.webp" alt="Inflatable bounce house rental" loading="lazy"></div>
         <div class="rental-body">
-          <h3>Inflatables</h3>
-          <p>Fun inflatable options for kids' parties, birthdays, and outdoor celebrations.</p>
+          <h3 data-en="Inflatables" data-es="Inflables">Inflatables</h3>
+          <p data-en="Fun inflatable options for kids' parties, birthdays, and outdoor celebrations." data-es="Opciones de inflables divertidas para fiestas infantiles, cumpleaños y celebraciones al aire libre.">Fun inflatable options for kids' parties, birthdays, and outdoor celebrations.</p>
           <div class="rental-foot">
-            <span class="rental-price">Contact for pricing</span>
-            <a class="rental-cta" href="contact.html?rental=Inflatables">Ask About This Rental <span aria-hidden="true">→</span></a>
+            <span class="rental-price" data-en="Contact for pricing" data-es="Consultar precio">Contact for pricing</span>
+            <a class="rental-cta" href="contact.html?rental=Inflatables" data-en="Ask About This Rental <span aria-hidden=&quot;true&quot;>→</span>" data-es="Preguntar por Este Alquiler <span aria-hidden=&quot;true&quot;>→</span>">Ask About This Rental <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </article>
@@ -392,11 +396,11 @@
       <article class="rental-card">
         <div class="rental-media"><img src="images/rentals/kids-chairs.webp" data-full="images/rentals/full/kids-chairs.webp" alt="White kids chairs rental" loading="lazy"></div>
         <div class="rental-body">
-          <h3>Kids Chairs</h3>
-          <p>Comfortable white kids chairs, perfect for birthdays, spa parties, and table setups.</p>
+          <h3 data-en="Kids Chairs" data-es="Sillas para Niños">Kids Chairs</h3>
+          <p data-en="Comfortable white kids chairs, perfect for birthdays, spa parties, and table setups." data-es="Cómodas sillas blancas para niños, perfectas para cumpleaños, fiestas de spa y mesas.">Comfortable white kids chairs, perfect for birthdays, spa parties, and table setups.</p>
           <div class="rental-foot">
             <span class="rental-price">$2 each</span>
-            <a class="rental-cta" href="contact.html?rental=Kids%20Chairs">Ask About This Rental <span aria-hidden="true">→</span></a>
+            <a class="rental-cta" href="contact.html?rental=Kids%20Chairs" data-en="Ask About This Rental <span aria-hidden=&quot;true&quot;>→</span>" data-es="Preguntar por Este Alquiler <span aria-hidden=&quot;true&quot;>→</span>">Ask About This Rental <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </article>
@@ -404,11 +408,11 @@
       <article class="rental-card">
         <div class="rental-media"><img src="images/rentals/kids-tables.webp" data-full="images/rentals/full/kids-tables.webp" alt="Kids tables rental" loading="lazy"></div>
         <div class="rental-body">
-          <h3>Kids Tables</h3>
-          <p>Kid-friendly tables for food, activities, crafts, and party setups.</p>
+          <h3 data-en="Kids Tables" data-es="Mesas para Niños">Kids Tables</h3>
+          <p data-en="Kid-friendly tables for food, activities, crafts, and party setups." data-es="Mesas aptas para niños, ideales para comida, actividades, manualidades y decoración de fiesta.">Kid-friendly tables for food, activities, crafts, and party setups.</p>
           <div class="rental-foot">
             <span class="rental-price">$6 each</span>
-            <a class="rental-cta" href="contact.html?rental=Kids%20Tables">Ask About This Rental <span aria-hidden="true">→</span></a>
+            <a class="rental-cta" href="contact.html?rental=Kids%20Tables" data-en="Ask About This Rental <span aria-hidden=&quot;true&quot;>→</span>" data-es="Preguntar por Este Alquiler <span aria-hidden=&quot;true&quot;>→</span>">Ask About This Rental <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </article>
@@ -416,11 +420,11 @@
       <article class="rental-card">
         <div class="rental-media"><img src="images/rentals/cocktail-table.webp" data-full="images/rentals/full/cocktail-table.webp" alt="Cocktail high table rental" loading="lazy"></div>
         <div class="rental-body">
-          <h3>Cocktail High Table</h3>
-          <p>A stylish high table option for decorations, treats, drinks, or event display areas.</p>
+          <h3 data-en="Cocktail High Table" data-es="Mesa Alta Coctelera">Cocktail High Table</h3>
+          <p data-en="A stylish high table option for decorations, treats, drinks, or event display areas." data-es="Una elegante mesa alta para decoraciones, dulces, bebidas o zonas de exhibición del evento.">A stylish high table option for decorations, treats, drinks, or event display areas.</p>
           <div class="rental-foot">
             <span class="rental-price">$10 each</span>
-            <a class="rental-cta" href="contact.html?rental=Cocktail%20High%20Table">Ask About This Rental <span aria-hidden="true">→</span></a>
+            <a class="rental-cta" href="contact.html?rental=Cocktail%20High%20Table" data-en="Ask About This Rental <span aria-hidden=&quot;true&quot;>→</span>" data-es="Preguntar por Este Alquiler <span aria-hidden=&quot;true&quot;>→</span>">Ask About This Rental <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </article>
@@ -428,11 +432,11 @@
       <article class="rental-card">
         <div class="rental-media"><img src="images/rentals/adult-chairs.webp" data-full="images/rentals/full/adult-chairs.webp" alt="Adult chairs rental" loading="lazy"></div>
         <div class="rental-body">
-          <h3>Adult Chairs</h3>
-          <p>Clean and elegant seating options for parents, family members, and guests.</p>
+          <h3 data-en="Adult Chairs" data-es="Sillas para Adultos">Adult Chairs</h3>
+          <p data-en="Clean and elegant seating options for parents, family members, and guests." data-es="Opciones de asiento limpias y elegantes para padres, familiares e invitados.">Clean and elegant seating options for parents, family members, and guests.</p>
           <div class="rental-foot">
             <span class="rental-price">$4 each</span>
-            <a class="rental-cta" href="contact.html?rental=Adult%20Chairs">Ask About This Rental <span aria-hidden="true">→</span></a>
+            <a class="rental-cta" href="contact.html?rental=Adult%20Chairs" data-en="Ask About This Rental <span aria-hidden=&quot;true&quot;>→</span>" data-es="Preguntar por Este Alquiler <span aria-hidden=&quot;true&quot;>→</span>">Ask About This Rental <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </article>
@@ -440,11 +444,11 @@
       <article class="rental-card">
         <div class="rental-media"><img src="images/rentals/pancakes-cart.webp" data-full="images/rentals/full/pancakes-cart.webp" alt="Mini pancakes cart rental" loading="lazy"></div>
         <div class="rental-body">
-          <h3>Mini Pancakes Cart</h3>
-          <p>A sweet party add-on that brings a fun dessert-style experience to your celebration.</p>
+          <h3 data-en="Mini Pancakes Cart" data-es="Carrito de Mini Pancakes">Mini Pancakes Cart</h3>
+          <p data-en="A sweet party add-on that brings a fun dessert-style experience to your celebration." data-es="Un delicioso complemento para la fiesta que trae una divertida experiencia estilo postre a tu celebración.">A sweet party add-on that brings a fun dessert-style experience to your celebration.</p>
           <div class="rental-foot">
-            <span class="rental-price">Contact for pricing</span>
-            <a class="rental-cta" href="contact.html?rental=Mini%20Pancakes%20Cart">Ask About This Rental <span aria-hidden="true">→</span></a>
+            <span class="rental-price" data-en="Contact for pricing" data-es="Consultar precio">Contact for pricing</span>
+            <a class="rental-cta" href="contact.html?rental=Mini%20Pancakes%20Cart" data-en="Ask About This Rental <span aria-hidden=&quot;true&quot;>→</span>" data-es="Preguntar por Este Alquiler <span aria-hidden=&quot;true&quot;>→</span>">Ask About This Rental <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </article>
@@ -452,25 +456,25 @@
       <article class="rental-card">
         <div class="rental-media"><img src="images/rentals/kids-games.webp" data-full="images/rentals/full/kids-games.webp" alt="Kids party games rental" loading="lazy"></div>
         <div class="rental-body">
-          <h3>Kids Party Games</h3>
-          <p>Fun games for mixed kids' parties, perfect for boys and girls to enjoy together.</p>
+          <h3 data-en="Kids Party Games" data-es="Juegos para Fiestas Infantiles">Kids Party Games</h3>
+          <p data-en="Fun games for mixed kids' parties, perfect for boys and girls to enjoy together." data-es="Juegos divertidos para fiestas mixtas, perfectos para que niños y niñas disfruten juntos.">Fun games for mixed kids' parties, perfect for boys and girls to enjoy together.</p>
           <div class="rental-foot">
-            <span class="rental-price">Contact for pricing</span>
-            <a class="rental-cta" href="contact.html?rental=Kids%20Party%20Games">Ask About This Rental <span aria-hidden="true">→</span></a>
+            <span class="rental-price" data-en="Contact for pricing" data-es="Consultar precio">Contact for pricing</span>
+            <a class="rental-cta" href="contact.html?rental=Kids%20Party%20Games" data-en="Ask About This Rental <span aria-hidden=&quot;true&quot;>→</span>" data-es="Preguntar por Este Alquiler <span aria-hidden=&quot;true&quot;>→</span>">Ask About This Rental <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </article>
     </div>
 
     <div class="rentals-features">
-      <div class="rfeat"><span class="rfeat-dot"></span><strong>Clean &amp; Safe</strong><span class="rfeat-sub">Sanitized before every event</span></div>
-      <div class="rfeat"><span class="rfeat-dot"></span><strong>Pickup &amp; Delivery</strong><span class="rfeat-sub">Convenient and on time</span></div>
-      <div class="rfeat"><span class="rfeat-dot"></span><strong>Perfect for Any Event</strong><span class="rfeat-sub">Birthdays, parties, and more</span></div>
+      <div class="rfeat"><span class="rfeat-dot"></span><strong data-en="Clean &amp; Safe" data-es="Limpio y Seguro">Clean &amp; Safe</strong><span class="rfeat-sub" data-en="Sanitized before every event" data-es="Desinfectado antes de cada evento">Sanitized before every event</span></div>
+      <div class="rfeat"><span class="rfeat-dot"></span><strong data-en="Pickup &amp; Delivery" data-es="Recogida y Entrega">Pickup &amp; Delivery</strong><span class="rfeat-sub" data-en="Convenient and on time" data-es="Conveniente y puntual">Convenient and on time</span></div>
+      <div class="rfeat"><span class="rfeat-dot"></span><strong data-en="Perfect for Any Event" data-es="Ideal para Cualquier Evento">Perfect for Any Event</strong><span class="rfeat-sub" data-en="Birthdays, parties, and more" data-es="Cumpleaños, fiestas y más">Birthdays, parties, and more</span></div>
     </div>
 
     <div class="rentals-note">
-      <p>Interested in adding rentals to your party? Contact us and tell us which items you would like to include.</p>
-      <a class="btn btn-primary" href="contact.html">Ask About Rentals</a>
+      <p data-en="Interested in adding rentals to your party? Contact us and tell us which items you would like to include." data-es="¿Te interesa agregar alquileres a tu fiesta? Contáctanos y dinos qué artículos te gustaría incluir.">Interested in adding rentals to your party? Contact us and tell us which items you would like to include.</p>
+      <a class="btn btn-primary" href="contact.html" data-en="Ask About Rentals" data-es="Preguntar por Alquileres">Ask About Rentals</a>
     </div>
   </div>
 </section>
@@ -479,11 +483,11 @@
 <section class="poster" id="poster">
   <div class="container">
     <svg class="ornament" viewBox="0 0 200 8"><line x1="0" y1="4" x2="86" y2="4" stroke="currentColor" stroke-width="1"/><polygon points="100,0 108,4 100,8 92,4" fill="currentColor"/><line x1="114" y1="4" x2="200" y2="4" stroke="currentColor" stroke-width="1"/></svg>
-    <h2>Create magical<br>memories <em>today</em>.</h2>
-    <p>Reserve a date and our hostess will reach out personally to plan every detail of the programme.</p>
+    <h2 data-en="Create magical<br>memories <em>today</em>." data-es="Crea recuerdos<br>mágicos <em>hoy</em>.">Create magical<br>memories <em>today</em>.</h2>
+    <p data-en="Reserve a date and our hostess will reach out personally to plan every detail of the programme." data-es="Reserva una fecha y nuestra anfitriona se comunicará personalmente para planificar cada detalle del programa.">Reserve a date and our hostess will reach out personally to plan every detail of the programme.</p>
     <div class="actions">
-      <a href="contact.html" class="btn btn-primary">Reserve a Date</a>
-      <a href="contact.html" class="btn btn-ink">Speak with the Team</a>
+      <a href="contact.html" class="btn btn-primary" data-en="Reserve a Date" data-es="Reservar una Fecha">Reserve a Date</a>
+      <a href="contact.html" class="btn btn-ink" data-en="Speak with the Team" data-es="Hablar con el Equipo">Speak with the Team</a>
     </div>
   </div>
 </section>
@@ -498,14 +502,14 @@
       <h3 id="rmodalTitle"></h3>
       <span class="rmodal-price" id="rmodalPrice"></span>
       <p id="rmodalDesc"></p>
-      <a class="btn btn-primary" href="contact.html">Ask About This Rental</a>
+      <a class="btn btn-primary" href="contact.html" data-en="Ask About This Rental" data-es="Preguntar por Este Alquiler">Ask About This Rental</a>
     </div>
   </div>
 </div>
 
 <!-- ===== floating mobile cta ===== -->
 <div class="floating-cta">
-  <a href="contact.html" class="btn btn-primary">Reserve a Party</a>
+  <a href="contact.html" class="btn btn-primary" data-en="Reserve a Party" data-es="Reservar una Fiesta">Reserve a Party</a>
 </div>
 
 <!-- ===== floating whatsapp FAB ===== -->
@@ -522,7 +526,7 @@
         <div class="brand-row">
           <img class="brand-logo" src="images/logo.png" alt="The Pink Spa Bus · Party Mobile">
         </div>
-        <p>A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour.</p>
+        <p data-en="A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour." data-es="Un autobús spa móvil para celebraciones infantiles en todo Central Florida. Llegamos con todo — el glam, los productos y una anfitriona que trata a cada invitada como la invitada de honor.">A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour.</p>
         <div class="socials">
           <a href="https://instagram.com/thepinkspabus" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -536,27 +540,27 @@
         </div>
       </div>
       <div>
-        <h6>Explore</h6>
+        <h6 data-en="Explore" data-es="Explorar">Explore</h6>
         <ul>
-          <li><a href="index.html">The Experience</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="packages.html">Services</a></li>
+          <li><a href="index.html" data-en="The Experience" data-es="La Experiencia">The Experience</a></li>
+          <li><a href="about.html" data-en="About us" data-es="Nosotros">About us</a></li>
+          <li><a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a></li>
+          <li><a href="packages.html" data-en="Services" data-es="Paquetes">Services</a></li>
         </ul>
       </div>
       <div>
-        <h6>Reserve</h6>
+        <h6 data-en="Reserve" data-es="Reservar">Reserve</h6>
         <ul>
-          <li><a href="disclosure.html">Disclosure Form</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="disclosure.html" data-en="Disclosure Form" data-es="Formulario de Aviso">Disclosure Form</a></li>
+          <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
           <li><a href="tel:+18632967303">+1 (863) 296-7303</a></li>
           <li><a href="mailto:thepinkspabus@gmail.com">thepinkspabus@gmail.com</a></li>
         </ul>
       </div>
     </div>
     <div class="bottom">
-      <div>© 2026 The Pink Spa Bus <span class="dot">·</span> All rights reserved</div>
-      <div>Central Florida <span class="dot">·</span> Mobile Spa Bus <span class="dot">·</span> Glamour, Fun, Amazing Moments</div>
+      <div data-en="© 2026 The Pink Spa Bus <span class=&quot;dot&quot;>·</span> All rights reserved" data-es="© 2026 The Pink Spa Bus <span class=&quot;dot&quot;>·</span> Todos los derechos reservados">© 2026 The Pink Spa Bus <span class="dot">·</span> All rights reserved</div>
+      <div data-en="Central Florida <span class=&quot;dot&quot;>·</span> Mobile Spa Bus <span class=&quot;dot&quot;>·</span> Glamour, Fun, Amazing Moments" data-es="Central Florida <span class=&quot;dot&quot;>·</span> Autobús Spa Móvil <span class=&quot;dot&quot;>·</span> Glamour, Diversión, Momentos Increíbles">Central Florida <span class="dot">·</span> Mobile Spa Bus <span class="dot">·</span> Glamour, Fun, Amazing Moments</div>
     </div>
   </div>
 </footer>

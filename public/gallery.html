@@ -33,14 +33,18 @@
       <img class="brand-logo" src="images/logo.png" alt="The Pink Spa Bus · Party Mobile">
     </a>
         <ul>
-      <li><a href="index.html">The Experience</a></li>
-      <li><a href="about.html">About us</a></li>
-      <li><a class="active" href="gallery.html">Gallery</a></li>
-      <li><a href="packages.html">Services</a></li>
-      <li><a href="disclosure.html">Disclosure</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html" data-en="The Experience" data-es="La Experiencia">The Experience</a></li>
+      <li><a href="about.html" data-en="About us" data-es="Nosotros">About us</a></li>
+      <li><a class="active" href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a></li>
+      <li><a href="packages.html" data-en="Services" data-es="Paquetes">Services</a></li>
+      <li><a href="disclosure.html" data-en="Disclosure" data-es="Aviso">Disclosure</a></li>
+      <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
     </ul>
-    <a href="contact.html" class="rsvp">Reserve</a>
+    <a href="contact.html" class="rsvp" data-en="Reserve" data-es="Reservar">Reserve</a>
+    <div class="lang-toggle" role="tablist">
+      <button class="active" data-lang="en" onclick="setLang('en')">English</button>
+      <button data-lang="es" onclick="setLang('es')">Español</button>
+    </div>
     <button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('nav').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
@@ -52,7 +56,7 @@
 
     <!-- Gallery 1: Our Events -->
     <div class="section-head">
-      <h2>Our <em>Events</em>.</h2>
+      <h2 data-en="Our <em>Events</em>." data-es="Nuestros <em>Eventos</em>.">Our <em>Events</em>.</h2>
       <div class="ornament gold-ornament-rule">
         <span class="line"></span><span class="diamond"></span><span class="line"></span>
       </div>
@@ -61,7 +65,7 @@
     <div class="ugal" data-count="31" data-path="images/gallery">
       <div class="ugal-stage">
         <img class="ugal-bg" alt="" aria-hidden="true">
-        <img class="ugal-featured" alt="The Pink Spa Bus event photo">
+        <img class="ugal-featured" alt="The Pink Spa Bus event photo" data-en="The Pink Spa Bus event photo" data-es="Foto de evento de The Pink Spa Bus">
         <button class="ugal-nav prev" type="button" aria-label="Previous photo">‹</button>
         <button class="ugal-nav next" type="button" aria-label="Next photo">›</button>
         <button class="ugal-toggle" type="button" aria-label="Pause slideshow">
@@ -74,7 +78,7 @@
 
     <!-- Gallery 2: Pink Coquette Package — images/gallery/coquette/large|thumb/NN.webp -->
     <div class="section-head" style="margin-top:80px">
-      <h2>Pink Coquette <em>Package</em>.</h2>
+      <h2 data-en="Pink Coquette <em>Package</em>." data-es="Paquete Pink <em>Coquette</em>.">Pink Coquette <em>Package</em>.</h2>
       <div class="ornament gold-ornament-rule">
         <span class="line"></span><span class="diamond"></span><span class="line"></span>
       </div>
@@ -82,7 +86,7 @@
     <div class="ugal" data-count="6" data-path="images/gallery/coquette">
       <div class="ugal-stage">
         <img class="ugal-bg" alt="" aria-hidden="true">
-        <img class="ugal-featured" alt="Pink Coquette Package photo">
+        <img class="ugal-featured" alt="Pink Coquette Package photo" data-en="Pink Coquette Package photo" data-es="Foto del Paquete Pink Coquette">
         <button class="ugal-nav prev" type="button" aria-label="Previous photo">‹</button>
         <button class="ugal-nav next" type="button" aria-label="Next photo">›</button>
         <button class="ugal-toggle" type="button" aria-label="Pause slideshow">
@@ -100,17 +104,17 @@
 <section class="poster" id="poster">
   <div class="container">
     <svg class="ornament" viewBox="0 0 200 8"><line x1="0" y1="4" x2="86" y2="4" stroke="currentColor" stroke-width="1"/><polygon points="100,0 108,4 100,8 92,4" fill="currentColor"/><line x1="114" y1="4" x2="200" y2="4" stroke="currentColor" stroke-width="1"/></svg>
-    <h2>Create magical<br>memories <em>today</em>.</h2>
-    <p>Reserve a date and our hostess will reach out personally to plan every detail of the programme.</p>
+    <h2 data-en="Create magical<br>memories <em>today</em>." data-es="Crea recuerdos<br>mágicos <em>hoy</em>.">Create magical<br>memories <em>today</em>.</h2>
+    <p data-en="Reserve a date and our hostess will reach out personally to plan every detail of the programme." data-es="Reserva una fecha y nuestra anfitriona se comunicará personalmente para planificar cada detalle del programa.">Reserve a date and our hostess will reach out personally to plan every detail of the programme.</p>
     <div class="actions">
-      <a href="contact.html" class="btn btn-primary">Reserve a Date</a>
-      <a href="contact.html" class="btn btn-ink">Speak with the Team</a>
+      <a href="contact.html" class="btn btn-primary" data-en="Reserve a Date" data-es="Reservar una Fecha">Reserve a Date</a>
+      <a href="contact.html" class="btn btn-ink" data-en="Speak with the Team" data-es="Hablar con el Equipo">Speak with the Team</a>
     </div>
   </div>
 </section>
 <!-- ===== floating mobile cta ===== -->
 <div class="floating-cta">
-  <a href="contact.html" class="btn btn-primary">Reserve a Party</a>
+  <a href="contact.html" class="btn btn-primary" data-en="Reserve a Party" data-es="Reservar una Fiesta">Reserve a Party</a>
 </div>
 
 <!-- ===== floating whatsapp FAB ===== -->
@@ -127,7 +131,7 @@
         <div class="brand-row">
           <img class="brand-logo" src="images/logo.png" alt="The Pink Spa Bus · Party Mobile">
         </div>
-        <p>A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour.</p>
+        <p data-en="A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour." data-es="Un autobús spa móvil para celebraciones infantiles en todo Central Florida. Llegamos con todo — el glam, los productos y una anfitriona que trata a cada invitada como la invitada de honor.">A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour.</p>
         <div class="socials">
           <a href="https://instagram.com/thepinkspabus" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -141,27 +145,27 @@
         </div>
       </div>
       <div>
-        <h6>Explore</h6>
+        <h6 data-en="Explore" data-es="Explorar">Explore</h6>
         <ul>
-          <li><a href="index.html">The Experience</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="packages.html">Services</a></li>
+          <li><a href="index.html" data-en="The Experience" data-es="La Experiencia">The Experience</a></li>
+          <li><a href="about.html" data-en="About us" data-es="Nosotros">About us</a></li>
+          <li><a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a></li>
+          <li><a href="packages.html" data-en="Services" data-es="Paquetes">Services</a></li>
         </ul>
       </div>
       <div>
-        <h6>Reserve</h6>
+        <h6 data-en="Reserve" data-es="Reservar">Reserve</h6>
         <ul>
-          <li><a href="disclosure.html">Disclosure Form</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="disclosure.html" data-en="Disclosure Form" data-es="Formulario de Aviso">Disclosure Form</a></li>
+          <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
           <li><a href="tel:+18632967303">+1 (863) 296-7303</a></li>
           <li><a href="mailto:thepinkspabus@gmail.com">thepinkspabus@gmail.com</a></li>
         </ul>
       </div>
     </div>
     <div class="bottom">
-      <div>© 2026 The Pink Spa Bus <span class="dot">·</span> All rights reserved</div>
-      <div>Central Florida <span class="dot">·</span> Mobile Spa Bus <span class="dot">·</span> Glamour, Fun, Amazing Moments</div>
+      <div data-en="© 2026 The Pink Spa Bus <span class=&quot;dot&quot;>·</span> All rights reserved" data-es="© 2026 The Pink Spa Bus <span class=&quot;dot&quot;>·</span> Todos los derechos reservados">© 2026 The Pink Spa Bus <span class="dot">·</span> All rights reserved</div>
+      <div data-en="Central Florida <span class=&quot;dot&quot;>·</span> Mobile Spa Bus <span class=&quot;dot&quot;>·</span> Glamour, Fun, Amazing Moments" data-es="Central Florida <span class=&quot;dot&quot;>·</span> Autobús Spa Móvil <span class=&quot;dot&quot;>·</span> Glamour, Diversión, Momentos Increíbles">Central Florida <span class="dot">·</span> Mobile Spa Bus <span class="dot">·</span> Glamour, Fun, Amazing Moments</div>
     </div>
   </div>
 </footer>

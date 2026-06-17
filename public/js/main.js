@@ -13,12 +13,23 @@
   function setLang(lang){
     document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
     document.querySelectorAll('[data-en]').forEach(el=>{
-      const txt = el.dataset[lang]; if(txt!==undefined) el.innerHTML = txt;
+      const txt = el.dataset[lang]; if(txt===undefined) return;
+      const tag = el.tagName;
+      if(tag==='INPUT'||tag==='TEXTAREA'){
+        el.placeholder = txt;
+      } else if(tag==='IMG'){
+        el.alt = txt;
+      } else {
+        el.innerHTML = txt;
+      }
     });
     document.documentElement.lang = lang;
     currentLang = lang;
+    localStorage.setItem('lang', lang);
   }
   let currentLang = 'en';
+  // restore persisted language on page load
+  (function(){ const saved = localStorage.getItem('lang'); if(saved==='en'||saved==='es') setLang(saved); })();
 
   // multi-step form
   function goStep(n){

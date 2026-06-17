@@ -33,14 +33,18 @@
       <img class="brand-logo" src="images/logo.png" alt="The Pink Spa Bus · Party Mobile">
     </a>
         <ul>
-      <li><a class="active" href="index.html">The Experience</a></li>
-      <li><a href="about.html">About us</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="packages.html">Services</a></li>
-      <li><a href="disclosure.html">Disclosure</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a class="active" href="index.html" data-en="The Experience" data-es="La Experiencia">The Experience</a></li>
+      <li><a href="about.html" data-en="About us" data-es="Nosotros">About us</a></li>
+      <li><a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a></li>
+      <li><a href="packages.html" data-en="Services" data-es="Paquetes">Services</a></li>
+      <li><a href="disclosure.html" data-en="Disclosure" data-es="Aviso">Disclosure</a></li>
+      <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
     </ul>
-    <a href="contact.html" class="rsvp">Reserve</a>
+    <a href="contact.html" class="rsvp" data-en="Reserve" data-es="Reservar">Reserve</a>
+    <div class="lang-toggle" role="tablist">
+      <button class="active" data-lang="en" onclick="setLang('en')">English</button>
+      <button data-lang="es" onclick="setLang('es')">Español</button>
+    </div>
     <button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('nav').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
@@ -56,7 +60,7 @@
   </div>
   <div class="container">
     <div class="hero-content">
-      <h1>Spa parties they'll<br>never <em>forget</em>.</h1>
+      <h1 data-en="Spa parties they'll<br>never <em>forget</em>." data-es="Fiestas de spa que nunca<br><em>olvidarán</em>.">Spa parties they'll<br>never <em>forget</em>.</h1>
     </div>
   </div>
 </section>
@@ -64,10 +68,10 @@
 <!-- ===== hero content bar (below the big image) ===== -->
 <div class="hero-bar-wrap">
   <div class="container hero-bar">
-    <p class="hero-lede">A luxury mobile spa experience inside a real pink spa bus — glam mirror stations, makeovers, manicures &amp; music, parked right at your door.</p>
+    <p class="hero-lede" data-en="A luxury mobile spa experience inside a real pink spa bus — glam mirror stations, makeovers, manicures &amp; music, parked right at your door." data-es="Una lujosa experiencia de spa móvil dentro de un autobús spa rosa de verdad — estaciones glam con espejos, maquillaje, manicuras y música, estacionado frente a tu puerta.">A luxury mobile spa experience inside a real pink spa bus — glam mirror stations, makeovers, manicures &amp; music, parked right at your door.</p>
     <div class="hero-bar-actions">
       <a class="hero-quote" href="contact.html">
-        <span>Book My Party</span>
+        <span data-en="Book My Party" data-es="Reservar Mi Fiesta">Book My Party</span>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <div class="hero-proof">
@@ -76,7 +80,7 @@
           <img src="images/gallery/thumb/08.webp" alt="" loading="lazy">
           <img src="images/gallery/thumb/15.webp" alt="" loading="lazy">
         </div>
-        <div class="hero-stat"><strong>Up to 20</strong><span>guests per party</span></div>
+        <div class="hero-stat"><strong data-en="Up to 20" data-es="Hasta 20">Up to 20</strong><span data-en="guests per party" data-es="invitadas por fiesta">guests per party</span></div>
       </div>
     </div>
   </div>
@@ -85,13 +89,13 @@
 <!-- ===== trust strip ===== -->
 <div class="trust">
   <div class="container">
-    <span class="trust-item">Mobile Spa Experience</span>
+    <span class="trust-item" data-en="Mobile Spa Experience" data-es="Experiencia de Spa Móvil">Mobile Spa Experience</span>
     <span class="trust-dot"></span>
-    <span class="trust-item">Birthday Parties</span>
+    <span class="trust-item" data-en="Birthday Parties" data-es="Fiestas de Cumpleaños">Birthday Parties</span>
     <span class="trust-dot"></span>
-    <span class="trust-item">Safe &amp; Fun Environment</span>
+    <span class="trust-item" data-en="Safe &amp; Fun Environment" data-es="Ambiente Seguro y Divertido">Safe &amp; Fun Environment</span>
     <span class="trust-dot"></span>
-    <span class="trust-item">Professional Staff</span>
+    <span class="trust-item" data-en="Professional Staff" data-es="Personal Profesional">Professional Staff</span>
   </div>
 </div>
 
@@ -101,22 +105,22 @@
     <div class="experience">
       <div class="panel" style="background:none; border:0">
         <div class="exp-carousel" id="expCarousel">
-          <img class="exp-slide is-active" src="images/experience/01.jpg" alt="Inside the Pink Spa Bus — glam mirror stations">
-          <img class="exp-slide" src="images/experience/03.jpg" alt="Step aboard — the pink entrance" loading="lazy">
+          <img class="exp-slide is-active" src="images/experience/01.jpg" alt="Inside the Pink Spa Bus — glam mirror stations" data-en="Inside the Pink Spa Bus — glam mirror stations" data-es="Dentro del The Pink Spa Bus — estaciones glam con espejos">
+          <img class="exp-slide" src="images/experience/03.jpg" alt="Step aboard — the pink entrance" loading="lazy" data-en="Step aboard — the pink entrance" data-es="Sube a bordo — la entrada rosa">
         </div>
       </div>
       <div class="vrule"></div>
       <div>
-        <span class="display-italic" style="color:var(--secondary)">— the experience —</span>
-        <h3>What it feels like<br>to be the <em>guest of honour</em>.</h3>
-        <p>From the moment we arrive, the guest of honour and her friends step into a world arranged just for them — soft robes, a glam table set with their names, and a hostess who treats every detail like a couture appointment.</p>
-        <p>Every programme is paced for children — gentle, age-appropriate, and ends on a photo moment to keep.</p>
-        <p>The Pink Spa Bus is a unique experience on wheels, designed to transform any celebration into a magical, glamorous occasion. This innovative pink bus is not just a vehicle, but a world of sparkle, fun, and style, where girls can enjoy an unforgettable spa experience in a themed, fantasy-filled setting.</p>
+        <span class="display-italic" style="color:var(--secondary)" data-en="— the experience —" data-es="— la experiencia —">— the experience —</span>
+        <h3 data-en="What it feels like<br>to be the <em>guest of honour</em>." data-es="Lo que se siente<br>ser la <em>invitada de honor</em>.">What it feels like<br>to be the <em>guest of honour</em>.</h3>
+        <p data-en="From the moment we arrive, the guest of honour and her friends step into a world arranged just for them — soft robes, a glam table set with their names, and a hostess who treats every detail like a couture appointment." data-es="Desde el momento en que llegamos, la invitada de honor y sus amigas entran a un mundo creado solo para ellas — batas suaves, una mesa glam con sus nombres y una anfitriona que cuida cada detalle como si fuera una cita de alta costura.">From the moment we arrive, the guest of honour and her friends step into a world arranged just for them — soft robes, a glam table set with their names, and a hostess who treats every detail like a couture appointment.</p>
+        <p data-en="Every programme is paced for children — gentle, age-appropriate, and ends on a photo moment to keep." data-es="Cada programa está pensado para niñas — suave, adecuado para su edad, y termina con un momento de fotos para recordar.">Every programme is paced for children — gentle, age-appropriate, and ends on a photo moment to keep.</p>
+        <p data-en="The Pink Spa Bus is a unique experience on wheels, designed to transform any celebration into a magical, glamorous occasion. This innovative pink bus is not just a vehicle, but a world of sparkle, fun, and style, where girls can enjoy an unforgettable spa experience in a themed, fantasy-filled setting." data-es="The Pink Spa Bus es una experiencia única sobre ruedas, diseñada para transformar cualquier celebración en una ocasión mágica y glamorosa. Este innovador autobús rosa no es solo un vehículo, sino un mundo de brillos, diversión y estilo, donde las niñas pueden disfrutar de una experiencia de spa inolvidable en un ambiente temático lleno de fantasía.">The Pink Spa Bus is a unique experience on wheels, designed to transform any celebration into a magical, glamorous occasion. This innovative pink bus is not just a vehicle, but a world of sparkle, fun, and style, where girls can enjoy an unforgettable spa experience in a themed, fantasy-filled setting.</p>
         <ul class="points">
-          <li>Personalised welcome &amp; named glam stations</li>
-          <li>Age-appropriate, child-safe products only</li>
-          <li>Trained party hostess on-site for every booking</li>
-          <li>Take-home keepsakes for every guest</li>
+          <li data-en="Personalised welcome &amp; named glam stations" data-es="Bienvenida personalizada y estaciones glam con nombres">Personalised welcome &amp; named glam stations</li>
+          <li data-en="Age-appropriate, child-safe products only" data-es="Solo productos adecuados para la edad y seguros para niñas">Age-appropriate, child-safe products only</li>
+          <li data-en="Trained party hostess on-site for every booking" data-es="Anfitriona de fiesta capacitada en el lugar para cada reservación">Trained party hostess on-site for every booking</li>
+          <li data-en="Take-home keepsakes for every guest" data-es="Recuerdos para llevar a casa para cada invitada">Take-home keepsakes for every guest</li>
         </ul>
       </div>
     </div>
@@ -134,8 +138,8 @@
      duplicates the row for a seamless loop, so just edit these 8 cards. -->
 <section class="reviews" aria-label="Customer reviews">
   <div class="container reviews-head">
-    <h3>Loved by <em>families</em></h3>
-    <a class="reviews-link" href="https://www.google.com/search?q=The+Pink+Spa+Bus+reviews" target="_blank" rel="noopener">★★★★★ &nbsp;See us on Google</a>
+    <h3 data-en="Loved by <em>families</em>" data-es="El amor de las <em>familias</em>">Loved by <em>families</em></h3>
+    <a class="reviews-link" href="https://www.google.com/search?q=The+Pink+Spa+Bus+reviews" target="_blank" rel="noopener" data-en="★★★★★ &nbsp;See us on Google" data-es="★★★★★ &nbsp;Véanos en Google">★★★★★ &nbsp;See us on Google</a>
   </div>
   <div class="reviews-marquee">
     <div class="reviews-track">
@@ -185,7 +189,7 @@
 
 <!-- ===== floating mobile cta ===== -->
 <div class="floating-cta">
-  <a href="contact.html" class="btn btn-primary">Reserve a Party</a>
+  <a href="contact.html" class="btn btn-primary" data-en="Reserve a Party" data-es="Reservar una Fiesta">Reserve a Party</a>
 </div>
 
 <!-- ===== floating whatsapp FAB ===== -->
@@ -202,7 +206,7 @@
         <div class="brand-row">
           <img class="brand-logo" src="images/logo.png" alt="The Pink Spa Bus · Party Mobile">
         </div>
-        <p>A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour.</p>
+        <p data-en="A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour." data-es="Un autobús spa móvil para celebraciones infantiles en todo Central Florida. Llegamos con todo — el glam, los productos y una anfitriona que trata a cada invitada como la invitada de honor.">A mobile spa bus for children's celebrations across Central Florida. We arrive with everything — the glam, the products, and a hostess who treats every guest like the guest of honour.</p>
         <div class="socials">
           <a href="https://instagram.com/thepinkspabus" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -216,27 +220,27 @@
         </div>
       </div>
       <div>
-        <h6>Explore</h6>
+        <h6 data-en="Explore" data-es="Explorar">Explore</h6>
         <ul>
-          <li><a href="index.html">The Experience</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="packages.html">Services</a></li>
+          <li><a href="index.html" data-en="The Experience" data-es="La Experiencia">The Experience</a></li>
+          <li><a href="about.html" data-en="About us" data-es="Nosotros">About us</a></li>
+          <li><a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a></li>
+          <li><a href="packages.html" data-en="Services" data-es="Paquetes">Services</a></li>
         </ul>
       </div>
       <div>
-        <h6>Reserve</h6>
+        <h6 data-en="Reserve" data-es="Reservar">Reserve</h6>
         <ul>
-          <li><a href="disclosure.html">Disclosure Form</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="disclosure.html" data-en="Disclosure Form" data-es="Formulario de Aviso">Disclosure Form</a></li>
+          <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
           <li><a href="tel:+18632967303">+1 (863) 296-7303</a></li>
           <li><a href="mailto:thepinkspabus@gmail.com">thepinkspabus@gmail.com</a></li>
         </ul>
       </div>
     </div>
     <div class="bottom">
-      <div>© 2026 The Pink Spa Bus <span class="dot">·</span> All rights reserved</div>
-      <div>Central Florida <span class="dot">·</span> Mobile Spa Bus <span class="dot">·</span> Glamour, Fun, Amazing Moments</div>
+      <div data-en="© 2026 The Pink Spa Bus <span class=&quot;dot&quot;>·</span> All rights reserved" data-es="© 2026 The Pink Spa Bus <span class=&quot;dot&quot;>·</span> Todos los derechos reservados">© 2026 The Pink Spa Bus <span class="dot">·</span> All rights reserved</div>
+      <div data-en="Central Florida <span class=&quot;dot&quot;>·</span> Mobile Spa Bus <span class=&quot;dot&quot;>·</span> Glamour, Fun, Amazing Moments" data-es="Central Florida <span class=&quot;dot&quot;>·</span> Autobús Spa Móvil <span class=&quot;dot&quot;>·</span> Glamour, Diversión, Momentos Increíbles">Central Florida <span class="dot">·</span> Mobile Spa Bus <span class="dot">·</span> Glamour, Fun, Amazing Moments</div>
     </div>
   </div>
 </footer>
