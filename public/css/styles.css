@@ -1006,6 +1006,30 @@
   }
   .add-child:hover{ background:var(--primary-soft) }
 
+  /* inline validation */
+  .field-error{
+    color:#c0392b; font:12px/1.4 Inter,sans-serif;
+    margin:5px 0 0; min-height:0; display:block;
+    transition:opacity .15s;
+  }
+  .field-error:empty{ display:none; }
+  .field input.is-invalid, .field textarea.is-invalid, .field select.is-invalid{
+    border-color:#c0392b !important; box-shadow:0 0 0 2px rgba(192,57,43,.15);
+  }
+  .check.is-invalid label{ color:#c0392b; }
+  .form-banner{
+    border-radius:var(--r-sm); padding:12px 16px;
+    font:13px/1.5 Inter,sans-serif; margin-top:14px; display:none;
+  }
+  .form-banner.is-error{
+    display:block; background:#fff3f2;
+    border:1px solid #f5c6c2; color:#922b21;
+  }
+  .form-banner.is-warning{
+    display:block; background:#fffbf0;
+    border:1px solid #f9e4b7; color:#7d5a0a;
+  }
+
   /* signature pad */
   .sig-pad{
     background:var(--paper); border:1px solid var(--rule-gold);

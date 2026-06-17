@@ -43,13 +43,33 @@
   // restore persisted language on page load
   (function(){ const saved = localStorage.getItem('lang'); if(saved==='en'||saved==='es') setLang(saved); })();
 
+  // ---- inline validation helpers ----
+  function fieldError(id, msg){
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.textContent = msg || '';
+  }
+  function inputInvalid(id, invalid){
+    const el = document.getElementById(id);
+    if(el) el.classList.toggle('is-invalid', !!invalid);
+  }
+  function formBanner(id, msg, type /* 'error' | 'warning' | '' */){
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.textContent = msg || '';
+    el.className = 'form-banner' + (type ? ' is-' + type : '');
+  }
+
   // multi-step form
   function goStep(n){
     const agree = document.getElementById('agree');
     if(n===2 && agree && !agree.checked){
-      alert(currentLang==='es' ? 'Por favor acepte el aviso para continuar.' : 'Please accept the disclosure to continue.');
+      fieldError('agree-error', currentLang==='es' ? 'Por favor acepte el aviso para continuar.' : 'Please accept the disclosure to continue.');
+      document.querySelector('.check')?.classList.add('is-invalid');
       return;
     }
+    fieldError('agree-error', '');
+    document.querySelector('.check')?.classList.remove('is-invalid');
     document.querySelectorAll('.step-pane').forEach(p=>p.classList.toggle('active', +p.dataset.step===n));
     // re-size the signature canvas when step V becomes visible
     if(n===5 && window._sigResize) setTimeout(window._sigResize, 30);
@@ -95,9 +115,10 @@
     const list = document.getElementById('children-list');
     const currentCount = list.querySelectorAll('.child-block').length;
     if (currentCount >= 20) {
-      alert(currentLang === 'es' ? 'Máximo 20 niños permitidos.' : 'Maximum of 20 children allowed.');
+      fieldError('children-error', currentLang === 'es' ? 'Máximo 20 niños permitidos.' : 'Maximum of 20 children allowed.');
       return;
     }
+    fieldError('children-error', '');
     childCount++;
     const n = childCount;
     const block = document.createElement('div');
@@ -314,18 +335,23 @@
         return;
       }
       if (!res.ok || !data.ok) {
-        alert(currentLang === 'es'
-          ? 'No se pudo enviar. ' + (data.error || '') + ' Inténtelo de nuevo o contáctenos por WhatsApp.'
-          : 'Could not send. ' + (data.error || '') + ' Please try again or reach us on WhatsApp.');
+        formBanner('submit-error',
+          currentLang === 'es'
+            ? 'No se pudo enviar. ' + (data.error || '') + ' Inténtelo de nuevo o contáctenos por WhatsApp.'
+            : 'Could not send. ' + (data.error || '') + ' Please try again or reach us on WhatsApp.',
+          'error');
         return;
       }
+      formBanner('submit-error', '', '');
       showSuccessStep(data, payload);
     } catch (err) {
       console.error('Disclosure submit failed', err);
       if (btn) { btn.disabled = false; btn.style.opacity = ''; }
-      alert(currentLang === 'es'
-        ? 'Error de red. Inténtelo de nuevo o contáctenos por WhatsApp.'
-        : 'Network error. Please try again or reach us on WhatsApp.');
+      formBanner('submit-error',
+        currentLang === 'es'
+          ? 'Error de red. Inténtelo de nuevo o contáctenos por WhatsApp.'
+          : 'Network error. Please try again or reach us on WhatsApp.',
+        'error');
     }
   }
 
@@ -345,18 +371,23 @@
       const data = await res.json().catch(() => ({}));
       if (btn) { btn.disabled = false; btn.style.opacity = ''; }
       if (!res.ok || !data.ok) {
-        alert(currentLang === 'es'
-          ? 'No se pudo actualizar. ' + (data.error || '') + ' Inténtelo de nuevo.'
-          : 'Could not update. ' + (data.error || '') + ' Please try again.');
+        formBanner('submit-error',
+          currentLang === 'es'
+            ? 'No se pudo actualizar. ' + (data.error || '') + ' Inténtelo de nuevo.'
+            : 'Could not update. ' + (data.error || '') + ' Please try again.',
+          'error');
         return;
       }
+      formBanner('submit-error', '', '');
       showSuccessStep(data, payload, true);
     } catch (err) {
       console.error('Disclosure update failed', err);
       if (btn) { btn.disabled = false; btn.style.opacity = ''; }
-      alert(currentLang === 'es'
-        ? 'Error de red. Inténtelo de nuevo.'
-        : 'Network error. Please try again.');
+      formBanner('submit-error',
+        currentLang === 'es'
+          ? 'Error de red. Inténtelo de nuevo.'
+          : 'Network error. Please try again.',
+        'error');
     }
   }
 

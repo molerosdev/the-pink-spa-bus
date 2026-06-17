@@ -96,6 +96,7 @@
           <input type="checkbox" id="agree" />
           <label for="agree" data-en="I have read, understood, and agree to the liability waiver above." data-es="He leído, entendido y acepto la exención de responsabilidad anterior.">I have read, understood, and agree to the liability waiver above.</label>
         </div>
+        <p class="field-error" id="agree-error"></p>
 
         <div class="step-nav">
           <button class="prev" disabled>← <span data-en="Back" data-es="Atrás">Back</span></button>
@@ -188,6 +189,7 @@
           <span>+</span>
           <span data-en="Add another child" data-es="Agregar otro niño">Add another child</span>
         </button>
+        <p class="field-error" id="children-error"></p>
 
         <div class="step-nav">
           <button class="prev" onclick="goStep(2)">← <span data-en="Back" data-es="Atrás">Back</span></button>
@@ -243,6 +245,8 @@
           </div>
         </div>
 
+        <p class="field-error" id="sig-error"></p>
+        <div class="form-banner" id="submit-error"></div>
         <div class="step-nav">
           <button class="prev" onclick="goStep(4)">← <span data-en="Back" data-es="Atrás">Back</span></button>
           <button class="btn btn-primary" id="submit-btn" onclick="submitDisclosure(event)" data-en="Submit Disclosure →" data-es="Enviar Aviso →">Submit Disclosure →</button>
