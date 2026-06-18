@@ -1029,6 +1029,10 @@
     display:block; background:#fffbf0;
     border:1px solid #f9e4b7; color:#7d5a0a;
   }
+  .form-banner.is-success{
+    display:block; background:#f0faf4;
+    border:1px solid #a8dab5; color:#1e6b3a;
+  }
 
   /* signature pad */
   .sig-pad{

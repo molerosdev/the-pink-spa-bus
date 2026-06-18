@@ -553,9 +553,13 @@
     if(btn){ btn.disabled = false; btn.textContent = orig; }
     if(ok){
       form.reset();
-      alert(currentLang==='es' ? '¡Gracias! Le contactaremos en 24 horas.' : 'Thank you! We will be in touch within 24 hours.');
+      formBanner('contact-result',
+        currentLang==='es' ? '¡Gracias! Le contactaremos en 24 horas.' : 'Thank you! We will be in touch within 24 hours.',
+        'success');
     } else {
-      alert(currentLang==='es' ? 'No se pudo enviar. Inténtelo de nuevo o contáctenos por WhatsApp.' : 'Could not send. Please try again or reach us on WhatsApp.');
+      formBanner('contact-result',
+        currentLang==='es' ? 'No se pudo enviar. Inténtelo de nuevo o contáctenos por WhatsApp.' : 'Could not send. Please try again or reach us on WhatsApp.',
+        'error');
     }
   }
 
