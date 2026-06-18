@@ -48,6 +48,7 @@ export async function onRequestPost({ request, env }) {
   const body = {
     from,
     to,
+    bcc: ['thepinkspabus@gmail.com'],
     subject: `${p.subject || 'New submission'} — The Pink Spa Bus`,
     html: buildHtml(p),
   };
