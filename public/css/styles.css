@@ -262,7 +262,10 @@
 
   /* responsive */
   @media (max-width:860px){
-    .hero{ min-height:clamp(560px,86vh,720px) }
+    /* bus.webp is 1090×1400 (portrait). Setting min-height to 100vw×(1400/1090)
+       makes the hero exactly tall enough so object-fit:cover shows the full bus
+       without any cropping on any mobile screen width. */
+    .hero{ min-height:calc(100vw * 1.284) }
     .hero-content{ max-width:none }
   }
   @media (max-width:760px){
