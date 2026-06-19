@@ -273,6 +273,11 @@
        without any cropping on any mobile screen width. */
     .hero{ min-height:calc(100vw * 1.284) }
     .hero-content{ max-width:none }
+    /* Landscape slides (slides 2 & 3) cannot show the full bus on a portrait mobile
+       screen without cropping. On mobile we keep only the perfect-fit portrait slide
+       and permanently override its opacity so the JS cycling has no visual effect. */
+    picture.hg-slide{ display:none }
+    .hero-stage .hg-slide:first-child{ opacity:1 !important; transition:none }
   }
   @media (max-width:760px){
     .hero-bar{ gap:22px; padding:26px 0 }
