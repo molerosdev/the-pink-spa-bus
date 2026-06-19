@@ -182,6 +182,12 @@
     margin:0; max-width:none; max-height:none; display:block;
     opacity:0; transition:opacity 1.1s ease;
   }
+  /* when hg-slide is a <picture> element, the inner <img> must also fill + cover */
+  .hg-slide > img{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:center;
+    display:block; margin:0; max-width:none; max-height:none;
+  }
   .hg-slide.is-active{ opacity:1 }
   /* no scrim — keep the bus colors vivid; the headline carries its own halo */
   .hero .container{ position:relative; z-index:2; width:100%; padding-top:clamp(24px,4vh,58px); padding-right:16px }

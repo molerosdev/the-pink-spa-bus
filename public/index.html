@@ -55,8 +55,14 @@
 <section class="hero" id="top">
   <div class="hero-stage" aria-hidden="true">
     <img class="hg-slide is-active" src="images/hero/bus.webp" alt="">
-    <img class="hg-slide" src="images/hero/1.webp" alt="" loading="lazy">
-    <img class="hg-slide" src="images/hero/2.webp" alt="" loading="lazy">
+    <picture class="hg-slide">
+      <source media="(max-width:860px)" srcset="images/hero/1-mobile.webp">
+      <img src="images/hero/1.webp" alt="" loading="lazy">
+    </picture>
+    <picture class="hg-slide">
+      <source media="(max-width:860px)" srcset="images/hero/2-mobile.webp">
+      <img src="images/hero/2.webp" alt="" loading="lazy">
+    </picture>
   </div>
   <div class="container">
     <div class="hero-content">
